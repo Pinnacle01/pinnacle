@@ -1,0 +1,48 @@
+name: pinnacle_main
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  carousel_slider: ^5.0.0
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  sizer: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Afacad
+      fonts:
+        - asset: assets/google_fonts/AfacadFlux-Black.ttf
+          weight: 900
+        - asset: assets/google_fonts/AfacadFlux-Bold.ttf
+          weight: 700
+        - asset: assets/google_fonts/AfacadFlux-ExtraBold.ttf
+          weight: 800
+        - asset: assets/google_fonts/AfacadFlux-ExtraLight.ttf
+          weight: 200
+        - asset: assets/google_fonts/AfacadFlux-Light.ttf
+          weight: 300
+        - asset: assets/google_fonts/AfacadFlux-Medium.ttf
+          weight: 500
+        - asset: assets/google_fonts/AfacadFlux-Regular.ttf
+          weight: 400
+        - asset: assets/google_fonts/AfacadFlux-SemiBold.ttf
+          weight: 600
+        - asset: assets/google_fonts/AfacadFlux-Thin.ttf
+          weight: 100
+  assets:
+    - assets/images/profile_pic.jpg
+    - assets/images/travel_image_component.jpg
+    - assets/images/bike.jpg
+    
