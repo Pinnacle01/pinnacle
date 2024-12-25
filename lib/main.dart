@@ -5,10 +5,10 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/components.dart';
+import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 import 'package:sizer/sizer.dart';
-import 'package:pinnacle_main/framework/widgets/utils.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -88,10 +88,7 @@ class MainApp extends StatelessWidget {
                     uploadedImage: [
                       TempStrings.userPostImage,
                       TempStrings.userImage,
-                      TempStrings.userPostImage,
-                      TempStrings.userImage,
-                      TempStrings.userPostImage,
-                      TempStrings.userPostImage
+                      TempStrings.categoryImage,
                     ],
                   ),
 
@@ -102,7 +99,10 @@ class MainApp extends StatelessWidget {
                   NotificationTab(
                     logoImage: TempStrings.userImage,
                     count: 5,
-                  )
+                  ),
+                  // Award Card
+
+                  const AwardCard(),
                 ],
               ),
             ),

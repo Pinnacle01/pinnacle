@@ -4,12 +4,18 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 
 class TextWidget extends StatelessWidget {
   const TextWidget(
-      {super.key, required this.text, this.color, this.size, this.type});
+      {super.key,
+      required this.text,
+      this.color,
+      this.size,
+      this.type,
+      this.alignment});
 
   final String text;
   final Color? color;
   final double? size;
   final FontWeight? type;
+  final TextAlign? alignment;
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -19,6 +25,7 @@ class TextWidget extends StatelessWidget {
         fontSize: size,
         fontWeight: type,
       ),
+      textAlign: alignment,
     );
   }
 }
