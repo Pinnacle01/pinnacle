@@ -13,6 +13,9 @@ class GeneralString {
   static String get notificationTitle => 'Notification Title';
   static String get notificationCaption =>
       'Notification Caption ..... Notification Substring';
+  static String get awardTitle => 'Intel Expectional Award';
+  static String get awardCaption =>
+      'For your Expectional work in driving the team to success in 2020';
 }
 
 class TempStrings {
@@ -20,4 +23,5 @@ class TempStrings {
   static String get userPostImage => 'assets/images/travel_image_component.jpg';
   static String get categoryImage => 'assets/images/bike.jpg';
   static String get biking => 'Biking';
+  static String get awardImage => 'assets/images/award.png';
 }

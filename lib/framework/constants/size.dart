@@ -103,7 +103,7 @@ class Sizes {
   static double get size100 => 100;
 }
 
-class Radius {
+class CircularRadius {
   static double get extraSmall => 5;
   static double get small => 15;
   static double get medium => 22;

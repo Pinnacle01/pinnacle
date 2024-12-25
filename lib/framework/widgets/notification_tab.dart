@@ -38,7 +38,7 @@ class NotificationTab extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(
-                        Radius.large,
+                        CircularRadius.large,
                       ),
                     ),
                     child: TextWidget(

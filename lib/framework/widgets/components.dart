@@ -32,7 +32,7 @@ class TravelRequestComponent extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Radius.medium),
+            borderRadius: BorderRadius.circular(CircularRadius.medium),
             color: CustomColors.cardBackgroundColor,
           ),
           child: Column(
@@ -47,7 +47,8 @@ class TravelRequestComponent extends StatelessWidget {
                             TempStrings.userPostImage,
                           ).image,
                           fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(Radius.medium),
+                      borderRadius:
+                          BorderRadius.circular(CircularRadius.medium),
                     ),
                     height: 180,
                   ),
@@ -63,8 +64,8 @@ class TravelRequestComponent extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: Radius.medium,
-                  right: Radius.medium,
+                  left: CircularRadius.medium,
+                  right: CircularRadius.medium,
                   top: Sizes.size10,
                 ),
                 child: TextWidget(
@@ -74,7 +75,8 @@ class TravelRequestComponent extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: Radius.medium),
+                padding:
+                    EdgeInsets.symmetric(horizontal: CircularRadius.medium),
                 child: TextWidget(
                   text: startDate.month == endDate.month
                       ? '${month[startDate.month - 1]} ${startDate.day} - ${endDate.day} '
@@ -84,7 +86,8 @@ class TravelRequestComponent extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: Radius.medium),
+                padding:
+                    EdgeInsets.symmetric(horizontal: CircularRadius.medium),
                 child: TextWidget(
                   text: '₹$price',
                   color: Colors.white,
@@ -93,8 +96,8 @@ class TravelRequestComponent extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: Radius.medium,
-                  right: Radius.medium,
+                  left: CircularRadius.medium,
+                  right: CircularRadius.medium,
                   bottom: Sizes.size10,
                 ),
                 child: Row(
@@ -198,17 +201,20 @@ class ExplorePagePost extends StatelessWidget {
             child: Column(
               children: [
                 CarouselSlider(
-                  items: uploadedImage.map((item) {
-                    return Container(
-                      decoration: BoxDecoration(
+                  items: uploadedImage.map(
+                    (item) {
+                      return Container(
+                        decoration: BoxDecoration(
                           image: DecorationImage(
-                        image: Image.asset(
-                          item,
-                        ).image,
-                        fit: BoxFit.cover,
-                      )),
-                    );
-                  }).toList(),
+                            image: Image.asset(
+                              item,
+                            ).image,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    },
+                  ).toList(),
                   options: CarouselOptions(
                     autoPlay: true,
                     autoPlayCurve: Curves.fastOutSlowIn,
@@ -249,7 +255,7 @@ class ExplorePagePost extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(Radius.medium),
+                    borderRadius: BorderRadius.circular(CircularRadius.medium),
                   ),
                   child: Row(
                     children: [
@@ -322,7 +328,7 @@ class CategoryCard extends StatelessWidget {
                 ).image,
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.circular(Radius.medium),
+              borderRadius: BorderRadius.circular(CircularRadius.medium),
             ),
             height: 210,
           ),
@@ -342,6 +348,52 @@ class CategoryCard extends StatelessWidget {
               ),
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class AwardCard extends StatelessWidget {
+  const AwardCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: CustomColors.cardBackgroundColor,
+        borderRadius: BorderRadius.circular(CircularRadius.medium),
+      ),
+      width: 200,
+      height: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(CircularRadius.medium),
+                topRight: Radius.circular(CircularRadius.medium),
+              ),
+              image: DecorationImage(
+                image: Image.asset(TempStrings.awardImage).image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            height: 230,
+          ),
+          TextWidget(
+            text: GeneralString.awardTitle,
+            color: CustomColors.buttonBackgroundCreamColor,
+            size: Sizes.size17.sp,
+            alignment: TextAlign.center,
+          ),
+          TextWidget(
+            text: GeneralString.awardCaption,
+            size: Sizes.size14.sp,
+            color: Colors.white,
+            alignment: TextAlign.center,
+          ),
         ],
       ),
     );
