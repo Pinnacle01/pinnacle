@@ -42,6 +42,7 @@ class MainApp extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  
                   // App Bar
                   UserWidgets().userTopProfileBar(
                     userName: UserString.userName,
