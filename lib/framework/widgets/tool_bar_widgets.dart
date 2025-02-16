@@ -9,14 +9,15 @@ PreferredSizeWidget customAppBarWithShadow(
     Color? titleColor,
     Icon? leadingIcon,
     Color? backgroundColor,
-    List<Icon>? actionIcon}) {
+    List<Icon>? actionIcon, 
+    }) {
   return PreferredSize(
     preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight),
     child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black,
             spreadRadius: 6,
             blurRadius: 6,
           ),
@@ -67,7 +68,6 @@ Widget customBottomNavigator() {
       color: CustomColors.navigationBackgroundColor,
       borderRadius: BorderRadius.circular(Sizes.size8.dp),
     ),
-    // margin: Margins.marginSmall,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: List.generate(icons.length, (index) {
@@ -75,7 +75,7 @@ Widget customBottomNavigator() {
           onPressed: () {},
           icon: IconWidget(
             icon: icons[index],
-            size: index == 2 ? 50 : 28, // Sizes to be
+            size: index == 2 ? 50 : 28,
             color: CustomColors.buttonBackgroundCreamColor,
           ),
         );

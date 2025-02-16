@@ -16,10 +16,10 @@ class UserWidgets {
     return PreferredSize(
       preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black,
               spreadRadius: 6,
               blurRadius: 6,
             ),

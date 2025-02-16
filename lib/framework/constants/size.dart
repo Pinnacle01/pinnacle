@@ -112,7 +112,7 @@ class CircularRadius {
 }
 
 class WidgetsSizes {
-  static double get appBarHeight => 35.sp;
+  static double get appBarHeight => 35;
   static double get chatTabHeight => 40.sp;
   static double get profileTabHeight => 40.sp;
   static double get plusIconSize => 7;
