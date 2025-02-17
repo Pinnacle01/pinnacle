@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -38,8 +39,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _router,
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp.router(
+        routerConfig: _router,
+      );
+    });
   }
 }

@@ -12,7 +12,7 @@ PreferredSizeWidget customAppBarWithShadow(
     List<Icon>? actionIcon, 
     }) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight),
+    preferredSize: Size.fromHeight(AppBar().preferredSize.height),
     child: Container(
       decoration: const BoxDecoration(
         boxShadow: [
@@ -24,7 +24,7 @@ PreferredSizeWidget customAppBarWithShadow(
         ],
       ),
       child: AppBar(
-        toolbarHeight: WidgetsSizes.appBarHeight,
+        toolbarHeight: AppBar().preferredSize.height,
         title: TextWidget(
           text: titleName,
           color: titleColor ?? Colors.white,

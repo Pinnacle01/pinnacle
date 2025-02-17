@@ -128,7 +128,6 @@ class TravelRequestComponent extends StatelessWidget {
 //   final String userCaption;
 //   final String userProfileId;
 //   final List<String> uploadedImage;
-
 //   const ExplorePagePost({
 //     super.key,
 //     required this.userName,
@@ -137,7 +136,6 @@ class TravelRequestComponent extends StatelessWidget {
 //     required this.userProfileId,
 //     required this.uploadedImage,
 //   });
-
 //   @override
 //   Widget build(BuildContext context) {
 //     return Column(
@@ -352,48 +350,47 @@ class CategoryCard extends StatelessWidget {
   }
 }
 
-class AwardCard extends StatelessWidget {
-  const AwardCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: CustomColors.cardBackgroundColor,
-        borderRadius: BorderRadius.circular(CircularRadius.medium),
-      ),
-      width: 200,
-      height: 300,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(CircularRadius.medium),
-                topRight: Radius.circular(CircularRadius.medium),
-              ),
-              image: DecorationImage(
-                image: Image.asset(TempStrings.awardImage).image,
-                fit: BoxFit.cover,
-              ),
-            ),
-            height: 230,
-          ),
-          TextWidget(
-            text: GeneralString.awardTitle,
-            color: CustomColors.buttonBackgroundCreamColor,
-            size: Sizes.size17.sp,
-            alignment: TextAlign.center,
-          ),
-          TextWidget(
-            text: GeneralString.awardCaption,
-            size: Sizes.size14.sp,
-            color: Colors.white,
-            alignment: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}
+// class AwardCard extends StatelessWidget {
+//   const AwardCard({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         color: CustomColors.cardBackgroundColor,
+//         borderRadius: BorderRadius.circular(CircularRadius.medium),
+//       ),
+//       width: 200,
+//       height: 300,
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: [
+//           Container(
+//             decoration: BoxDecoration(
+//               borderRadius: BorderRadius.only(
+//                 topLeft: Radius.circular(CircularRadius.medium),
+//                 topRight: Radius.circular(CircularRadius.medium),
+//               ),
+//               image: DecorationImage(
+//                 image: Image.asset(TempStrings.awardImage).image,
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             height: 230,
+//           ),
+//           TextWidget(
+//             text: GeneralString.awardTitle,
+//             color: CustomColors.buttonBackgroundCreamColor,
+//             size: Sizes.size17.sp,
+//             alignment: TextAlign.center,
+//           ),
+//           TextWidget(
+//             text: GeneralString.awardCaption,
+//             size: Sizes.size14.sp,
+//             color: Colors.white,
+//             alignment: TextAlign.center,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

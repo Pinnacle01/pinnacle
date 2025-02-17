@@ -14,7 +14,7 @@ class UserWidgets {
       Color? backgroundColor,
       List<Icon>? actionIcon}) {
     return PreferredSize(
-      preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight),
+      preferredSize: Size.fromHeight(AppBar().preferredSize.height),
       child: Container(
         decoration: const BoxDecoration(
           boxShadow: [
@@ -26,7 +26,7 @@ class UserWidgets {
           ],
         ),
         child: AppBar(
-          toolbarHeight: WidgetsSizes.appBarHeight,
+          toolbarHeight: AppBar().preferredSize.height,
           title: Row(
             children: [
               CircleAvatar(
