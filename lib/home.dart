@@ -21,7 +21,7 @@ class HomeApp extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () => context.go('/component'),
           child: const TextWidget(
-            text: 'Framework Component',
+            text: 'Framework Component  l Go to Component',
           ),
         ),
       ),
