@@ -84,8 +84,6 @@ Widget customBottomNavigator() {
   );
 }
 
-
-
 Widget curvedBoxTapable({required String text, IconData? icon, Color? color}) {
   return InkWell(
     onTap: () {},

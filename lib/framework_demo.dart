@@ -4,6 +4,7 @@ import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/components.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
+import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 import 'package:sizer/sizer.dart';
 
