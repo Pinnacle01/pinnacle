@@ -3,6 +3,7 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/general_widgets.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 
 class HomeApp extends StatelessWidget {
