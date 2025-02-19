@@ -1,5 +1,3 @@
-import 'package:sizer/sizer.dart';
-
 class Sizes {
   static double get size1 => 1;
   static double get size2 => 2;
@@ -112,10 +110,10 @@ class CircularRadius {
 }
 
 class WidgetsSizes {
-  static double get chatTabHeight => 40.sp;
-  static double get profileTabHeight => 40.sp;
+  static double get chatTabHeight => 40;
+  static double get profileTabHeight => 40;
   static double get plusIconSize => 7;
-  static double get bottomBarHeight => 35.sp;
+  static double get bottomBarHeight => 35;
 }
 
 class Elevation {
