@@ -68,7 +68,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
         TextWidget(
           text: label,
           color: isActive ? color : CustomColors.lightBackgroundColor,
-          // size: Sizes.size2.h,
           type: isActive ? FontWeight.bold : FontWeight.normal,
         ),
       ],
