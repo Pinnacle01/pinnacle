@@ -25,4 +25,6 @@ class TempStrings {
   static String get categoryImage => 'assets/images/bike.jpg';
   static String get biking => 'Biking';
   static String get awardImage => 'assets/images/award.png';
+  static String get crossIcon => 'assets/icons/cross_icon.svg';
+  static String get tickIcon => 'assets/icons/tick_icon.svg';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:sizer/sizer.dart';
@@ -41,12 +42,12 @@ class GroupRequestCard extends StatelessWidget {
           Column(
             children: [
               IconButton(
-                icon: Image.asset('assets/icons/tick_icon.svg'),
+                icon: SvgPicture.asset(TempStrings.tickIcon),
                 iconSize: Sizes.size24.sp,
                 onPressed: () {},
               ),
               IconButton(
-                icon: Image.asset('assets/icons/cross_icon.svg'),
+                icon: SvgPicture.asset(TempStrings.crossIcon),
                 iconSize: Sizes.size24.sp,
                 onPressed: () {},
               )
