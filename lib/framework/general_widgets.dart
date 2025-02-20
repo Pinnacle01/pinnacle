@@ -100,3 +100,21 @@ class IconButtonWidget extends StatelessWidget {
     );
   }
 }
+
+class ImageButtonWidget extends StatelessWidget {
+  const ImageButtonWidget({super.key, required this.imagePath, this.size});
+
+  final String imagePath;
+  final double? size;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Image.asset(
+        imagePath,
+        scale: size,
+      ),
+    );
+  }
+}

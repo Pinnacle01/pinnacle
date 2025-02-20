@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -27,9 +26,10 @@ class GroupRequestCard extends StatelessWidget {
         children: [
           Column(
             children: [
-              TextWidget(
-                text: GeneralString.grouprequestcard,
-                size: Sizes.size15.sp,
+              Text(
+                GeneralString.grouprequestcard,
+                style: TextStyle(
+                    fontSize: Sizes.size15.sp, fontWeight: FontWeight.w600),
               ),
               UserProfileCard(
                 userName: userName,
@@ -39,7 +39,18 @@ class GroupRequestCard extends StatelessWidget {
             ],
           ),
           Column(
-            children: [],
+            children: [
+              IconButton(
+                icon: Image.asset('assets/icons/tick_icon.svg'),
+                iconSize: Sizes.size24.sp,
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Image.asset('assets/icons/cross_icon.svg'),
+                iconSize: Sizes.size24.sp,
+                onPressed: () {},
+              )
+            ],
           ),
         ],
       ),

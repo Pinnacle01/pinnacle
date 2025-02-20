@@ -56,4 +56,6 @@ flutter:
     - assets/images/travel_image_component.jpg
     - assets/images/bike.jpg
     - assets/images/award.png
+    - assets/icons/cross_icon.svg
+    - assets/icons/tick_icon.svg
     

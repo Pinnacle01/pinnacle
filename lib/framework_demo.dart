@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-<<<<<<< HEAD
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
-import 'package:pinnacle_main/framework/widgets/components.dart';
-=======
->>>>>>> a76861126965829f12fbb8fd3fcb417d36b5fd0f
-import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
