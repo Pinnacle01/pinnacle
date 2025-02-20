@@ -19,8 +19,8 @@ class UserProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: WidgetsSizes.profileTabHeight.sp,
-      padding: EdgeInsets.only(left: Sizes.size20),
+      // height: WidgetsSizes.profileTabHeight.sp,
+      padding: EdgeInsets.only(left: Sizes.size20.sp),
       decoration: BoxDecoration(
         color: CustomColors.mainBackgroundColor,
       ),
@@ -33,24 +33,22 @@ class UserProfileCard extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           SizedBox(width: Sizes.size15),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextWidget(
-                  text: userName,
-                  color: Colors.white,
-                  size: Sizes.size18.sp,
-                  type: FontWeight.bold,
-                ),
-                TextWidget(
-                  text: '@$userProfileId',
-                  color: CustomColors.lightBackgroundColor,
-                  size: Sizes.size16.sp,
-                ),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              TextWidget(
+                text: userName,
+                color: Colors.white,
+                size: Sizes.size18.sp,
+                type: FontWeight.bold,
+              ),
+              TextWidget(
+                text: '@$userProfileId',
+                color: CustomColors.lightBackgroundColor,
+                size: Sizes.size16.sp,
+              ),
+            ],
           ),
         ],
       ),

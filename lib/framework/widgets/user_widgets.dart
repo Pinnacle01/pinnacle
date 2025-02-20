@@ -68,7 +68,7 @@ class UserWidgets {
       String? usermessage,
       required DateTime userTime}) {
     return Container(
-      height: WidgetsSizes.chatTabHeight,
+      height: WidgetsSizes.chatTabHeight.sp,
       padding: EdgeInsets.symmetric(horizontal: Sizes.size20),
       decoration: BoxDecoration(
         color: CustomColors.mainBackgroundColor,

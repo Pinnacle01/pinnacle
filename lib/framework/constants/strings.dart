@@ -16,6 +16,7 @@ class GeneralString {
   static String get awardTitle => 'Intel Expectional Award';
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
+  static String get grouprequestcard => 'Group Admission Request';
 }
 
 class TempStrings {
