@@ -17,13 +17,17 @@ class HomeApp extends StatelessWidget {
       appBar: customAppBarWithShadow(
         titleName: UserString.appBarTitle,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => context.go('/component'),
-          child: const Text(
-            'Framework Component',
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () => context.go('/component'),
+            child: const Text(
+              'Framework Component',
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

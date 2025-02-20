@@ -16,6 +16,7 @@ class GeneralString {
   static String get awardTitle => 'Intel Expectional Award';
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
+  static String get grouprequestcard => 'Group Admission Request';
 }
 
 class TempStrings {
@@ -24,4 +25,6 @@ class TempStrings {
   static String get categoryImage => 'assets/images/bike.jpg';
   static String get biking => 'Biking';
   static String get awardImage => 'assets/images/award.png';
+  static String get crossIcon => 'assets/icons/cross_icon.svg';
+  static String get tickIcon => 'assets/icons/tick_icon.svg';
 }

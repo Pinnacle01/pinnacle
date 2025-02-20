@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
 import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
@@ -14,6 +16,7 @@ class FrameworkDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColors.mainBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -64,6 +67,13 @@ class FrameworkDemo extends StatelessWidget {
             ),
 
             // const CustomBottomNavigationBar(),
+
+            // Group Request Card
+            GroupRequestCard(
+              userName: UserString.userName,
+              userId: UserString.userId,
+              userImage: TempStrings.userImage,
+            ),
           ],
         ),
       ),
