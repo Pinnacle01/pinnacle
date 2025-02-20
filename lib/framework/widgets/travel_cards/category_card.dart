@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key});

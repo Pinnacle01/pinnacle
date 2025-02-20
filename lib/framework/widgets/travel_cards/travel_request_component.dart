@@ -4,7 +4,6 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/general_constants.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 
 class TravelRequestComponent extends StatelessWidget {

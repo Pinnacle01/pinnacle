@@ -3,7 +3,6 @@ import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 
 class NotificationTab extends StatelessWidget {
   const NotificationTab(
