@@ -3,7 +3,6 @@ import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 
 class NotificationTab extends StatelessWidget {
   const NotificationTab(
@@ -41,9 +40,11 @@ class NotificationTab extends StatelessWidget {
                         CircularRadius.large,
                       ),
                     ),
-                    child: TextWidget(
-                      text: count.toString(),
-                      size: Sizes.size17.sp,
+                    child: Text(
+                      count.toString(),
+                      style: TextStyle(
+                        fontSize: Sizes.size17.sp,
+                      ),
                     ),
                   ),
                 ),
@@ -56,24 +57,30 @@ class NotificationTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextWidget(
-                  text: GeneralString.notificationTitle,
-                  color: Colors.white,
-                  size: Sizes.size18.sp,
-                  type: FontWeight.bold,
+                Text(
+                  GeneralString.notificationTitle,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: Sizes.size18.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                TextWidget(
-                  text: GeneralString.notificationCaption,
-                  color: Colors.white,
-                  size: Sizes.size16.sp,
+                Text(
+                  GeneralString.notificationCaption,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: Sizes.size16.sp,
+                  ),
                 ),
               ],
             ),
           ),
-          TextWidget(
-            text: '1m ago',
-            color: CustomColors.lightBackgroundColor,
-            size: Sizes.size16.sp,
+          Text(
+            '1m ago',
+            style: TextStyle(
+              color: CustomColors.lightBackgroundColor,
+              fontSize: Sizes.size16.sp,
+            ),
           )
         ],
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
@@ -64,7 +63,7 @@ class FrameworkDemo extends StatelessWidget {
               count: 5,
             ),
 
-            const CustomBottomNavigationBar(),
+            // const CustomBottomNavigationBar(),
           ],
         ),
       ),

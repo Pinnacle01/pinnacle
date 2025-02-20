@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class UserProfileCard extends StatelessWidget {
@@ -25,7 +24,7 @@ class UserProfileCard extends StatelessWidget {
         color: CustomColors.mainBackgroundColor,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CircleAvatar(
             backgroundImage: AssetImage(userImage),
@@ -33,24 +32,26 @@ class UserProfileCard extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           SizedBox(width: Sizes.size15),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextWidget(
-                  text: userName,
-                  color: Colors.white,
-                  size: Sizes.size18.sp,
-                  type: FontWeight.bold,
-                ),
-                TextWidget(
-                  text: '@$userProfileId',
-                  color: CustomColors.lightBackgroundColor,
-                  size: Sizes.size16.sp,
-                ),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                 userName,
+                 style: TextStyle(
+                    color: Colors.white,
+                    fontSize: Sizes.size18.sp,
+                    fontWeight: FontWeight.bold,
+                 ),
+              ),
+              Text(
+                '@$userProfileId',
+                 style: TextStyle(
+                    color: CustomColors.lightBackgroundColor,
+                    fontSize: Sizes.size16.sp,
+                 ),
+              ),
+            ],
           ),
         ],
       ),
