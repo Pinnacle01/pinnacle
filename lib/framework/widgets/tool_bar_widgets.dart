@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 
-PreferredSizeWidget customAppBarWithShadow(
-    {required String titleName,
-    Color? titleColor,
-    Icon? leadingIcon,
-    Color? backgroundColor,
-    List<Icon>? actionIcon,
-    }) {
+PreferredSizeWidget customAppBarWithShadow({
+  required String titleName,
+  Color? titleColor,
+  Icon? leadingIcon,
+  Color? backgroundColor,
+  List<Icon>? actionIcon,
+}) {
   return PreferredSize(
     preferredSize: Size.fromHeight(AppBar().preferredSize.height),
     child: Container(
@@ -25,10 +24,12 @@ PreferredSizeWidget customAppBarWithShadow(
       ),
       child: AppBar(
         toolbarHeight: AppBar().preferredSize.height,
-        title: TextWidget(
-          text: titleName,
-          color: titleColor ?? Colors.white,
-          size: Sizes.size20.sp,
+        title: Text(
+          titleName,
+          style: TextStyle(
+            color: titleColor ?? Colors.white,
+            fontSize: Sizes.size20.sp,
+          ),
         ),
         leading: leadingIcon,
         actions: actionIcon,
@@ -45,9 +46,11 @@ PreferredSizeWidget customAppBar(
     Color? backgroundColor,
     List<Icon>? actionIcon}) {
   return AppBar(
-    title: TextWidget(
-      text: titleName,
-      color: titleColor ?? Colors.white,
+    title: Text(
+      titleName,
+      style: TextStyle(
+        color: titleColor ?? Colors.white,
+      ),
     ),
     leading: leadingIcon,
     actions: actionIcon,
@@ -73,8 +76,8 @@ Widget customBottomNavigator() {
       children: List.generate(icons.length, (index) {
         return IconButton(
           onPressed: () {},
-          icon: IconWidget(
-            icon: icons[index],
+          icon: Icon(
+            icons[index],
             size: index == 2 ? 50 : 28,
             color: CustomColors.buttonBackgroundCreamColor,
           ),
@@ -102,18 +105,20 @@ Widget curvedBox(String text, {IconData? icon, Color? color}) {
       children: [
         Visibility(
           visible: icon != null,
-          child: IconWidget(
-            icon: icon!,
+          child: Icon(
+            icon!,
             size: Sizes.size15.sp,
           ),
         ),
         const SizedBox(
           width: 10,
         ),
-        TextWidget(
-          text: text,
-          size: Sizes.size15.sp,
-          type: FontWeight.bold,
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: Sizes.size15.sp,
+            fontWeight: FontWeight.bold,
+          ),
         )
       ],
     ),

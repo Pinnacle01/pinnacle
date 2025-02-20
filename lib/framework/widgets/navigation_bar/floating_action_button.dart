@@ -14,10 +14,11 @@ class CustomfloatingActionButton extends StatelessWidget {
       backgroundColor: CustomColors.buttonBackgroundCreamColor,
       shape: const CircleBorder(),
       elevation: Elevation.large,
-      child: IconWidget(
-        icon: Icons.add,
-        size: Sizes.size18.sp,
-      ),
+      child: 
+        Icon(
+          Icons.add,
+          size: Sizes.size18.sp,
+        ),
     );
   }
 }

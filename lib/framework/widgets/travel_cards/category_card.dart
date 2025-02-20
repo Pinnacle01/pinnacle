@@ -33,10 +33,13 @@ class CategoryCard extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextWidget(
-                text: TempStrings.biking,
-                size: Sizes.size18.sp,
-                type: FontWeight.bold,
+              child: Text(
+                TempStrings.biking,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: Sizes.size18.sp,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           )

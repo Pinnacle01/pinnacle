@@ -64,7 +64,7 @@ class FrameworkDemo extends StatelessWidget {
               count: 5,
             ),
 
-            const CustomBottomNavigationBar(),
+            // const CustomBottomNavigationBar(),
           ],
         ),
       ),
