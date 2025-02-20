@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class UserProfileCard extends StatelessWidget {
@@ -25,7 +24,7 @@ class UserProfileCard extends StatelessWidget {
         color: CustomColors.mainBackgroundColor,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CircleAvatar(
             backgroundImage: AssetImage(userImage),
@@ -35,18 +34,22 @@ class UserProfileCard extends StatelessWidget {
           SizedBox(width: Sizes.size15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextWidget(
-                text: userName,
-                color: Colors.white,
-                size: Sizes.size18.sp,
-                type: FontWeight.bold,
+              Text(
+                userName,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: Sizes.size18.sp,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              TextWidget(
-                text: '@$userProfileId',
-                color: CustomColors.lightBackgroundColor,
-                size: Sizes.size16.sp,
+              Text(
+                '@$userProfileId',
+                style: TextStyle(
+                  color: CustomColors.lightBackgroundColor,
+                  fontSize: Sizes.size16.sp,
+                ),
               ),
             ],
           ),

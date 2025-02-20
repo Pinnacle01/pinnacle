@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/general_widgets.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
@@ -59,17 +58,18 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        IconWidget(
-          icon: icon,
+        Icon(
+          icon,
           size: Sizes.size24.sp,
           color: isActive ? color : CustomColors.lightBackgroundColor,
         ),
         SizedBox(height: Sizes.size10.dp),
-        TextWidget(
-          text: label,
-          color: isActive ? color : CustomColors.lightBackgroundColor,
-          type: isActive ? FontWeight.bold : FontWeight.normal,
-        ),
+        Text(
+          label,
+          style: TextStyle(
+              color: isActive ? color : CustomColors.lightBackgroundColor,
+              fontWeight: isActive ? FontWeight.bold : FontWeight.normal),
+        )
       ],
     );
   }
