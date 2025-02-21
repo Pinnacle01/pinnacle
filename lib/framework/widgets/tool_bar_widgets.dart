@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 
@@ -24,12 +26,10 @@ PreferredSizeWidget customAppBarWithShadow({
       ),
       child: AppBar(
         toolbarHeight: AppBar().preferredSize.height,
-        title: Text(
-          titleName,
-          style: TextStyle(
-            color: titleColor ?? Colors.white,
-            fontSize: Sizes.size20.sp,
-          ),
+        title: TextWidget(
+          text: titleName,
+          color: titleColor ?? Colors.white,
+          size: Sizes.size20.sp,
         ),
         leading: leadingIcon,
         actions: actionIcon,
@@ -46,11 +46,9 @@ PreferredSizeWidget customAppBar(
     Color? backgroundColor,
     List<Icon>? actionIcon}) {
   return AppBar(
-    title: Text(
-      titleName,
-      style: TextStyle(
-        color: titleColor ?? Colors.white,
-      ),
+    title: TextWidget(
+      text: titleName,
+      color: titleColor ?? Colors.white,
     ),
     leading: leadingIcon,
     actions: actionIcon,
@@ -113,12 +111,10 @@ Widget curvedBox(String text, {IconData? icon, Color? color}) {
         const SizedBox(
           width: 10,
         ),
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: Sizes.size15.sp,
-            fontWeight: FontWeight.bold,
-          ),
+        TextWidget(
+          text: text,
+          size: Sizes.size15.sp,
+          fontWeight: FontWeight.bold,
         )
       ],
     ),

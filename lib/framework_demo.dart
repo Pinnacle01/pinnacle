@@ -8,7 +8,7 @@ import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart'
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 
 class FrameworkDemo extends StatelessWidget {
   const FrameworkDemo({super.key});

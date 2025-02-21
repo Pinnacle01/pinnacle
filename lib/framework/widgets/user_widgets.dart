@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 
 class UserWidgets {
   PreferredSizeWidget userTopProfileBar(
@@ -38,19 +40,15 @@ class UserWidgets {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    userName,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: Sizes.size19.sp,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    userStatus ? 'Online' : 'Offline',
-                    style: TextStyle(
-                      color: userStatus ? Colors.green : Colors.red,
-                      fontSize: Sizes.size15.sp,
-                    ),
+                  TextWidget(
+                      text: userName,
+                      color: Colors.white,
+                      size: Sizes.size19.sp,
+                      fontWeight: FontWeight.bold),
+                  TextWidget(
+                    text: userStatus ? 'Online' : 'Offline',
+                    color: userStatus ? Colors.green : Colors.red,
+                    size: Sizes.size15.sp,
                   ),
                 ],
               )
@@ -92,32 +90,26 @@ class UserWidgets {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  userName,
-                  style: TextStyle(
-                      fontSize: Sizes.size18.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
+                TextWidget(
+                    text: userName,
+                    size: Sizes.size18.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
                 Visibility(
                   visible: usermessage != null,
-                  child: Text(
-                    usermessage!,
-                    style: TextStyle(
-                      fontSize: Sizes.size16.sp,
-                      color: CustomColors.lightBackgroundColor,
-                    ),
+                  child: TextWidget(
+                    text: usermessage!,
+                    size: Sizes.size16.sp,
+                    color: CustomColors.lightBackgroundColor,
                   ),
                 ),
               ],
             ),
           ),
-          Text(
-            '${userTime.hour.toString()} : ${userTime.minute.toString()}',
-            style: TextStyle(
-              fontSize: Sizes.size15.sp,
-              color: Colors.white,
-            ),
+          TextWidget(
+            text: '${userTime.hour.toString()} : ${userTime.minute.toString()}',
+            size: Sizes.size15.sp,
+            color: Colors.white,
           ),
         ],
       ),
