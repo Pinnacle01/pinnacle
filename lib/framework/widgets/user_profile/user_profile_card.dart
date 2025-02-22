@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 
 class UserProfileCard extends StatelessWidget {
   final String userName;
@@ -18,7 +19,6 @@ class UserProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: WidgetsSizes.profileTabHeight.sp,
       padding: EdgeInsets.only(left: Sizes.size20.sp),
       decoration: BoxDecoration(
         color: CustomColors.mainBackgroundColor,
@@ -36,20 +36,16 @@ class UserProfileCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                userName,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: Sizes.size18.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+              TextWidget(
+                text: userName,
+                color: Colors.white,
+                size: Sizes.size18.sp,
+                fontWeight: FontWeight.bold,
               ),
-              Text(
-                '@$userProfileId',
-                style: TextStyle(
-                  color: CustomColors.lightBackgroundColor,
-                  fontSize: Sizes.size16.sp,
-                ),
+              TextWidget(
+                text: '@$userProfileId',
+                color: CustomColors.lightBackgroundColor,
+                size: Sizes.size16.sp,
               ),
             ],
           ),

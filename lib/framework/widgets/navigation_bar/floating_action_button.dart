@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:sizer/sizer.dart';
 
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 class CustomfloatingActionButton extends StatelessWidget {
   const CustomfloatingActionButton({super.key});
 
@@ -13,11 +13,10 @@ class CustomfloatingActionButton extends StatelessWidget {
       backgroundColor: CustomColors.buttonBackgroundCreamColor,
       shape: const CircleBorder(),
       elevation: Elevation.large,
-      child: 
-        Icon(
-          Icons.add,
-          size: Sizes.size18.sp,
-        ),
+      child: Icon(
+        Icons.add,
+        size: Sizes.size18.sp,
+      ),
     );
   }
 }

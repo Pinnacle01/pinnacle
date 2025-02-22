@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/uikit/image_button_widget.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 
@@ -27,11 +28,10 @@ class GroupRequestCard extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text(
-                GeneralString.grouprequestcard,
-                style: TextStyle(
-                    fontSize: Sizes.size15.sp, fontWeight: FontWeight.w600),
-              ),
+              TextWidget(
+                  text: GeneralString.grouprequestcard,
+                  size: Sizes.size15.sp,
+                  fontWeight: FontWeight.w600),
               UserProfileCard(
                 userName: userName,
                 userImage: userImage,
@@ -41,15 +41,17 @@ class GroupRequestCard extends StatelessWidget {
           ),
           Column(
             children: [
-              IconButton(
-                icon: SvgPicture.asset(TempStrings.tickIcon),
-                iconSize: Sizes.size24.sp,
-                onPressed: () {},
+              ImageButtonWidget(
+                iconPath: TempStrings.tickIcon,
+                size: Sizes.size24.sp,
+                onPress: () {},
+                iconType: IconType.svg,
               ),
-              IconButton(
-                icon: SvgPicture.asset(TempStrings.crossIcon),
-                iconSize: Sizes.size24.sp,
-                onPressed: () {},
+              ImageButtonWidget(
+                iconPath: TempStrings.crossIcon,
+                size: Sizes.size24.sp,
+                onPress: () {},
+                iconType: IconType.svg,
               )
             ],
           ),

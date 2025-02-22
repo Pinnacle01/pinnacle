@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/general_constants.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
@@ -66,36 +68,30 @@ class TravelRequestComponent extends StatelessWidget {
                   right: CircularRadius.medium,
                   top: Sizes.size10,
                 ),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Sizes.size20.sp,
-                  ),
+                child: TextWidget(
+                  text: title,
+                  color: Colors.white,
+                  size: Sizes.size20.sp,
                 ),
               ),
               Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: CircularRadius.medium),
-                child: Text(
-                  startDate.month == endDate.month
+                child: TextWidget(
+                  text: startDate.month == endDate.month
                       ? '${month[startDate.month - 1]} ${startDate.day} - ${endDate.day} '
                       : '${month[startDate.month - 1]} ${startDate.day} - ${month[endDate.month - 1]} ${endDate.day}',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Sizes.size16.sp,
-                  ),
+                  color: Colors.white,
+                  size: Sizes.size16.sp,
                 ),
               ),
               Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: CircularRadius.medium),
-                child: Text(
-                  '₹$price',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Sizes.size16.sp,
-                  ),
+                child: TextWidget(
+                  text: '₹$price',
+                  color: Colors.white,
+                  size: Sizes.size16.sp,
                 ),
               ),
               Padding(
@@ -111,12 +107,10 @@ class TravelRequestComponent extends StatelessWidget {
                       color: CustomColors.buttonBackgroundCreamColor,
                       size: Sizes.size15.sp,
                     ),
-                    Text(
-                      '$days Days Remaining !',
-                      style: TextStyle(
-                        color: CustomColors.buttonBackgroundCreamColor,
-                        fontSize: Sizes.size15.sp,
-                      ),
+                    TextWidget(
+                      text: '$days Days Remaining !',
+                      color: CustomColors.buttonBackgroundCreamColor,
+                      size: Sizes.size15.sp,
                     )
                   ],
                 ),

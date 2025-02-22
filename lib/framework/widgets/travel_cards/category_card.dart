@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 
@@ -32,13 +34,11 @@ class CategoryCard extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Text(
-                TempStrings.biking,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: Sizes.size18.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: TextWidget(
+                text: TempStrings.biking,
+                color: Colors.black,
+                size: Sizes.size18.sp,
+                fontWeight: FontWeight.bold,
               ),
             ),
           )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
@@ -40,11 +42,9 @@ class NotificationTab extends StatelessWidget {
                         CircularRadius.large,
                       ),
                     ),
-                    child: Text(
-                      count.toString(),
-                      style: TextStyle(
-                        fontSize: Sizes.size17.sp,
-                      ),
+                    child: TextWidget(
+                      text: count.toString(),
+                      size: Sizes.size17.sp,
                     ),
                   ),
                 ),
@@ -57,30 +57,24 @@ class NotificationTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  GeneralString.notificationTitle,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Sizes.size18.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
+                TextWidget(
+                  text: GeneralString.notificationTitle,
+                  color: Colors.white,
+                  size: Sizes.size18.sp,
+                  fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  GeneralString.notificationCaption,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Sizes.size16.sp,
-                  ),
+                TextWidget(
+                  text: GeneralString.notificationCaption,
+                  color: Colors.white,
+                  size: Sizes.size16.sp,
                 ),
               ],
             ),
           ),
-          Text(
-            '1m ago',
-            style: TextStyle(
-              color: CustomColors.lightBackgroundColor,
-              fontSize: Sizes.size16.sp,
-            ),
+          TextWidget(
+            text: '1m ago',
+            color: CustomColors.lightBackgroundColor,
+            size: Sizes.size16.sp,
           )
         ],
       ),

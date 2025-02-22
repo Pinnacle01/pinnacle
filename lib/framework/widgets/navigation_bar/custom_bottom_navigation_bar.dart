@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 
@@ -64,12 +66,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           color: isActive ? color : CustomColors.lightBackgroundColor,
         ),
         SizedBox(height: Sizes.size10.dp),
-        Text(
-          label,
-          style: TextStyle(
-              color: isActive ? color : CustomColors.lightBackgroundColor,
-              fontWeight: isActive ? FontWeight.bold : FontWeight.normal),
-        )
+        TextWidget(
+            text: label,
+            color: isActive ? color : CustomColors.lightBackgroundColor,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.normal),
       ],
     );
   }
