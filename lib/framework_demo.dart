@@ -30,7 +30,7 @@ class FrameworkDemo extends StatelessWidget {
         child: Column(
           children: [
             // App Bar
-            UserWidgets().userTopProfileBar(
+            UserWidgets.userTopProfileBar(
               userName: GeneralString.userName,
               userImage: AssetPath.userImage,
               userStatus: false,
@@ -44,7 +44,7 @@ class FrameworkDemo extends StatelessWidget {
             ),
 
             // Chat Tile
-            UserWidgets().chatTile(
+            UserWidgets.chatTile(
               userName: GeneralString.userName,
               userImage: AssetPath.userImage,
               usermessage: GeneralString.userMessage,
@@ -71,6 +71,13 @@ class FrameworkDemo extends StatelessWidget {
               userName: GeneralString.userName,
               userId: GeneralString.userId,
               userImage: AssetPath.userImage,
+            ),
+
+            // Settings Tab
+            UserWidgets.settingsTab(
+              label: "Setting",
+              iconPath: AssetPath.userSquareIcon,
+              onTap: () {},
             ),
           ],
         ),

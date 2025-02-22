@@ -93,7 +93,7 @@ class TravelRequestCard extends StatelessWidget {
                     Row(
                       children: [
                         IconWidget(
-                          icon: Icons.alarm_sharp,
+                          path: AssetPath.alarmIcon,
                           color: CustomColors.buttonBackgroundCreamColor,
                           size: Sizes.size15.sp,
                         ),

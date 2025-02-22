@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 
@@ -21,7 +22,7 @@ class CustomfloatingActionButton extends StatelessWidget {
       shape: const CircleBorder(),
       elevation: Elevation.large,
       child: IconWidget(
-        icon: Icons.add,
+        path: AssetPath.plusIcon,
         color: CustomColors.whiteColor,
         size: Sizes.size18.sp,
       ),

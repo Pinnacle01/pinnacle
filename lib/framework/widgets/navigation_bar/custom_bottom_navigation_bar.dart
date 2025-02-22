@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -19,19 +20,19 @@ class CustomBottomNavigationBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildNavItem(
-              icon: Icons.home,
+              icon: AssetPath.homeIcon,
               label: 'Home',
               color: CustomColors.buttonBackgroundCreamColor,
               isActive: true,
             ),
             _buildNavItem(
-              icon: Icons.explore,
+              icon: AssetPath.exploreIcon,
               label: 'General',
               color: CustomColors.buttonBackgroundCreamColor,
               isActive: false,
             ),
             _buildNavItem(
-              icon: Icons.person,
+              icon: AssetPath.userProfileIcon,
               label: 'Profile',
               color: CustomColors.buttonBackgroundCreamColor,
               isActive: false,
@@ -46,13 +47,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
   }
 
   Widget _buildNavItem({
-    required IconData icon,
+    required String icon,
     required String label,
     required Color color,
     required bool isActive,
   }) {
     return IconWidget(
-      icon: icon,
+      path: icon,
       size: Sizes.size30.sp,
       color: isActive ? color : CustomColors.lightBackgroundColor,
     );
