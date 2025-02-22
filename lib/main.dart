@@ -32,6 +32,18 @@ final _router = GoRouter(
             return const FrameworkDemo();
           },
         ),
+        GoRoute(
+            path: 'explore',
+            builder: (context, state) {
+              return ExploreHome(
+                controller: controller,
+                date: '',
+                daysRemaining: '',
+                location: '',
+                price: '',
+                image: '',
+              );
+            }),
       ],
     ),
   ],
