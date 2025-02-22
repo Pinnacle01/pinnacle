@@ -28,6 +28,15 @@ class HomeApp extends StatelessWidget {
               text: 'Framework Component',
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () => context.go('/explore'),
+            child: const TextWidget(
+              text: 'Explore',
+            ),
+          ),
         ],
       ),
     );
