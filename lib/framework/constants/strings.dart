@@ -1,4 +1,4 @@
-class UserString {
+class GeneralString {
   static String get appBarTitle => 'Title';
   static String get userCaption => 'User Caption related to Traveling..';
   static String get userName => 'App User';
@@ -6,9 +6,9 @@ class UserString {
   static String get userMessage => 'Sample User Message';
   static String get travelTitle => 'Travel Post Title';
   static String get travelPrice => '200';
-}
+  static String get daysRemaining => 'Days Remaining!';
 
-class GeneralString {
+  // Notification Tab
   static String get commentWrite => 'Write a comment';
   static String get notificationTitle => 'Notification Title';
   static String get notificationCaption =>
@@ -17,14 +17,4 @@ class GeneralString {
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
   static String get grouprequestcard => 'Group Admission Request';
-}
-
-class TempStrings {
-  static String get userImage => 'assets/images/profile_pic.jpg';
-  static String get userPostImage => 'assets/images/travel_image_component.jpg';
-  static String get categoryImage => 'assets/images/bike.jpg';
-  static String get biking => 'Biking';
-  static String get awardImage => 'assets/images/award.png';
-  static String get crossIcon => 'assets/icons/cross_icon.svg';
-  static String get tickIcon => 'assets/icons/tick_icon.svg';
 }

@@ -32,17 +32,6 @@ final _router = GoRouter(
             return const FrameworkDemo();
           },
         ),
-        GoRoute(
-            name: 'explore',
-            path: '/explore',
-            builder: (BuildContext context, GoRouterState state) => ExploreHome(
-                  date: '',
-                  daysRemaining: '',
-                  image: '',
-                  location: '',
-                  price: '',
-                  controller: controller,
-                )),
       ],
     ),
   ],
@@ -54,11 +43,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Device.init(context);
-    // return Sizer(builder: (context, orientation, deviceType) {
     return MaterialApp.router(
       routerConfig: _router,
     );
-    // }
-    // );
   }
 }

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/constants/strings.dart';
 
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+class SingleCategoryCard extends StatelessWidget {
+  const SingleCategoryCard({
+    super.key,
+    required this.categoryImage,
+  });
 
+  final String categoryImage;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -17,25 +21,28 @@ class CategoryCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: Image.asset(
-                  TempStrings.categoryImage,
+                  categoryImage,
                 ).image,
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.circular(CircularRadius.medium),
+              borderRadius: BorderRadius.circular(Sizes.size20.dp),
             ),
-            height: 210,
+            height: Sizes.size200.dp,
           ),
           Positioned(
-            bottom: 10,
-            left: 15,
+            bottom: Sizes.size10.dp,
+            left: Sizes.size10.dp,
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 30),
+              padding: EdgeInsets.symmetric(
+                vertical: Sizes.size5.dp,
+                horizontal: Sizes.size10.dp,
+              ),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(Sizes.size10.dp),
               ),
               child: TextWidget(
-                text: TempStrings.biking,
+                text: AssetPath.biking,
                 color: Colors.black,
                 size: Sizes.size18.sp,
                 fontWeight: FontWeight.bold,
