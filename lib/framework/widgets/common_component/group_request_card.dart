@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/uikit/image_button_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
@@ -22,34 +23,51 @@ class GroupRequestCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: CustomColors.mainTextColor),
-      padding: EdgeInsets.all(Sizes.size15),
+      padding: EdgeInsets.symmetric(
+        horizontal: Sizes.size15.dp,
+        vertical: Sizes.size15.dp,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Sizes.size25.dp),
+        color: CustomColors.navCardBackgroundColor222222,
+      ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            children: [
-              TextWidget(
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextWidget(
                   text: GeneralString.grouprequestcard,
                   size: Sizes.size15.sp,
-                  fontWeight: FontWeight.w600),
-              UserProfileCard(
-                userName: userName,
-                userImage: userImage,
-                userProfileId: userId,
-              ),
-            ],
+                  color: CustomColors.whiteColor,
+                  fontWeight: FontWeight.w600,
+                ),
+                SizedBox(height: Sizes.size5.dp),
+                UserProfileCard(
+                  userName: userName,
+                  userImage: userImage,
+                  userProfileId: userId,
+                ),
+              ],
+            ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ImageButtonWidget(
-                iconPath: TempStrings.tickIcon,
-                size: Sizes.size24.sp,
+                iconPath: AssetPath.tickIcon,
+                size: Sizes.size35.sp,
                 onPress: () {},
                 iconType: IconType.svg,
               ),
+              SizedBox(height: Sizes.size5.dp),
               ImageButtonWidget(
-                iconPath: TempStrings.crossIcon,
-                size: Sizes.size24.sp,
+                iconPath: AssetPath.crossIcon,
+                size: Sizes.size35.sp,
                 onPress: () {},
                 iconType: IconType.svg,
               )

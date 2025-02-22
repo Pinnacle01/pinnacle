@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
+import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/general_constants.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 
-class TravelRequestComponent extends StatelessWidget {
-  const TravelRequestComponent({
+class TravelRequestCard extends StatelessWidget {
+  const TravelRequestCard({
     super.key,
     required this.title,
     required this.startDate,
@@ -32,8 +34,8 @@ class TravelRequestComponent extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(CircularRadius.medium),
-            color: CustomColors.cardBackgroundColor,
+            borderRadius: BorderRadius.circular(Sizes.size12.dp),
+            color: CustomColors.navCardBackgroundColor3B3B3B_06,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,18 +45,18 @@ class TravelRequestComponent extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: Image.asset(
-                            TempStrings.userPostImage,
-                          ).image,
-                          fit: BoxFit.cover),
-                      borderRadius:
-                          BorderRadius.circular(CircularRadius.medium),
+                        image: Image.asset(
+                          AssetPath.userPostImage,
+                        ).image,
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(Sizes.size15.dp),
                     ),
-                    height: 180,
+                    height: Sizes.size200.dp,
                   ),
                   Positioned(
-                    bottom: 10,
-                    left: 10,
+                    bottom: Sizes.size10.dp,
+                    left: Sizes.size10.dp,
                     child: curvedBox(
                       cityLocation,
                       icon: Icons.location_on,
@@ -63,58 +65,49 @@ class TravelRequestComponent extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  left: CircularRadius.medium,
-                  right: CircularRadius.medium,
-                  top: Sizes.size10,
+                padding: EdgeInsets.symmetric(
+                  horizontal: Sizes.size10.sp,
+                  vertical: Sizes.size10.sp,
                 ),
-                child: TextWidget(
-                  text: title,
-                  color: Colors.white,
-                  size: Sizes.size20.sp,
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: CircularRadius.medium),
-                child: TextWidget(
-                  text: startDate.month == endDate.month
-                      ? '${month[startDate.month - 1]} ${startDate.day} - ${endDate.day} '
-                      : '${month[startDate.month - 1]} ${startDate.day} - ${month[endDate.month - 1]} ${endDate.day}',
-                  color: Colors.white,
-                  size: Sizes.size16.sp,
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: CircularRadius.medium),
-                child: TextWidget(
-                  text: '₹$price',
-                  color: Colors.white,
-                  size: Sizes.size16.sp,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: CircularRadius.medium,
-                  right: CircularRadius.medium,
-                  bottom: Sizes.size10,
-                ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.alarm_sharp,
-                      color: CustomColors.buttonBackgroundCreamColor,
-                      size: Sizes.size15.sp,
+                    TextWidget(
+                      text: title,
+                      color: Colors.white,
+                      size: Sizes.size18.sp,
+                      fontWeight: FontWeight.bold,
                     ),
                     TextWidget(
-                      text: '$days Days Remaining !',
-                      color: CustomColors.buttonBackgroundCreamColor,
-                      size: Sizes.size15.sp,
-                    )
+                      text: startDate.month == endDate.month
+                          ? '${month[startDate.month - 1]} ${startDate.day} - ${endDate.day} '
+                          : '${month[startDate.month - 1]} ${startDate.day} - ${month[endDate.month - 1]} ${endDate.day}',
+                      color: Colors.white,
+                      size: Sizes.size16.sp,
+                    ),
+                    TextWidget(
+                      text: '₹$price',
+                      color: Colors.white,
+                      size: Sizes.size16.sp,
+                    ),
+                    Row(
+                      children: [
+                        IconWidget(
+                          icon: Icons.alarm_sharp,
+                          color: CustomColors.buttonBackgroundCreamColor,
+                          size: Sizes.size15.sp,
+                        ),
+                        SizedBox(width: Sizes.size5.dp),
+                        TextWidget(
+                          text: '$days ${GeneralString.daysRemaining}',
+                          color: CustomColors.buttonBackgroundCreamColor,
+                          size: Sizes.size12.sp,
+                        )
+                      ],
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

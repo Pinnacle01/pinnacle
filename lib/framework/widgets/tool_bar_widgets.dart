@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -8,32 +9,45 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 PreferredSizeWidget customAppBarWithShadow({
   required String titleName,
   Color? titleColor,
-  Icon? leadingIcon,
+  IconData? iconPath,
+  Color? iconColor,
+  double? iconSize,
   Color? backgroundColor,
-  List<Icon>? actionIcon,
+  List<IconWidget>? actionIcon,
 }) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(AppBar().preferredSize.height),
+    preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight.dp),
     child: Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black,
-            spreadRadius: 6,
-            blurRadius: 6,
+            spreadRadius: Sizes.size6.sp,
+            blurRadius: Sizes.size6.sp,
           ),
         ],
       ),
       child: AppBar(
-        toolbarHeight: AppBar().preferredSize.height,
+        toolbarHeight: WidgetsSizes.appBarHeight.dp,
         title: TextWidget(
           text: titleName,
           color: titleColor ?? Colors.white,
           size: Sizes.size20.sp,
         ),
-        leading: leadingIcon,
+        leading: iconPath != null
+            ? IconWidget(
+                icon: iconPath,
+                size: iconSize ?? Sizes.size24.sp,
+                color: iconColor ?? Colors.white,
+              )
+            : BackButton(
+                color: Colors.white,
+                style: ButtonStyle(
+                  iconSize: WidgetStateProperty.all(Sizes.size24.sp),
+                ),
+              ),
         actions: actionIcon,
-        backgroundColor: backgroundColor ?? CustomColors.mainBackgroundColor,
+        backgroundColor: backgroundColor ?? Colors.black,
       ),
     ),
   );
@@ -52,7 +66,7 @@ PreferredSizeWidget customAppBar(
     ),
     leading: leadingIcon,
     actions: actionIcon,
-    backgroundColor: backgroundColor ?? CustomColors.mainBackgroundColor,
+    backgroundColor: backgroundColor ?? Colors.black,
   );
 }
 
@@ -66,21 +80,24 @@ Widget customBottomNavigator() {
   ];
   return Container(
     decoration: BoxDecoration(
-      color: CustomColors.navigationBackgroundColor,
+      color: CustomColors.navCardBackgroundColor3B3B3B_06,
       borderRadius: BorderRadius.circular(Sizes.size8.dp),
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: List.generate(icons.length, (index) {
-        return IconButton(
-          onPressed: () {},
-          icon: Icon(
-            icons[index],
-            size: index == 2 ? 50 : 28,
-            color: CustomColors.buttonBackgroundCreamColor,
-          ),
-        );
-      }),
+      children: List.generate(
+        icons.length,
+        (index) {
+          return IconButton(
+            onPressed: () {},
+            icon: Icon(
+              icons[index],
+              size: index == 2 ? 50 : 28,
+              color: CustomColors.buttonBackgroundCreamColor,
+            ),
+          );
+        },
+      ),
     ),
   );
 }
@@ -94,7 +111,8 @@ Widget curvedBoxTapable({required String text, IconData? icon, Color? color}) {
 
 Widget curvedBox(String text, {IconData? icon, Color? color}) {
   return Container(
-    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 15),
+    padding: EdgeInsets.symmetric(
+        vertical: Sizes.size5.dp, horizontal: Sizes.size15.dp),
     decoration: BoxDecoration(
       color: color ?? Colors.white,
       borderRadius: BorderRadius.circular(10),

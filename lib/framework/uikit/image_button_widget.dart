@@ -22,12 +22,24 @@ class ImageButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: iconType == IconType.svg
-          ? SvgPicture.asset(iconPath)
-          : Image.asset(iconPath),
-      iconSize: size,
-      onPressed: onPress,
+    return InkWell(
+      onTap: onPress,
+      child: Container(
+        height: size,
+        width: size,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(size),
+        ),
+        child: iconType == IconType.svg
+            ? SvgPicture.asset(
+                iconPath,
+                fit: BoxFit.cover,
+              )
+            : Image.asset(
+                iconPath,
+                fit: BoxFit.cover,
+              ),
+      ),
     );
   }
 }
