@@ -1,14 +1,14 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/widgets/search_bar.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
-import 'package:pinnacle_main/framework_demo.dart';
-import 'package:pinnacle_main/home.dart';
+// import 'package:pinnacle_main/framework_demo.dart';
+// import 'package:pinnacle_main/home.dart';
 
 class ExploreHome extends StatelessWidget {
   final TextEditingController controller;
@@ -103,20 +103,16 @@ class ExploreHome extends StatelessWidget {
   }
 
   Widget _categoryBoxButton(String title, BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        ///Can add Mobx Observer here
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-          decoration: BoxDecoration(
-            color: Colors.grey[300],
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          child: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.symmetric(
+            vertical: Sizes.size5.dp, horizontal: Sizes.size15.dp),
+        decoration: BoxDecoration(
+          color: Colors.grey[300],
+          borderRadius: BorderRadius.circular(Sizes.size10.sp),
         ),
+        child: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
       ),
     );
   }
