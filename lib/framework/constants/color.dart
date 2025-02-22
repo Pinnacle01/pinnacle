@@ -13,6 +13,8 @@ class CustomColors {
       const Color.fromRGBO(59, 59, 59, 1);
   static Color navCardBackgroundColor222222 =
       const Color.fromRGBO(34, 34, 34, 1);
+  static Color whiteShadeEBEDED = const Color.fromRGBO(235, 237, 237, 1);
+  static Color blueColor = const Color.fromRGBO(0, 122, 255, 1);
 
   // Chat Color Scheme
   static Color greenChatColor = const Color.fromRGBO(37, 211, 102, 1);
