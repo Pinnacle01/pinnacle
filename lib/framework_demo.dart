@@ -3,7 +3,6 @@ import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
-import 'package:pinnacle_main/framework/widgets/notification_tab.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 //import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
