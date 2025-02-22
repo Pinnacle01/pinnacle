@@ -3,6 +3,8 @@ import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
@@ -15,15 +17,18 @@ class FrameworkDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.mainBackgroundColor,
+      appBar: customAppBarWithShadow(
+        titleName: GeneralString.appBarTitle,
+      ),
+      floatingActionButton: CustomfloatingActionButton(
+        onPress: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      backgroundColor: CustomColors.mainBackgroundColor161513,
+      bottomNavigationBar: const CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // App Bar with shadow
-            customAppBarWithShadow(
-              titleName: GeneralString.appBarTitle,
-            ),
-
             // App Bar
             UserWidgets().userTopProfileBar(
               userName: GeneralString.userName,

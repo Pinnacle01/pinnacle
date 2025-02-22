@@ -29,9 +29,6 @@ final _router = GoRouter(
             return const FrameworkDemo();
           },
         ),
-
-        // HomePage Route
-
       ],
     ),
   ],

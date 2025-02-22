@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -64,7 +64,8 @@ class UserWidgets {
             size: Sizes.size24.sp,
             color: iconColor ?? Colors.white,
           ),
-          backgroundColor: backgroundColor ?? CustomColors.mainBackgroundColor,
+          backgroundColor:
+              backgroundColor ?? CustomColors.mainBackgroundColor161513,
         ),
       ),
     );
@@ -82,7 +83,7 @@ class UserWidgets {
         horizontal: Sizes.size5.dp,
       ),
       decoration: BoxDecoration(
-        color: CustomColors.mainBackgroundColor,
+        color: CustomColors.mainBackgroundColor161513,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
