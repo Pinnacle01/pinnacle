@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -7,12 +8,12 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 
 class UserWidgets {
-  PreferredSizeWidget userTopProfileBar({
+  static PreferredSizeWidget userTopProfileBar({
     required String userName,
     required String userImage,
     required bool userStatus,
     Color? titleColor,
-    IconData? iconPath,
+    String? iconPath,
     Color? iconColor,
     double? iconSize,
     Color? backgroundColor,
@@ -60,17 +61,18 @@ class UserWidgets {
             ],
           ),
           leading: IconWidget(
-            icon: iconPath ?? Icons.arrow_back_ios_rounded,
+            path: iconPath ?? AssetPath.leftButtonIcon,
             size: Sizes.size24.sp,
             color: iconColor ?? Colors.white,
           ),
-          backgroundColor: backgroundColor ?? CustomColors.mainBackgroundColor,
+          backgroundColor:
+              backgroundColor ?? CustomColors.mainBackgroundColor161513,
         ),
       ),
     );
   }
 
-  Widget chatTile({
+  static Widget chatTile({
     required String userName,
     required String userImage,
     String? usermessage,
@@ -82,7 +84,7 @@ class UserWidgets {
         horizontal: Sizes.size5.dp,
       ),
       decoration: BoxDecoration(
-        color: CustomColors.mainBackgroundColor,
+        color: CustomColors.mainBackgroundColor161513,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,6 +126,48 @@ class UserWidgets {
             color: Colors.white,
           ),
         ],
+      ),
+    );
+  }
+
+  static Widget settingsTab({
+    required String iconPath,
+    required String label,
+    required Function() onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          vertical: Sizes.size20.dp,
+          horizontal: Sizes.size20.dp,
+        ),
+        decoration: BoxDecoration(
+          color: CustomColors.blackColor,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconWidget(
+              path: iconPath,
+              size: Sizes.size24.sp,
+              color: CustomColors.whiteColor,
+            ),
+            SizedBox(width: Sizes.size10.dp),
+            Expanded(
+              child: TextWidget(
+                text: label,
+                size: Sizes.size20.sp,
+                color: Colors.white,
+              ),
+            ),
+            IconWidget(
+              path: AssetPath.rightBackButtonIcon,
+              size: Sizes.size40.sp,
+              color: CustomColors.whiteColor,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -9,7 +9,7 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 PreferredSizeWidget customAppBarWithShadow({
   required String titleName,
   Color? titleColor,
-  IconData? iconPath,
+  String? iconPath,
   Color? iconColor,
   double? iconSize,
   Color? backgroundColor,
@@ -36,7 +36,7 @@ PreferredSizeWidget customAppBarWithShadow({
         ),
         leading: iconPath != null
             ? IconWidget(
-                icon: iconPath,
+                path: iconPath,
                 size: iconSize ?? Sizes.size24.sp,
                 color: iconColor ?? Colors.white,
               )

@@ -29,9 +29,6 @@ final _router = GoRouter(
             return const FrameworkDemo();
           },
         ),
-
-        // HomePage Route
-
       ],
     ),
   ],
@@ -44,6 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Device.init(context);
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: _router,
     );
   }
