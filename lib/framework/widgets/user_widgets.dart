@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -6,28 +7,32 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 
 class UserWidgets {
-  PreferredSizeWidget userTopProfileBar(
-      {required String userName,
-      required String userImage,
-      required bool userStatus,
-      Color? titleColor,
-      Icon? leadingIcon,
-      Color? backgroundColor,
-      List<Icon>? actionIcon}) {
+  PreferredSizeWidget userTopProfileBar({
+    required String userName,
+    required String userImage,
+    required bool userStatus,
+    Color? titleColor,
+    IconData? iconPath,
+    Color? iconColor,
+    double? iconSize,
+    Color? backgroundColor,
+    List<Icon>? actionIcon,
+  }) {
     return PreferredSize(
-      preferredSize: Size.fromHeight(AppBar().preferredSize.height),
+      preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight.dp),
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Colors.black,
-              spreadRadius: 6,
-              blurRadius: 6,
+              spreadRadius: Sizes.size6.dp,
+              blurRadius: Sizes.size6.dp,
             ),
           ],
         ),
         child: AppBar(
-          toolbarHeight: AppBar().preferredSize.height,
+          toolbarHeight: WidgetsSizes.appBarHeight.dp,
+          actions: actionIcon,
           title: Row(
             children: [
               CircleAvatar(
@@ -36,7 +41,7 @@ class UserWidgets {
                 ).image,
                 radius: Sizes.size20.sp,
               ),
-              SizedBox(width: Sizes.size20),
+              SizedBox(width: Sizes.size10.dp),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,22 +59,28 @@ class UserWidgets {
               )
             ],
           ),
-          leading: leadingIcon,
-          actions: actionIcon,
+          leading: IconWidget(
+            icon: iconPath ?? Icons.arrow_back_ios_rounded,
+            size: Sizes.size24.sp,
+            color: iconColor ?? Colors.white,
+          ),
           backgroundColor: backgroundColor ?? CustomColors.mainBackgroundColor,
         ),
       ),
     );
   }
 
-  Widget chatTile(
-      {required String userName,
-      required String userImage,
-      String? usermessage,
-      required DateTime userTime}) {
+  Widget chatTile({
+    required String userName,
+    required String userImage,
+    String? usermessage,
+    required DateTime userTime,
+  }) {
     return Container(
-      height: WidgetsSizes.chatTabHeight.sp,
-      padding: EdgeInsets.symmetric(horizontal: Sizes.size20),
+      padding: EdgeInsets.symmetric(
+        vertical: Sizes.size10.dp,
+        horizontal: Sizes.size5.dp,
+      ),
       decoration: BoxDecoration(
         color: CustomColors.mainBackgroundColor,
       ),
@@ -80,7 +91,7 @@ class UserWidgets {
             backgroundImage: Image.asset(
               userImage,
             ).image,
-            radius: Sizes.size20.sp,
+            radius: Sizes.size24.sp,
           ),
           SizedBox(
             width: Sizes.size20,
@@ -91,10 +102,10 @@ class UserWidgets {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextWidget(
-                    text: userName,
-                    size: Sizes.size18.sp,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                  text: userName,
+                  size: Sizes.size18.sp,
+                  color: Colors.white,
+                ),
                 Visibility(
                   visible: usermessage != null,
                   child: TextWidget(
@@ -107,8 +118,9 @@ class UserWidgets {
             ),
           ),
           TextWidget(
-            text: '${userTime.hour.toString()} : ${userTime.minute.toString()}',
-            size: Sizes.size15.sp,
+            text:
+                '''${userTime.hour.toString()} : ${userTime.minute.toString()}''',
+            size: Sizes.size16.sp,
             color: Colors.white,
           ),
         ],

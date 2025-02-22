@@ -11,7 +11,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: CustomColors.navigationBackgroundColor,
+      color: CustomColors.navCardBackgroundColor3B3B3B_06,
       shape: const CircularNotchedRectangle(),
       height: WidgetsSizes.bottomBarHeight,
       child: Center(
@@ -67,9 +67,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
         SizedBox(height: Sizes.size10.dp),
         TextWidget(
-            text: label,
-            color: isActive ? color : CustomColors.lightBackgroundColor,
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal),
+          text: label,
+          color: isActive ? color : CustomColors.lightBackgroundColor,
+          fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+        ),
       ],
     );
   }

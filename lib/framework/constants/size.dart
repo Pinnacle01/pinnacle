@@ -99,19 +99,15 @@ class Sizes {
   static double get size98 => 98;
   static double get size99 => 99;
   static double get size100 => 100;
-}
-
-class CircularRadius {
-  static double get extraSmall => 5;
-  static double get small => 15;
-  static double get medium => 22;
-  static double get large => 30;
-  static double get extraLarge => 35;
+  static double get size200 => 200;
+  static double get size250 => 250;
+  static double get size500 => 500;
 }
 
 class WidgetsSizes {
-  static double get chatTabHeight => 40;
-  static double get profileTabHeight => 40;
+  static double get appBarHeight => 60;
+  static double get chatTabHeight => 50;
+  static double get profileTabHeight => 50;
   static double get plusIconSize => 7;
   static double get bottomBarHeight => 35;
 }
@@ -121,4 +117,3 @@ class Elevation {
   static double get medium => 6;
   static double get large => 8;
 }
-

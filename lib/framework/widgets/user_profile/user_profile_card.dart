@@ -8,30 +8,31 @@ class UserProfileCard extends StatelessWidget {
   final String userName;
   final String userImage;
   final String userProfileId;
+  final Color? bgColor;
 
   const UserProfileCard({
     super.key,
     required this.userName,
     required this.userImage,
     required this.userProfileId,
+    this.bgColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: Sizes.size20.sp),
       decoration: BoxDecoration(
-        color: CustomColors.mainBackgroundColor,
+        color: bgColor ?? Colors.transparent,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CircleAvatar(
             backgroundImage: AssetImage(userImage),
-            radius: Sizes.size22.sp,
+            radius: Sizes.size24.sp,
             backgroundColor: Colors.transparent,
           ),
-          SizedBox(width: Sizes.size15),
+          SizedBox(width: Sizes.size15.dp),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,13 +40,14 @@ class UserProfileCard extends StatelessWidget {
               TextWidget(
                 text: userName,
                 color: Colors.white,
-                size: Sizes.size18.sp,
+                size: Sizes.size20.sp,
                 fontWeight: FontWeight.bold,
               ),
+              SizedBox(width: Sizes.size5.dp),
               TextWidget(
                 text: '@$userProfileId',
                 color: CustomColors.lightBackgroundColor,
-                size: Sizes.size16.sp,
+                size: Sizes.size14.sp,
               ),
             ],
           ),
