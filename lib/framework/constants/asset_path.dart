@@ -3,7 +3,8 @@ class AssetPath {
   static String get userPostImage => 'assets/images/travel_image_component.jpg';
   static String get categoryImage => 'assets/images/bike.jpg';
   static String get biking => 'Biking';
-  static String get awardImage => 'assets/images/award.png';
+  static String get loadingLocationImage => 'assets/images/loading_location_image.jpg';
+  
   static String get crossIcon => 'assets/icons/cross_icon.svg';
   static String get tickIcon => 'assets/icons/tick_icon.svg';
   static String get userSquareIcon => 'assets/icons/user_square_icon.svg';
@@ -16,3 +17,4 @@ class AssetPath {
   static String get alarmIcon => 'assets/icons/alarm_icon.png';
   static String get plusIcon => 'assets/icons/plus_icon.png';
 }
+
