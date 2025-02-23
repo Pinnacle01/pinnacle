@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 //import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
@@ -16,17 +19,20 @@ class FrameworkDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.mainBackgroundColor,
+      appBar: customAppBarWithShadow(
+        titleName: GeneralString.appBarTitle,
+      ),
+      floatingActionButton: CustomfloatingActionButton(
+        onPress: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      backgroundColor: CustomColors.mainBackgroundColor161513,
+      bottomNavigationBar: const CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // App Bar with shadow
-            customAppBarWithShadow(
-              titleName: GeneralString.appBarTitle,
-            ),
-
             // App Bar
-            UserWidgets().userTopProfileBar(
+            UserWidgets.userTopProfileBar(
               userName: GeneralString.userName,
               userImage: AssetPath.userImage,
               userStatus: false,
@@ -40,7 +46,7 @@ class FrameworkDemo extends StatelessWidget {
             ),
 
             // Chat Tile
-            UserWidgets().chatTile(
+            UserWidgets.chatTile(
               userName: GeneralString.userName,
               userImage: AssetPath.userImage,
               usermessage: GeneralString.userMessage,
@@ -67,6 +73,28 @@ class FrameworkDemo extends StatelessWidget {
               userName: GeneralString.userName,
               userId: GeneralString.userId,
               userImage: AssetPath.userImage,
+            ),
+
+            // Settings Tab
+            UserWidgets.settingsTab(
+              label: "Setting",
+              iconPath: AssetPath.userSquareIcon,
+              onTap: () {},
+            ),
+
+            const TextFieldWidget(
+              label: "Email",
+              hintText: "Enter your email",
+              keyboardType: TextInputType.emailAddress,
+              textFieldTheme: TextFeildTheme.dark,
+            ),
+
+            // Budget Text Field
+            const TextFieldWidget(
+              label: "Budget",
+              hintText: "2000",
+              keyboardType: TextInputType.number,
+              textFieldTheme: TextFeildTheme.light,
             ),
           ],
         ),

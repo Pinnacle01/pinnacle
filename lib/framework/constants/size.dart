@@ -109,7 +109,7 @@ class WidgetsSizes {
   static double get chatTabHeight => 50;
   static double get profileTabHeight => 50;
   static double get plusIconSize => 7;
-  static double get bottomBarHeight => 35;
+  static double get bottomBarHeight => 56;
 }
 
 class Elevation {

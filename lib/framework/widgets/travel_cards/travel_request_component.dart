@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/uikit/icon_wudget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -93,7 +93,7 @@ class TravelRequestCard extends StatelessWidget {
                     Row(
                       children: [
                         IconWidget(
-                          icon: Icons.alarm_sharp,
+                          path: AssetPath.alarmIcon,
                           color: CustomColors.buttonBackgroundCreamColor,
                           size: Sizes.size15.sp,
                         ),

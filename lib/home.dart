@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pinnacle_main/framework/uikit/normal_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 class HomeApp extends StatelessWidget {
@@ -9,27 +10,22 @@ class HomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.mainBackgroundColor,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () => context.go('/component'),
-            child: const TextWidget(
-              text: 'Framework Component',
+      backgroundColor: CustomColors.mainBackgroundColor161513,
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            NormalButton(
+              buttonType: ButtonType.normal,
+              onPress: () => context.go('/component'),
+              label: const TextWidget(
+                text: 'Framework Component',
+              ),
+              icon: const Icon(Icons.add),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ElevatedButton(
-            onPressed: () => context.go('/explore'),
-            child: const TextWidget(
-              text: 'Explore',
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
