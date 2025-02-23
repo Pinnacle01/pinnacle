@@ -16,21 +16,26 @@ class IconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return path.endsWith('.svg')
-        ? SvgPicture.asset(
-            path,
-            width: size,
-            height: size,
-            colorFilter: ColorFilter.mode(
-              color ?? CustomColors.whiteColor,
-              BlendMode.srcIn,
+    return Container(
+      height: size,
+      width: size,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(size),
+      ),
+      child: path.endsWith('.svg')
+          ? SvgPicture.asset(
+              path,
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                color ?? CustomColors.whiteColor,
+                BlendMode.srcIn,
+              ),
+            )
+          : Image.asset(
+              path,
+              fit: BoxFit.cover,
+              color: color ?? CustomColors.whiteColor,
             ),
-          )
-        : Image.asset(
-            path,
-            width: size,
-            height: size,
-            color: color ?? CustomColors.whiteColor,
-          );
+    );
   }
 }

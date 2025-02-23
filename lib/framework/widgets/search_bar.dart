@@ -26,7 +26,8 @@ class SearchBarWidget extends StatelessWidget {
           hintText: 'Search...',
           prefixIcon: IconWidget(
             path: AssetPath.searchIcon,
-            size: Sizes.size24.sp,
+            size: Sizes.size5.dp,
+            color: CustomColors.navCardBackgroundColor3B3B3B,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(Sizes.size10.dp),

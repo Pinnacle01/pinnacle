@@ -5,26 +5,17 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/search_bar.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
-import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
-import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 
 class ExploreHome extends StatefulWidget {
   const ExploreHome({
     super.key,
-    this.date,
-    this.daysRemaining,
-    this.location,
-    this.price,
-    this.image,
   });
-
-  final String? daysRemaining;
-  final String? price;
-  final String? location;
-  final String? date;
-  final String? image;
 
   @override
   State<ExploreHome> createState() => _ExploreHomeState();
@@ -50,7 +41,12 @@ class _ExploreHomeState extends State<ExploreHome>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: CustomfloatingActionButton(
+        onPress: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
+      bottomNavigationBar: const CustomBottomNavigationBar(),
       appBar: customAppBarWithShadow(
         titleName: 'Explore',
         backgroundColor: CustomColors.mainBackgroundColor161513,
@@ -62,7 +58,7 @@ class _ExploreHomeState extends State<ExploreHome>
         children: [
           SearchBarWidget(controller: controller),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: Sizes.size10.dp),
+            padding: EdgeInsets.symmetric(horizontal: Sizes.size5.dp),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -82,7 +78,6 @@ class _ExploreHomeState extends State<ExploreHome>
               ],
             ),
           ),
-          customBottomNavigator(),
         ],
       ),
     );
@@ -97,7 +92,9 @@ class _ExploreHomeState extends State<ExploreHome>
       },
       child: Container(
         padding: EdgeInsets.symmetric(
-            vertical: Sizes.size10.dp, horizontal: Sizes.size20.dp),
+          vertical: Sizes.size5.dp,
+          horizontal: Sizes.size15.dp,
+        ),
         decoration: BoxDecoration(
           color: _tabController.index == index
               ? CustomColors.buttonBackgroundCreamColor
@@ -115,6 +112,7 @@ class _ExploreHomeState extends State<ExploreHome>
   Widget _buildListViewHome(String title) {
     return ListView.builder(
       itemCount: 5,
+      shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return TravelRequestCard(
           title: 'Travel Title',
@@ -131,9 +129,16 @@ class _ExploreHomeState extends State<ExploreHome>
   Widget _buildListViewCategories(String title) {
     return ListView.builder(
       itemCount: 5,
+      shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
-        return SingleCategoryCard(
-          categoryImage: AssetPath.categoryImage,
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: Sizes.size5.dp,
+            horizontal: Sizes.size10.dp,
+          ),
+          child: SingleCategoryCard(
+            categoryImage: AssetPath.categoryImage,
+          ),
         );
       },
     );
@@ -141,15 +146,11 @@ class _ExploreHomeState extends State<ExploreHome>
 
   Widget _buildListViewLocations(String title) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
-        return TravelRequestCard(
-          title: 'Travel Title',
-          startDate: DateTime.now(),
-          endDate: DateTime.now(),
-          price: 'Travel Price',
-          days: 5,
-          cityLocation: 'Lonavala',
+        return SingleCategoryCard(
+          categoryImage: AssetPath.categoryImage,
         );
       },
     );
