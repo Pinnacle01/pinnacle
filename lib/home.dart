@@ -22,7 +22,13 @@ class HomeApp extends StatelessWidget {
               label: const TextWidget(
                 text: 'Framework Component',
               ),
-              icon: const Icon(Icons.add),
+            ),
+            NormalButton(
+              buttonType: ButtonType.normal,
+              onPress: () => context.go('/explorePage'),
+              label: const TextWidget(
+                text: 'Explore Page',
+              ),
             ),
           ],
         ),
