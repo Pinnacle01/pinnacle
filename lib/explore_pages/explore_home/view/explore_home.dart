@@ -114,6 +114,7 @@ class _ExploreHomeState extends State<ExploreHome>
 
   Widget _buildListViewHome(String title) {
     return ListView.builder(
+      itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return TravelRequestCard(
           title: 'Travel Title',
@@ -129,6 +130,7 @@ class _ExploreHomeState extends State<ExploreHome>
 
   Widget _buildListViewCategories(String title) {
     return ListView.builder(
+      itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return SingleCategoryCard(
           categoryImage: AssetPath.categoryImage,
@@ -139,6 +141,7 @@ class _ExploreHomeState extends State<ExploreHome>
 
   Widget _buildListViewLocations(String title) {
     return ListView.builder(
+      itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return TravelRequestCard(
           title: 'Travel Title',

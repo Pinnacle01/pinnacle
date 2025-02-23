@@ -25,7 +25,7 @@ class HomeApp extends StatelessWidget {
             ),
             NormalButton(
               buttonType: ButtonType.normal,
-              onPress: () => context.go('/explorePage'),
+              onPress: () => context.go('/explorepage'),
               label: const TextWidget(
                 text: 'Explore Page',
               ),
