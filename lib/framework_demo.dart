@@ -8,8 +8,8 @@ import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_nav
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 //import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
-import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
-import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 
