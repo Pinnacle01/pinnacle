@@ -6,26 +6,48 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/widgets/search_bar.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
+import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
+
 // import 'package:pinnacle_main/framework_demo.dart';
 // import 'package:pinnacle_main/home.dart';
 
-class ExploreHome extends StatelessWidget {
-  final TextEditingController controller;
-  ExploreHome(
-      {super.key,
-      required this.date,
-      required this.daysRemaining,
-      required this.location,
-      required this.price,
-      required this.image,
-      required this.controller});
+class ExploreHome extends StatefulWidget {
+  ExploreHome({
+    super.key,
+    required this.date,
+    required this.daysRemaining,
+    required this.location,
+    required this.price,
+    required this.image,
+  });
 
   String daysRemaining;
   String price;
   String location;
   String date;
-  String image;
+  final String image;
+
+  @override
+  State<ExploreHome> createState() => _ExploreHomeState();
+}
+
+class _ExploreHomeState extends State<ExploreHome>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  late TextEditingController controller = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,56 +66,29 @@ class ExploreHome extends StatelessWidget {
       body: Column(
         children: [
           SearchBarWidget(controller: controller),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _categoryBoxButton('Home', context),
-              _categoryBoxButton('Categories', context),
-              _categoryBoxButton('Locations', context),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.grid_view_outlined),
-              ),
-
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   child: const Text('Home'),
-              // ),
-              // SizedBox(
-              //   width: Sizes.size10.sp,
-              // ),
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   child: const Text('Categories'),
-              // ),
-              // SizedBox(
-              //   width: Sizes.size10.sp,
-              // ),
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   child: const Text('Locations'),
-              // ),
-              // SizedBox(
-              //   width: Sizes.size10.sp,
-              // ),
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: const Icon(Icons.grid_view_outlined),
-              // ),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _categoryBoxButton('Home', 0),
+                _categoryBoxButton('Categories', 1),
+                _categoryBoxButton('Locations', 2),
+                IconButton(
+                  icon: const Icon(Icons.grid_view, color: Colors.white),
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                return TravelRequestCard(
-                  title: 'Travel Title',
-                  startDate: DateTime.now(),
-                  endDate: DateTime.now(),
-                  price: 'Travel Price',
-                  days: 5,
-                  cityLocation: 'Lonavala',
-                );
-              },
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                _buildListViewHome('Home'),
+                _buildListViewCategories('Categories'),
+                _buildListViewLocations('Locations'),
+              ],
             ),
           ),
           customBottomNavigator(),
@@ -102,18 +97,140 @@ class ExploreHome extends StatelessWidget {
     );
   }
 
-  Widget _categoryBoxButton(String title, BuildContext context) {
+  Widget _categoryBoxButton(String title, int index) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          _tabController.index = index;
+        });
+      },
       child: Container(
-        padding: EdgeInsets.symmetric(
-            vertical: Sizes.size5.dp, horizontal: Sizes.size15.dp),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: _tabController.index == index
+              ? CustomColors.buttonBackgroundCreamColor
+              : CustomColors.mainTextColor,
           borderRadius: BorderRadius.circular(Sizes.size10.sp),
         ),
-        child: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        child: Text(title,
+            style: TextStyle(
+                color: CustomColors.mainBackgroundColor,
+                fontWeight: FontWeight.w600)),
       ),
     );
   }
+
+  Widget _buildListViewHome(String title) {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        return TravelRequestCard(
+          title: 'Travel Title',
+          startDate: DateTime.now(),
+          endDate: DateTime.now(),
+          price: 'Travel Price',
+          days: 5,
+          cityLocation: 'Lonavala',
+        );
+      },
+    );
+  }
+
+  Widget _buildListViewCategories(String title) {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        return SingleCategoryCard(
+          categoryImage: widget.image,
+        );
+      },
+    );
+  }
+
+  Widget _buildListViewLocations(String title) {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        return TravelRequestCard(
+          title: 'Travel Title',
+          startDate: DateTime.now(),
+          endDate: DateTime.now(),
+          price: 'Travel Price',
+          days: 5,
+          cityLocation: 'Lonavala',
+        );
+        ;
+      },
+    );
+  }
 }
+
+////////////////////////////////////
+// Widget _categoryBoxButton(String title, BuildContext context) {
+  //   return InkWell(
+  //     onTap: () {},
+  //     child: Container(
+  //       padding: EdgeInsets.symmetric(
+  //           vertical: Sizes.size5.dp, horizontal: Sizes.size15.dp),
+  //       decoration: BoxDecoration(
+  //         color: Colors.grey[300],
+  //         borderRadius: BorderRadius.circular(Sizes.size10.sp),
+  //       ),
+  //       child: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+  //     ),
+  //   );
+  // }
+
+ // Expanded(
+          //   child: ListView.builder(
+          //     itemBuilder: (BuildContext context, int index) {
+          //       return TravelRequestCard(
+          //         title: 'Travel Title',
+          //         startDate: DateTime.now(),
+          //         endDate: DateTime.now(),
+          //         price: 'Travel Price',
+          //         days: 5,
+          //         cityLocation: 'Lonavala',
+          //       );
+          //     },
+          //   ),
+          // ),
+
+
+
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     _categoryBoxButton('Home', context),
+          //     _categoryBoxButton('Categories', context),
+          //     _categoryBoxButton('Locations', context),
+          //     IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(Icons.grid_view_outlined),
+          //     ),
+
+          //     // ElevatedButton(
+          //     //   onPressed: () {},
+          //     //   child: const Text('Home'),
+          //     // ),
+          //     // SizedBox(
+          //     //   width: Sizes.size10.sp,
+          //     // ),
+          //     // ElevatedButton(
+          //     //   onPressed: () {},
+          //     //   child: const Text('Categories'),
+          //     // ),
+          //     // SizedBox(
+          //     //   width: Sizes.size10.sp,
+          //     // ),
+          //     // ElevatedButton(
+          //     //   onPressed: () {},
+          //     //   child: const Text('Locations'),
+          //     // ),
+          //     // SizedBox(
+          //     //   width: Sizes.size10.sp,
+          //     // ),
+          //     // IconButton(
+          //     //   onPressed: () {},
+          //     //   icon: const Icon(Icons.grid_view_outlined),
+          //     // ),
+          //   ],
+          // ),
+         

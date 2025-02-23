@@ -36,7 +36,6 @@ final _router = GoRouter(
             path: 'explore',
             builder: (context, state) {
               return ExploreHome(
-                controller: controller,
                 date: '',
                 daysRemaining: '',
                 location: '',
