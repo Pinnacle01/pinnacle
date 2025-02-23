@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
@@ -7,9 +11,6 @@ import 'package:pinnacle_main/framework/widgets/common_component/group_request_c
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
-//import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
-import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
-import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 
@@ -82,9 +83,10 @@ class FrameworkDemo extends StatelessWidget {
               onTap: () {},
             ),
 
-            const TextFieldWidget(
+            TextFieldWidget(
               label: "Email",
               hintText: "Enter your email",
+              prefixIcon: AssetPath.alarmIcon,
               keyboardType: TextInputType.emailAddress,
               textFieldTheme: TextFeildTheme.dark,
             ),
@@ -96,6 +98,18 @@ class FrameworkDemo extends StatelessWidget {
               keyboardType: TextInputType.number,
               textFieldTheme: TextFeildTheme.light,
             ),
+
+            // Nearby Attraction Small Card
+            NerabyAttractionSmallCard(
+              imagePath: AssetPath.loadingLocationImage,
+              locationName: '',
+              distance: '',
+            ),
+
+            GeneralComponent.requestCardDataInfo(
+              iconPath: AssetPath.locationIcon,
+              title: 'Location',
+            )
           ],
         ),
       ),
