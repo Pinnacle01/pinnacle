@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -16,20 +18,23 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(Sizes.size16.sp),
+      padding: EdgeInsets.all(Sizes.size16.dp),
       child: TextField(
         controller: controller,
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: 'Search...',
-          prefixIcon: const Icon(Icons.search),
+          prefixIcon: IconWidget(
+            path: AssetPath.searchIcon,
+            size: Sizes.size24.sp,
+          ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Sizes.size10.sp),
+            borderRadius: BorderRadius.circular(Sizes.size10.dp),
             borderSide: BorderSide.none,
           ),
           filled: true,
           fillColor: CustomColors.mainTextColor,
-          contentPadding: EdgeInsets.symmetric(vertical: Sizes.size10.sp),
+          contentPadding: EdgeInsets.symmetric(vertical: Sizes.size10.dp),
         ),
       ),
     );

@@ -51,7 +51,6 @@ class _ExploreHomeState extends State<ExploreHome>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
-
       appBar: customAppBarWithShadow(
         titleName: 'Explore',
         backgroundColor: CustomColors.mainBackgroundColor161513,
@@ -59,18 +58,6 @@ class _ExploreHomeState extends State<ExploreHome>
         fontSize: Sizes.size32.sp,
         fontWeight: FontWeight.w600,
       ),
-      // appBar: AppBar(
-      //   toolbarHeight: 60,
-      //   backgroundColor: CustomColors.mainBackgroundColor161513,
-      //   title: Text(
-      //     'Explore',
-      //     style: TextStyle(
-      //       color: CustomColors.mainTextColor,
-      //       fontSize: Sizes.size32.sp,
-      //       fontWeight: FontWeight.w600,
-      //     ),
-      //   ),
-      // ),
       body: Column(
         children: [
           SearchBarWidget(controller: controller),
@@ -82,10 +69,6 @@ class _ExploreHomeState extends State<ExploreHome>
                 _categoryBoxButton('Home', 0),
                 _categoryBoxButton('Categories', 1),
                 _categoryBoxButton('Locations', 2),
-                // IconButtonWidget(
-                //   icon: const Icon(Icons.grid_view, color: Colors.white),
-                //   onPressed: () {},
-                // ),
               ],
             ),
           ),
@@ -169,76 +152,3 @@ class _ExploreHomeState extends State<ExploreHome>
     );
   }
 }
-
-////////////////////////////////////
-// Widget _categoryBoxButton(String title, BuildContext context) {
-  //   return InkWell(
-  //     onTap: () {},
-  //     child: Container(
-  //       padding: EdgeInsets.symmetric(
-  //           vertical: Sizes.size5.dp, horizontal: Sizes.size15.dp),
-  //       decoration: BoxDecoration(
-  //         color: Colors.grey[300],
-  //         borderRadius: BorderRadius.circular(Sizes.size10.sp),
-  //       ),
-  //       child: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-  //     ),
-  //   );
-  // }
-
- // Expanded(
-          //   child: ListView.builder(
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return TravelRequestCard(
-          //         title: 'Travel Title',
-          //         startDate: DateTime.now(),
-          //         endDate: DateTime.now(),
-          //         price: 'Travel Price',
-          //         days: 5,
-          //         cityLocation: 'Lonavala',
-          //       );
-          //     },
-          //   ),
-          // ),
-
-
-
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   children: [
-          //     _categoryBoxButton('Home', context),
-          //     _categoryBoxButton('Categories', context),
-          //     _categoryBoxButton('Locations', context),
-          //     IconButton(
-          //       onPressed: () {},
-          //       icon: const Icon(Icons.grid_view_outlined),
-          //     ),
-
-          //     // ElevatedButton(
-          //     //   onPressed: () {},
-          //     //   child: const Text('Home'),
-          //     // ),
-          //     // SizedBox(
-          //     //   width: Sizes.size10.sp,
-          //     // ),
-          //     // ElevatedButton(
-          //     //   onPressed: () {},
-          //     //   child: const Text('Categories'),
-          //     // ),
-          //     // SizedBox(
-          //     //   width: Sizes.size10.sp,
-          //     // ),
-          //     // ElevatedButton(
-          //     //   onPressed: () {},
-          //     //   child: const Text('Locations'),
-          //     // ),
-          //     // SizedBox(
-          //     //   width: Sizes.size10.sp,
-          //     // ),
-          //     // IconButton(
-          //     //   onPressed: () {},
-          //     //   icon: const Icon(Icons.grid_view_outlined),
-          //     // ),
-          //   ],
-          // ),
-         

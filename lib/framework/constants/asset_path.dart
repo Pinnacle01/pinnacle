@@ -15,4 +15,5 @@ class AssetPath {
   static String get leftButtonIcon => 'assets/icons/left_button_icon.svg';
   static String get alarmIcon => 'assets/icons/alarm_icon.png';
   static String get plusIcon => 'assets/icons/plus_icon.png';
+  static String get searchIcon => 'assets/icons/search_icon.png';
 }
