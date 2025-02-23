@@ -1,6 +1,5 @@
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
+
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -9,9 +8,7 @@ import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
 
-// import 'package:pinnacle_main/framework_demo.dart';
-// import 'package:pinnacle_main/home.dart';
-
+// ignore: must_be_immutable
 class ExploreHome extends StatefulWidget {
   ExploreHome({
     super.key,
@@ -52,10 +49,10 @@ class _ExploreHomeState extends State<ExploreHome>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.mainBackgroundColor,
+      backgroundColor: CustomColors.mainBackgroundColor161513,
       appBar: AppBar(
         toolbarHeight: 60,
-        backgroundColor: CustomColors.mainBackgroundColor,
+        backgroundColor: CustomColors.mainBackgroundColor161513,
         title: Text('Explore',
             style: TextStyle(
               color: CustomColors.mainTextColor,
@@ -114,7 +111,7 @@ class _ExploreHomeState extends State<ExploreHome>
         ),
         child: Text(title,
             style: TextStyle(
-                color: CustomColors.mainBackgroundColor,
+                color: CustomColors.mainBackgroundColor161513,
                 fontWeight: FontWeight.w600)),
       ),
     );
@@ -156,7 +153,6 @@ class _ExploreHomeState extends State<ExploreHome>
           days: 5,
           cityLocation: 'Lonavala',
         );
-        ;
       },
     );
   }
