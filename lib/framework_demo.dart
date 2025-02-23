@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
 import 'package:pinnacle_main/explore_home/uikit/neraby_attraction_small_card.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
 import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
@@ -82,9 +83,10 @@ class FrameworkDemo extends StatelessWidget {
               onTap: () {},
             ),
 
-            const TextFieldWidget(
+            TextFieldWidget(
               label: "Email",
               hintText: "Enter your email",
+              prefixIcon: AssetPath.alarmIcon,
               keyboardType: TextInputType.emailAddress,
               textFieldTheme: TextFeildTheme.dark,
             ),
@@ -97,11 +99,17 @@ class FrameworkDemo extends StatelessWidget {
               textFieldTheme: TextFeildTheme.light,
             ),
 
+            // Nearby Attraction Small Card
             NerabyAttractionSmallCard(
               imagePath: AssetPath.loadingLocationImage,
               locationName: '',
               distance: '',
             ),
+
+            GeneralComponent.requestCardDataInfo(
+              iconPath: AssetPath.locationIcon,
+              title: 'Location',
+            )
           ],
         ),
       ),

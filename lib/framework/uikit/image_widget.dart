@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pinnacle_main/framework/constants/color.dart';
 
 class ImageWidget extends StatelessWidget {
   const ImageWidget({
     super.key,
     required this.path,
     required this.size,
+    this.fit,
+    this.color,
   });
 
   final String path;
   final double size;
+  final Color? color;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +23,11 @@ class ImageWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(size),
       ),
-      child: path.endsWith('.svg')
-          ? SvgPicture.asset(
-              path,
-              fit: BoxFit.cover,
-            )
-          : Image.asset(
-              path,
-              fit: BoxFit.cover,
-            ),
+      child: Image.asset(
+        path,
+        fit: fit ?? BoxFit.cover,
+        color: color ?? CustomColors.whiteColor,
+      ),
     );
   }
 }
