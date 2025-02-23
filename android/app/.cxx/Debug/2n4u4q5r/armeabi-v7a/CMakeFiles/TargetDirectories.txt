@@ -1,0 +1,2 @@
+C:/Users/yashw/Desktop/Android/pinnacle/android/app/.cxx/Debug/2n4u4q5r/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/yashw/Desktop/Android/pinnacle/android/app/.cxx/Debug/2n4u4q5r/armeabi-v7a/CMakeFiles/rebuild_cache.dir

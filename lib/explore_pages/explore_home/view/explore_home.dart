@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/search_bar.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/single_category_card.dart';
 import 'package:pinnacle_main/framework/widgets/travel_cards/travel_request_component.dart';
 
-// ignore: must_be_immutable
 class ExploreHome extends StatefulWidget {
-  ExploreHome({
+  const ExploreHome({
     super.key,
-    required this.date,
-    required this.daysRemaining,
-    required this.location,
-    required this.price,
-    required this.image,
+    this.date,
+    this.daysRemaining,
+    this.location,
+    this.price,
+    this.image,
   });
 
-  String daysRemaining;
-  String price;
-  String location;
-  String date;
-  final String image;
+  final String? daysRemaining;
+  final String? price;
+  final String? location;
+  final String? date;
+  final String? image;
 
   @override
   State<ExploreHome> createState() => _ExploreHomeState();
@@ -50,31 +51,41 @@ class _ExploreHomeState extends State<ExploreHome>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
-      appBar: AppBar(
-        toolbarHeight: 60,
+
+      appBar: customAppBarWithShadow(
+        titleName: 'Explore',
         backgroundColor: CustomColors.mainBackgroundColor161513,
-        title: Text('Explore',
-            style: TextStyle(
-              color: CustomColors.mainTextColor,
-              fontSize: Sizes.size32.sp,
-              fontWeight: FontWeight.w600,
-            )),
+        titleColor: CustomColors.mainTextColor,
+        fontSize: Sizes.size32.sp,
+        fontWeight: FontWeight.w600,
       ),
+      // appBar: AppBar(
+      //   toolbarHeight: 60,
+      //   backgroundColor: CustomColors.mainBackgroundColor161513,
+      //   title: Text(
+      //     'Explore',
+      //     style: TextStyle(
+      //       color: CustomColors.mainTextColor,
+      //       fontSize: Sizes.size32.sp,
+      //       fontWeight: FontWeight.w600,
+      //     ),
+      //   ),
+      // ),
       body: Column(
         children: [
           SearchBarWidget(controller: controller),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: Sizes.size10.dp),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _categoryBoxButton('Home', 0),
                 _categoryBoxButton('Categories', 1),
                 _categoryBoxButton('Locations', 2),
-                IconButton(
-                  icon: const Icon(Icons.grid_view, color: Colors.white),
-                  onPressed: () {},
-                ),
+                // IconButtonWidget(
+                //   icon: const Icon(Icons.grid_view, color: Colors.white),
+                //   onPressed: () {},
+                // ),
               ],
             ),
           ),
@@ -102,17 +113,18 @@ class _ExploreHomeState extends State<ExploreHome>
         });
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: EdgeInsets.symmetric(
+            vertical: Sizes.size10.dp, horizontal: Sizes.size20.dp),
         decoration: BoxDecoration(
           color: _tabController.index == index
               ? CustomColors.buttonBackgroundCreamColor
               : CustomColors.mainTextColor,
           borderRadius: BorderRadius.circular(Sizes.size10.sp),
         ),
-        child: Text(title,
-            style: TextStyle(
-                color: CustomColors.mainBackgroundColor161513,
-                fontWeight: FontWeight.w600)),
+        child: TextWidget(
+            text: title,
+            color: CustomColors.mainBackgroundColor161513,
+            fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -136,7 +148,7 @@ class _ExploreHomeState extends State<ExploreHome>
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         return SingleCategoryCard(
-          categoryImage: widget.image,
+          categoryImage: AssetPath.categoryImage,
         );
       },
     );

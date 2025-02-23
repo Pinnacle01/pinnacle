@@ -14,6 +14,8 @@ PreferredSizeWidget customAppBarWithShadow({
   double? iconSize,
   Color? backgroundColor,
   List<IconWidget>? actionIcon,
+  FontWeight? fontWeight,
+  double? fontSize,
 }) {
   return PreferredSize(
     preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight.dp),
@@ -32,7 +34,8 @@ PreferredSizeWidget customAppBarWithShadow({
         title: TextWidget(
           text: titleName,
           color: titleColor ?? Colors.white,
-          size: Sizes.size20.sp,
+          size: fontSize ?? Sizes.size20.sp,
+          fontWeight: fontWeight,
         ),
         leading: iconPath != null
             ? IconWidget(
