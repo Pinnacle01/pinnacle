@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 
 class IconButtonWidget extends StatelessWidget {
   const IconButtonWidget({
     super.key,
-    required this.icon,
+    required this.path,
     required this.size,
     this.color,
     required this.onPress,
   });
 
   final void Function() onPress;
-  final IconData icon;
+  final String path;
   final double size;
   final Color? color;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: onPress,
-      icon: Icon(icon, size: size),
-      color: color,
+    return InkWell(
+      onTap: onPress,
+      child: IconWidget(
+        path: path,
+        size: size,
+        color: color,
+      ),
     );
   }
 }
