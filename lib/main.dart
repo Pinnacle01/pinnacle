@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/explore_home/view/explore_home.dart';
+import 'package:pinnacle_main/explore_home/view/trip_details.dart';
 import 'package:pinnacle_main/framework/digital/device.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
@@ -34,6 +35,12 @@ final _router = GoRouter(
           path: 'explorepage',
           builder: (BuildContext context, GoRouterState state) {
             return const ExploreHome();
+          },
+        ),
+        GoRoute(
+          path: 'tripdetails',
+          builder: (BuildContext context, GoRouterState state) {
+            return const TripDetails();
           },
         ),
       ],
