@@ -6,11 +6,9 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
-import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
-import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
-import 'package:pinnacle_main/framework/widgets/search_bar.dart';
+
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
-import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
+
 import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 
@@ -24,6 +22,7 @@ class TripDetails extends StatefulWidget {
 }
 
 class _TripDetailsState extends State<TripDetails> {
+  final TextEditingController _notesController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,9 +70,69 @@ class _TripDetailsState extends State<TripDetails> {
               iconPath: AssetPath.globeIcon,
               iconColor: CustomColors.mainTextColor,
             ),
+            _buildNotesField(),
+            SizedBox(height: Sizes.size16.dp),
+            _buildPreferences(),
+            SizedBox(height: Sizes.size16.dp),
+            SizedBox(height: Sizes.size16.dp),
+            _postButton(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildNotesField() {
+    return TextField(
+      controller: _notesController,
+      maxLength: 500,
+      maxLines: null, // Allows dynamic height expansion
+      keyboardType: TextInputType.multiline,
+      decoration: InputDecoration(
+        hintText: 'Notes...',
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide.none,
+        ),
+        filled: true,
+        fillColor: CustomColors.cardBackgroundColor313131,
+        contentPadding: EdgeInsets.all(Sizes.size12.dp),
+      ),
+      style: const TextStyle(color: Colors.white),
+    );
+  }
+
+  Widget _buildPreferences() {
+    return Row(
+      children: [
+        _buildPreferenceChip('No Alcohol'),
+        SizedBox(width: Sizes.size10.dp),
+        _buildPreferenceChip('No Smoking'),
+        SizedBox(width: Sizes.size10.dp),
+        _buildPreferenceChip('Bikes'),
+      ],
+    );
+  }
+
+  Widget _buildPreferenceChip(String label) {
+    return Chip(
+      label: TextWidget(
+          text: label, color: CustomColors.mainBackgroundColor161513),
+      backgroundColor: CustomColors.mainTextColor,
+      padding: EdgeInsets.all(Sizes.size10.dp),
+      labelPadding: EdgeInsets.all(Sizes.size5.dp),
+    );
+  }
+
+  Widget _postButton() {
+    String text = 'Post your trip ';
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: CustomColors.buttonBackgroundCreamColor,
+      ),
+      onPressed: () {},
+      child:
+          TextWidget(text: text, color: CustomColors.mainBackgroundColor161513),
     );
   }
 }
