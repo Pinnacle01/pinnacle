@@ -98,7 +98,7 @@ class _TripDetailsState extends State<TripDetails> {
         fillColor: CustomColors.cardBackgroundColor313131,
         contentPadding: EdgeInsets.all(Sizes.size12.dp),
       ),
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: CustomColors.mainTextColor),
     );
   }
 
