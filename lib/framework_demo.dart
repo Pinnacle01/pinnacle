@@ -5,7 +5,9 @@ import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
 import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
@@ -31,6 +33,7 @@ class FrameworkDemo extends StatelessWidget {
       bottomNavigationBar: const CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // App Bar
             UserWidgets.userTopProfileBar(
@@ -67,6 +70,7 @@ class FrameworkDemo extends StatelessWidget {
             // Category
             SingleCategoryCard(
               categoryImage: AssetPath.categoryImage,
+              onTap: (){},
             ),
 
             // Group Request Card
@@ -83,6 +87,7 @@ class FrameworkDemo extends StatelessWidget {
               onTap: () {},
             ),
 
+            // Dark theme Text Field Widget
             TextFieldWidget(
               label: "Email",
               hintText: "Enter your email",
@@ -91,7 +96,7 @@ class FrameworkDemo extends StatelessWidget {
               textFieldTheme: TextFeildTheme.dark,
             ),
 
-            // Budget Text Field
+            // Light Theme Text Field Widget
             const TextFieldWidget(
               label: "Budget",
               hintText: "2000",
@@ -100,10 +105,35 @@ class FrameworkDemo extends StatelessWidget {
             ),
 
             // Nearby Attraction Small Card
-            NerabyAttractionSmallCard(
-              imagePath: AssetPath.loadingLocationImage,
-              locationName: '',
-              distance: '',
+            SizedBox(
+              height: Sizes.size210.dp,
+              child: ListView(
+                padding: EdgeInsets.symmetric(
+                  horizontal: Sizes.size10.dp,
+                  vertical: Sizes.size5.dp,
+                ),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                ],
+              ),
             ),
 
             GeneralComponent.requestCardDataInfo(

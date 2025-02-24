@@ -1,4 +1,5 @@
 class Sizes {
+  static double get size0 => 0;
   static double get size1 => 1;
   static double get size2 => 2;
   static double get size3 => 3;
@@ -99,7 +100,15 @@ class Sizes {
   static double get size98 => 98;
   static double get size99 => 99;
   static double get size100 => 100;
+  static double get size120 => 120;
+  static double get size130 => 130;
+  static double get size140 => 140;
+  static double get size150 => 150;
   static double get size200 => 200;
+  static double get size210 => 210;
+  static double get size220 => 220;
+  static double get size230 => 230;
+  static double get size240 => 240;
   static double get size250 => 250;
   static double get size500 => 500;
 }
@@ -109,7 +118,7 @@ class WidgetsSizes {
   static double get chatTabHeight => 50;
   static double get profileTabHeight => 50;
   static double get plusIconSize => 7;
-  static double get bottomBarHeight => 56;
+  static double get bottomBarHeight => 58;
 }
 
 class Elevation {
