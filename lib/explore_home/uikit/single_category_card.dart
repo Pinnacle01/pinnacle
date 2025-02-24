@@ -9,12 +9,15 @@ class SingleCategoryCard extends StatelessWidget {
   const SingleCategoryCard({
     super.key,
     required this.categoryImage,
+    required this.onTap,
   });
 
   final String categoryImage;
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Stack(
         children: [
           Container(
@@ -44,7 +47,7 @@ class SingleCategoryCard extends StatelessWidget {
               child: TextWidget(
                 text: AssetPath.biking,
                 color: Colors.black,
-                size: Sizes.size18.sp,
+                size: Sizes.size12.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),

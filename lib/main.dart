@@ -17,8 +17,6 @@ void main() {
   return runApp(const MyApp());
 }
 
-TextEditingController controller = TextEditingController();
-
 final _router = GoRouter(
   initialLocation: '/',
   routes: [

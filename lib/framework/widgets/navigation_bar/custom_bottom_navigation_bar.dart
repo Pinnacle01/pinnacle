@@ -55,6 +55,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return IconWidget(
       path: icon,
       size: Sizes.size30.sp,
+      fit: BoxFit.contain,
       color: isActive ? color : CustomColors.lightBackgroundColor,
     );
   }
