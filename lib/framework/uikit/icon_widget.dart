@@ -22,12 +22,12 @@ class IconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: size ?? Sizes.size24.sp,
-        width: size ?? Sizes.size24.sp,
+        height: size ?? Sizes.size24.dp,
+        width: size ?? Sizes.size24.dp,
         child: path.endsWith('.svg')
             ? SvgPicture.asset(
                 path,
-                fit: fit ?? BoxFit.contain,
+                fit: fit ?? BoxFit.none,
                 colorFilter: ColorFilter.mode(
                   color ?? CustomColors.whiteColor,
                   BlendMode.srcIn,
@@ -35,8 +35,8 @@ class IconWidget extends StatelessWidget {
               )
             : Image.asset(
                 path,
-                fit: fit ?? BoxFit.contain,
-                color: color ?? CustomColors.whiteColor,
+                fit: fit ?? BoxFit.cover,
+                color: color,
               ),
       ),
     );

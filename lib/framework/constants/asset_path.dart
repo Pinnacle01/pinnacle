@@ -22,4 +22,6 @@ class AssetPath {
   static String get locationIcon => 'assets/icons/location_icon.svg';
   static String get globeIcon => 'assets/icons/globe_icon.svg';
   static String get groupSizeIcon => 'assets/icons/group_size_icon.svg';
+  static String get plusAddGreenIcon => 'assets/icons/plus_add_green_icon.png';
+  static String get minusRedIcon => 'assets/icons/minus_red_icon.png';
 }

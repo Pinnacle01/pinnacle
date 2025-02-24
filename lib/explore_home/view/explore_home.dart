@@ -54,12 +54,15 @@ class _ExploreHomeState extends State<ExploreHome>
         fontSize: Sizes.size32.sp,
         fontWeight: FontWeight.w600,
       ),
-      body: Column(
-        children: [
-          SearchBarWidget(controller: controller),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: Sizes.size5.dp),
-            child: Row(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: Sizes.size5.dp),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: Sizes.size10.dp),
+              child: SearchBarWidget(controller: controller),
+            ),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _categoryBoxButton('Home', 0),
@@ -67,44 +70,49 @@ class _ExploreHomeState extends State<ExploreHome>
                 _categoryBoxButton('Locations', 2),
               ],
             ),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                _buildListViewHome('Home'),
-                _buildListViewCategories('Categories'),
-                _buildListViewLocations('Locations'),
-              ],
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  _buildListViewHome('Home'),
+                  _buildListViewCategories('Categories'),
+                  _buildListViewLocations('Locations'),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   Widget _categoryBoxButton(String title, int index) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          _tabController.index = index;
-        });
-      },
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: Sizes.size5.dp,
-          horizontal: Sizes.size15.dp,
+    return Expanded(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            _tabController.index = index;
+          });
+        },
+        child: Container(
+          margin: EdgeInsets.symmetric(
+            horizontal: Sizes.size5.dp,
+            vertical: Sizes.size10.dp,
+          ),
+          padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
+          decoration: BoxDecoration(
+            color: _tabController.index == index
+                ? CustomColors.buttonBackgroundCreamColor
+                : CustomColors.mainTextColor,
+            borderRadius: BorderRadius.circular(Sizes.size10.sp),
+          ),
+          child: Center(
+            child: TextWidget(
+                text: title,
+                color: CustomColors.mainBackgroundColor161513,
+                fontWeight: FontWeight.w600),
+          ),
         ),
-        decoration: BoxDecoration(
-          color: _tabController.index == index
-              ? CustomColors.buttonBackgroundCreamColor
-              : CustomColors.mainTextColor,
-          borderRadius: BorderRadius.circular(Sizes.size10.sp),
-        ),
-        child: TextWidget(
-            text: title,
-            color: CustomColors.mainBackgroundColor161513,
-            fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -137,6 +145,7 @@ class _ExploreHomeState extends State<ExploreHome>
             horizontal: Sizes.size10.dp,
           ),
           child: SingleCategoryCard(
+            onTap: () {},
             categoryImage: AssetPath.categoryImage,
           ),
         );
@@ -150,6 +159,7 @@ class _ExploreHomeState extends State<ExploreHome>
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return SingleCategoryCard(
+          onTap: () {},
           categoryImage: AssetPath.categoryImage,
         );
       },

@@ -7,6 +7,10 @@ class GeneralString {
   static String get travelTitle => 'Travel Post Title';
   static String get travelPrice => '200';
   static String get daysRemaining => 'Days Remaining!';
+  static String get kmAway => ' km away';
+  static String get search => 'Search...';
+
+  
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
