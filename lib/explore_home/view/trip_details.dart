@@ -71,9 +71,7 @@ class _TripDetailsState extends State<TripDetails> {
               iconColor: CustomColors.mainTextColor,
             ),
             _buildNotesField(),
-            SizedBox(height: Sizes.size16.dp),
             _buildPreferences(),
-            SizedBox(height: Sizes.size16.dp),
             SizedBox(height: Sizes.size16.dp),
             _postButton(),
           ],
@@ -91,7 +89,7 @@ class _TripDetailsState extends State<TripDetails> {
       decoration: InputDecoration(
         hintText: 'Notes...',
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(Sizes.size10.dp),
           borderSide: BorderSide.none,
         ),
         filled: true,
