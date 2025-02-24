@@ -24,7 +24,7 @@ class CustomfloatingActionButton extends StatelessWidget {
       child: IconWidget(
         path: AssetPath.plusIcon,
         color: CustomColors.whiteColor,
-        size: Sizes.size18.sp,
+        size: Sizes.size24.sp,
       ),
     );
   }

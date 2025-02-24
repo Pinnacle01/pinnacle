@@ -16,18 +16,30 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final TextFeildTheme textFieldTheme;
-  final String? prefixLabel;
+  final String? prefixIcon;
+  final double? labelSize;
   final double? prefixSize;
+  final Color? bgColor;
+  final Color? labelColor;
+  final Color? hintColor;
+  final Color? fieldTextColor;
+  final Color? prefixIconColor;
 
   const TextFieldWidget({
     super.key,
     required this.label,
-    this.prefixLabel,
-    this.prefixSize,
     required this.hintText,
     required this.textFieldTheme,
+    this.hintColor,
+    this.labelColor,
+    this.labelSize,
+    this.bgColor,
+    this.prefixIcon,
+    this.prefixSize,
     this.controller,
     this.keyboardType = TextInputType.text,
+    this.fieldTextColor,
+    this.prefixIconColor,
   });
 
   @override
@@ -45,27 +57,38 @@ class TextFieldWidget extends StatelessWidget {
         children: [
           TextWidget(
             text: label,
-            size: Sizes.size16.sp,
+            size: labelSize ?? Sizes.size16.sp,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: labelColor ?? Colors.white,
           ),
           SizedBox(height: Sizes.size10.dp),
-          TextField(
-            controller: controller,
-            keyboardType: keyboardType,
-            style: const TextStyle(color: Colors.black),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: CustomColors.whiteShadeEBEDED,
-              prefixIcon: (prefixSize != null && prefixLabel != null)
-                  ? IconWidget(path: prefixLabel!, size: prefixSize!)
-                  : null,
-              hintText: hintText,
-              hintStyle:
-                  TextStyle(color: CustomColors.navCardBackgroundColor222222),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(Sizes.size30.sp),
-                borderSide: BorderSide.none,
+          Container(
+            padding: EdgeInsets.only(right: Sizes.size20.dp),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.size15.sp),
+              color: bgColor ?? CustomColors.navCardBackgroundColor222222,
+            ),
+            child: TextField(
+              controller: controller,
+              keyboardType: keyboardType,
+              style: TextStyle(color: fieldTextColor ?? Colors.black),
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: bgColor ?? CustomColors.whiteShadeEBEDED,
+                prefixIcon: (prefixSize != null && prefixIcon != null)
+                    ? IconWidget(
+                        path: prefixIcon!,
+                        size: prefixSize!,
+                      )
+                    : null,
+                hintText: hintText,
+                hintStyle: TextStyle(
+                    color:
+                        hintColor ?? CustomColors.navCardBackgroundColor222222),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(Sizes.size30.sp),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
           ),
@@ -77,29 +100,50 @@ class TextFieldWidget extends StatelessWidget {
         children: [
           TextWidget(
             text: label,
-            size: Sizes.size16.sp,
+            size: labelSize ?? Sizes.size16.sp,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: labelColor ?? Colors.white,
           ),
           SizedBox(height: Sizes.size10.dp),
-          TextField(
-            controller: controller,
-            keyboardType: keyboardType,
-            style: TextStyle(color: CustomColors.blueColor),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: CustomColors.navCardBackgroundColor222222,
-              prefixIcon: (prefixSize != null && prefixLabel != null)
-                  ? IconWidget(path: prefixLabel!, size: prefixSize!)
-                  : null,
-              hintText: hintText,
-              hintStyle: TextStyle(color: CustomColors.whiteColor),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(Sizes.size15.sp),
-                borderSide: BorderSide.none,
-              ),
+          Container(
+            padding: EdgeInsets.only(right: Sizes.size20.dp),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.size15.sp),
+              color: bgColor ?? CustomColors.navCardBackgroundColor222222,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: controller,
+                    keyboardType: keyboardType,
+                    style: TextStyle(
+                      color: fieldTextColor ?? CustomColors.blueColor,
+                    ),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor:
+                          bgColor ?? CustomColors.navCardBackgroundColor222222,
+                      hintText: hintText,
+                      hintStyle: TextStyle(
+                          color: hintColor ?? CustomColors.whiteColor),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(Sizes.size15.sp),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
+                if (prefixIcon != null) _prefixIconWidget(),
+              ],
             ),
           ),
         ],
+      );
+
+  Widget _prefixIconWidget() => IconWidget(
+        path: prefixIcon!,
+        size: prefixSize ?? Sizes.size24.sp,
+        color: prefixIconColor ?? CustomColors.whiteColor,
       );
 }

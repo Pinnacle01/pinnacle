@@ -6,7 +6,7 @@ class CustomColors {
   static Color mainBackgroundColor161513 = const Color.fromRGBO(22, 21, 19, 1);
   static Color mainTextColor = Colors.white;
   static Color lightBackgroundColor = const Color.fromRGBO(154, 154, 154, 1);
-  static Color cardBackgroundColor = const Color.fromRGBO(49, 49, 49, 1);
+  static Color cardBackgroundColor313131 = const Color.fromRGBO(49, 49, 49, 1);
   static Color navCardBackgroundColor3B3B3B_06 =
       const Color.fromRGBO(59, 59, 59, 0.6);
   static Color navCardBackgroundColor3B3B3B =

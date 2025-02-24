@@ -16,8 +16,6 @@ void main() {
   return runApp(const MyApp());
 }
 
-TextEditingController controller = TextEditingController();
-
 final _router = GoRouter(
   initialLocation: '/',
   routes: [
@@ -32,15 +30,12 @@ final _router = GoRouter(
             return const FrameworkDemo();
           },
         ),
-
         GoRoute(
           path: 'explorepage',
           builder: (BuildContext context, GoRouterState state) {
             return const ExploreHome();
           },
         ),
-
-        // HomePage Route
       ],
     ),
   ],

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
+import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
+import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
-//import 'package:pinnacle_main/framework/widgets/travel_cards/category_card.dart';
-import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
-import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 
@@ -30,6 +33,7 @@ class FrameworkDemo extends StatelessWidget {
       bottomNavigationBar: const CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // App Bar
             UserWidgets.userTopProfileBar(
@@ -66,6 +70,7 @@ class FrameworkDemo extends StatelessWidget {
             // Category
             SingleCategoryCard(
               categoryImage: AssetPath.categoryImage,
+              onTap: (){},
             ),
 
             // Group Request Card
@@ -82,20 +87,59 @@ class FrameworkDemo extends StatelessWidget {
               onTap: () {},
             ),
 
-            const TextFieldWidget(
+            // Dark theme Text Field Widget
+            TextFieldWidget(
               label: "Email",
               hintText: "Enter your email",
+              prefixIcon: AssetPath.alarmIcon,
               keyboardType: TextInputType.emailAddress,
               textFieldTheme: TextFeildTheme.dark,
             ),
 
-            // Budget Text Field
+            // Light Theme Text Field Widget
             const TextFieldWidget(
               label: "Budget",
               hintText: "2000",
               keyboardType: TextInputType.number,
               textFieldTheme: TextFeildTheme.light,
             ),
+
+            // Nearby Attraction Small Card
+            SizedBox(
+              height: Sizes.size210.dp,
+              child: ListView(
+                padding: EdgeInsets.symmetric(
+                  horizontal: Sizes.size10.dp,
+                  vertical: Sizes.size5.dp,
+                ),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            ),
+
+            GeneralComponent.requestCardDataInfo(
+              iconPath: AssetPath.locationIcon,
+              title: 'Location',
+            )
           ],
         ),
       ),
