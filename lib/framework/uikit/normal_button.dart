@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
-
-enum ButtonType {
-  normal,
-  outlined,
-  text,
-  buttonWithIcon,
-  backIconButton,
-}
 
 class NormalButton extends StatelessWidget {
   const NormalButton({
     super.key,
     required this.label,
     required this.onPress,
+    required this.buttonType,
     this.onLongPress,
     this.icon,
     this.bgColor,
     this.iconColor,
-    required this.buttonType,
+    this.padding,
+    this.radius,
   });
 
   final void Function() onPress;
@@ -29,6 +24,8 @@ class NormalButton extends StatelessWidget {
   final Color? bgColor;
   final Color? iconColor;
   final ButtonType buttonType;
+  final double? padding;
+  final double? radius;
   final void Function()? onLongPress;
 
   @override
@@ -44,6 +41,8 @@ class NormalButton extends StatelessWidget {
         return _buildButtonWithIcon();
       case ButtonType.backIconButton:
         return _buildBackIcon();
+      case ButtonType.customButton:
+        return _buildCustomButton();
     }
   }
 
@@ -113,6 +112,20 @@ class NormalButton extends StatelessWidget {
       onPressed: onPress,
       onLongPress: onLongPress,
       child: label,
+    );
+  }
+
+  Widget _buildCustomButton() {
+    return InkWell(
+      onTap: onPress,
+      child: Container(
+        padding: EdgeInsets.all(padding ?? Sizes.size10.dp),
+        decoration: BoxDecoration(
+          color: bgColor ?? CustomColors.buttonBackgroundCreamColor,
+          borderRadius: BorderRadius.circular(radius ?? Sizes.size0.dp),
+        ),
+        child: Center(child: label),
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ PreferredSizeWidget customAppBarWithShadow({
   Color? iconColor,
   double? iconSize,
   Color? backgroundColor,
-  List<IconWidget>? actionIcon,
+  List<Widget>? actionWidget,
   FontWeight? fontWeight,
   double? fontSize,
 }) {
@@ -49,7 +49,7 @@ PreferredSizeWidget customAppBarWithShadow({
                   iconSize: WidgetStateProperty.all(Sizes.size24.sp),
                 ),
               ),
-        actions: actionIcon,
+        actions: actionWidget,
         backgroundColor: backgroundColor ?? Colors.black,
       ),
     ),

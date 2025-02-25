@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
-import 'package:pinnacle_main/explore_home/uikit/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
 import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/widgets/common_component/group_request_card.dart';
+import 'package:pinnacle_main/framework/widgets/expense/single_expense.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
@@ -30,7 +33,9 @@ class FrameworkDemo extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
-      bottomNavigationBar: const CustomBottomNavigationBar(),
+      bottomNavigationBar: const CustomBottomNavigationBar(
+        currentIndex: 0,
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -70,7 +75,7 @@ class FrameworkDemo extends StatelessWidget {
             // Category
             SingleCategoryCard(
               categoryImage: AssetPath.categoryImage,
-              onTap: (){},
+              onTap: () {},
             ),
 
             // Group Request Card
@@ -136,9 +141,24 @@ class FrameworkDemo extends StatelessWidget {
               ),
             ),
 
+            // Request Card
             GeneralComponent.requestCardDataInfo(
               iconPath: AssetPath.locationIcon,
               title: 'Location',
+            ),
+
+            // Single Expense
+            SingleExpense(
+              expenseType: ExpenseType.fuel,
+              expenseTitle: 'Taxi Ride',
+              expenseDate: DateTime.now(),
+              expenseCost: '500',
+              paidBy: 'Yash',
+            ),
+
+            const ScrollableNotesBox(
+              maxLength: 500,
+              hintText: 'Notes...',
             )
           ],
         ),

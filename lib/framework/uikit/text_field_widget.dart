@@ -24,6 +24,7 @@ class TextFieldWidget extends StatelessWidget {
   final Color? hintColor;
   final Color? fieldTextColor;
   final Color? prefixIconColor;
+  final int? maxLength;
 
   const TextFieldWidget({
     super.key,
@@ -40,6 +41,7 @@ class TextFieldWidget extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.fieldTextColor,
     this.prefixIconColor,
+    this.maxLength,
   });
 
   @override
@@ -69,6 +71,7 @@ class TextFieldWidget extends StatelessWidget {
               color: bgColor ?? CustomColors.navCardBackgroundColor222222,
             ),
             child: TextField(
+              maxLength: maxLength,
               controller: controller,
               keyboardType: keyboardType,
               style: TextStyle(color: fieldTextColor ?? Colors.black),
@@ -120,6 +123,7 @@ class TextFieldWidget extends StatelessWidget {
                     style: TextStyle(
                       color: fieldTextColor ?? CustomColors.blueColor,
                     ),
+                    maxLength: maxLength,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor:
