@@ -9,16 +9,16 @@ Widget postButton() {
   return SizedBox(
     width: Sizes.size372.dp,
     height: Sizes.size43.dp,
-    child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: CustomColors.buttonBackgroundCreamColor,
-      ),
-      onPressed: () {},
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(
-            Sizes.size105.dp, Sizes.size6.dp, Sizes.size105.dp, Sizes.size6.dp),
-        child: TextWidget(
-            text: text, color: CustomColors.mainBackgroundColor161513),
+    child: Expanded(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: CustomColors.buttonBackgroundCreamColor,
+        ),
+        onPressed: () {},
+        child: Center(
+          child: TextWidget(
+              text: text, color: CustomColors.mainBackgroundColor161513),
+        ),
       ),
     ),
   );
