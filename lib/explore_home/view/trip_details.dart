@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/explore_home/uikit/build_prefrences.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/post_button.dart';
+import 'package:pinnacle_main/explore_home/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
-import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 
@@ -22,7 +24,6 @@ class TripDetails extends StatefulWidget {
 }
 
 class _TripDetailsState extends State<TripDetails> {
-  final TextEditingController _notesController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +36,9 @@ class _TripDetailsState extends State<TripDetails> {
         fontWeight: FontWeight.w600,
       ),
       body: Padding(
-        padding: EdgeInsets.all(Sizes.size16.dp),
-        child: ListView(
+        padding: EdgeInsets.fromLTRB(
+            Sizes.size20.dp, Sizes.size10.dp, Sizes.size20.dp, Sizes.size10.dp),
+        child: Column(
           children: [
             TravelRequestCard(
               title: 'Travel Title',
@@ -46,91 +48,39 @@ class _TripDetailsState extends State<TripDetails> {
               days: 5,
               cityLocation: 'Lonavala',
             ),
-            SizedBox(height: Sizes.size16.dp),
+            SizedBox(height: Sizes.size10.dp),
             UserProfileCard(
               userName: 'User Name',
               userImage: AssetPath.userImage,
               userProfileId: 'User Id',
             ),
-            SizedBox(height: Sizes.size16.dp),
+            SizedBox(height: Sizes.size10.dp),
             GeneralComponent.requestCardDataInfo(
               title: 'Location',
               iconPath: AssetPath.locationIcon,
               iconColor: CustomColors.mainTextColor,
             ),
-            SizedBox(height: Sizes.size16.dp),
+            SizedBox(height: Sizes.size10.dp),
             GeneralComponent.requestCardDataInfo(
               title: 'Group size',
               iconPath: AssetPath.groupSizeIcon,
               iconColor: CustomColors.mainTextColor,
             ),
-            SizedBox(height: Sizes.size16.dp),
+            SizedBox(height: Sizes.size10.dp),
             GeneralComponent.requestCardDataInfo(
               title: 'English',
               iconPath: AssetPath.globeIcon,
               iconColor: CustomColors.mainTextColor,
             ),
-            _buildNotesField(),
-            _buildPreferences(),
-            SizedBox(height: Sizes.size16.dp),
-            _postButton(),
+            SizedBox(height: Sizes.size10.dp),
+            const ScrollableNotesBox(),
+            SizedBox(height: Sizes.size10.dp),
+            buildPreferences(),
+            SizedBox(height: Sizes.size10.dp),
+            postButton(),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildNotesField() {
-    return TextField(
-      controller: _notesController,
-      maxLength: 500,
-      maxLines: null, // Allows dynamic height expansion
-      keyboardType: TextInputType.multiline,
-      decoration: InputDecoration(
-        hintText: 'Notes...',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Sizes.size10.dp),
-          borderSide: BorderSide.none,
-        ),
-        filled: true,
-        fillColor: CustomColors.cardBackgroundColor313131,
-        contentPadding: EdgeInsets.all(Sizes.size12.dp),
-      ),
-      style: TextStyle(color: CustomColors.mainTextColor),
-    );
-  }
-
-  Widget _buildPreferences() {
-    return Row(
-      children: [
-        _buildPreferenceChip('No Alcohol'),
-        SizedBox(width: Sizes.size10.dp),
-        _buildPreferenceChip('No Smoking'),
-        SizedBox(width: Sizes.size10.dp),
-        _buildPreferenceChip('Bikes'),
-      ],
-    );
-  }
-
-  Widget _buildPreferenceChip(String label) {
-    return Chip(
-      label: TextWidget(
-          text: label, color: CustomColors.mainBackgroundColor161513),
-      backgroundColor: CustomColors.mainTextColor,
-      padding: EdgeInsets.all(Sizes.size10.dp),
-      labelPadding: EdgeInsets.all(Sizes.size5.dp),
-    );
-  }
-
-  Widget _postButton() {
-    String text = 'Post your trip ';
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: CustomColors.buttonBackgroundCreamColor,
-      ),
-      onPressed: () {},
-      child:
-          TextWidget(text: text, color: CustomColors.mainBackgroundColor161513),
     );
   }
 }
