@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -46,7 +47,9 @@ class _ExploreHomeState extends State<ExploreHome>
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
-      bottomNavigationBar: const CustomBottomNavigationBar(),
+      bottomNavigationBar: const CustomBottomNavigationBar(
+        currentIndex: 1,
+      ),
       appBar: customAppBarWithShadow(
         titleName: 'Explore',
         backgroundColor: CustomColors.mainBackgroundColor161513,
@@ -54,63 +57,61 @@ class _ExploreHomeState extends State<ExploreHome>
         fontSize: Sizes.size32.sp,
         fontWeight: FontWeight.w600,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Sizes.size5.dp),
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: Sizes.size10.dp),
-              child: SearchBarWidget(controller: controller),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: Sizes.size10.dp),
+            child: SearchBarWidget(controller: controller),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _categoryBoxButton('Home', 0),
+              _categoryBoxButton('Categories', 1),
+              _categoryBoxButton('Locations', 2),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
               children: [
-                _categoryBoxButton('Home', 0),
-                _categoryBoxButton('Categories', 1),
-                _categoryBoxButton('Locations', 2),
+                _buildListViewHome('Home'),
+                _buildListViewCategories('Categories'),
+                _buildListViewLocations('Locations'),
               ],
             ),
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  _buildListViewHome('Home'),
-                  _buildListViewCategories('Categories'),
-                  _buildListViewLocations('Locations'),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   Widget _categoryBoxButton(String title, int index) {
     return Expanded(
-      child: InkWell(
-        onTap: () {
-          setState(() {
-            _tabController.index = index;
-          });
-        },
-        child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: Sizes.size5.dp,
-            vertical: Sizes.size10.dp,
-          ),
-          padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
-          decoration: BoxDecoration(
-            color: _tabController.index == index
-                ? CustomColors.buttonBackgroundCreamColor
-                : CustomColors.mainTextColor,
-            borderRadius: BorderRadius.circular(Sizes.size10.sp),
-          ),
+      child: Container(
+        margin: EdgeInsets.symmetric(
+          horizontal: Sizes.size5.dp,
+          vertical: Sizes.size10.dp,
+        ),
+        padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
+        decoration: BoxDecoration(
+          color: _tabController.index == index
+              ? CustomColors.buttonBackgroundCreamColor
+              : CustomColors.mainTextColor,
+          borderRadius: BorderRadius.circular(Sizes.size10.sp),
+        ),
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              _tabController.index = index;
+            });
+          },
           child: Center(
             child: TextWidget(
-                text: title,
-                color: CustomColors.mainBackgroundColor161513,
-                fontWeight: FontWeight.w600),
+              text: title,
+              color: CustomColors.mainBackgroundColor161513,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),
@@ -122,13 +123,22 @@ class _ExploreHomeState extends State<ExploreHome>
       itemCount: 5,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
-        return TravelRequestCard(
-          title: 'Travel Title',
-          startDate: DateTime.now(),
-          endDate: DateTime.now(),
-          price: 'Travel Price',
-          days: 5,
-          cityLocation: 'Lonavala',
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: Sizes.size5.dp,
+            horizontal: Sizes.size15.dp,
+          ),
+          child: InkWell(
+            onTap: () => context.push('/tripdetails'),
+            child: TravelRequestCard(
+              title: 'Travel Title',
+              startDate: DateTime.now(),
+              endDate: DateTime.now(),
+              price: 'Travel Price',
+              days: 5,
+              cityLocation: 'Lonavala',
+            ),
+          ),
         );
       },
     );
@@ -142,7 +152,7 @@ class _ExploreHomeState extends State<ExploreHome>
         return Padding(
           padding: EdgeInsets.symmetric(
             vertical: Sizes.size5.dp,
-            horizontal: Sizes.size10.dp,
+            horizontal: Sizes.size15.dp,
           ),
           child: SingleCategoryCard(
             onTap: () {},
@@ -158,9 +168,15 @@ class _ExploreHomeState extends State<ExploreHome>
       shrinkWrap: true,
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
-        return SingleCategoryCard(
-          onTap: () {},
-          categoryImage: AssetPath.categoryImage,
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: Sizes.size5.dp,
+            horizontal: Sizes.size15.dp,
+          ),
+          child: SingleCategoryCard(
+            onTap: () {},
+            categoryImage: AssetPath.categoryImage,
+          ),
         );
       },
     );

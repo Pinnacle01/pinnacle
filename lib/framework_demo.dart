@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
-import 'package:pinnacle_main/explore_home/uikit/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
+import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
 import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
-import 'package:pinnacle_main/framework/constants/common_enums.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -32,7 +33,9 @@ class FrameworkDemo extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
-      bottomNavigationBar: const CustomBottomNavigationBar(),
+      bottomNavigationBar: const CustomBottomNavigationBar(
+        currentIndex: 0,
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -152,6 +155,11 @@ class FrameworkDemo extends StatelessWidget {
               expenseCost: '500',
               paidBy: 'Yash',
             ),
+
+            const ScrollableNotesBox(
+              maxLength: 500,
+              hintText: 'Notes...',
+            )
           ],
         ),
       ),

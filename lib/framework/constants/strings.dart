@@ -12,6 +12,11 @@ class GeneralString {
   static String get paidBy => 'Paid By:';
 
   
+  static String get tripDetail => 'Trip Details';
+  static String get startPlanning => 'Start Planning';
+
+
+  
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';

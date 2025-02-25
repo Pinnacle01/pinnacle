@@ -32,17 +32,18 @@ final _router = GoRouter(
           },
         ),
         GoRoute(
-          path: 'explorepage',
-          builder: (BuildContext context, GoRouterState state) {
-            return const ExploreHome();
-          },
-        ),
-        GoRoute(
-          path: 'tripdetails',
-          builder: (BuildContext context, GoRouterState state) {
-            return const TripDetails();
-          },
-        ),
+            path: 'explorepage',
+            builder: (BuildContext context, GoRouterState state) {
+              return const ExploreHome();
+            },
+            routes: [
+              GoRoute(
+                path: 'tripdetails',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const TripDetails();
+                },
+              ),
+            ]),
       ],
     ),
   ],

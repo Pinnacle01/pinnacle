@@ -18,8 +18,8 @@ class GeneralComponent {
         children: [
           Container(
             margin: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
-            width: Sizes.size50.sp,
-            height: Sizes.size50.sp,
+            width: Sizes.size40.sp,
+            height: Sizes.size40.sp,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Sizes.size10.dp),
               color: CustomColors.cardBackgroundColor313131,
