@@ -8,7 +8,8 @@ class GeneralString {
   static String get travelPrice => '200';
   static String get daysRemaining => 'Days Remaining!';
   static String get kmAway => ' km away';
-  static String get search => 'Search...';
+  static String get search => 'Where are you going?';
+  static String get paidBy => 'Paid By:';
 
   
 
@@ -21,4 +22,5 @@ class GeneralString {
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
   static String get grouprequestcard => 'Group Admission Request';
+
 }
