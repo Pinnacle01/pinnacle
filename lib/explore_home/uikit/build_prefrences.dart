@@ -20,8 +20,8 @@ Widget buildPreferences() {
 
 Widget _buildPreferenceChip(String label) {
   return SizedBox(
-    height: 28,
-    width: 92.77,
+    height: Sizes.size28.dp,
+    width: Sizes.size120.dp,
     child: Chip(
       label: TextWidget(
           text: label,
