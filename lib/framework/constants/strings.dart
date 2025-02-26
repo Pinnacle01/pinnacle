@@ -8,15 +8,22 @@ class GeneralString {
   static String get travelPrice => '200';
   static String get daysRemaining => 'Days Remaining!';
   static String get kmAway => ' km away';
-  static String get search => 'Where are you going?';
+  static String get search => 'Search...';
+  static String get travelPost => 'Travel Request';
+  static String get post => 'Post';
+  static String get tripName => 'Trip Name';
+  static String get selectCity => 'Select City';
+  static String get enterLocation => 'Enter Location';
+  static String get travelDates => 'Travel Dates';
+  static String get startDate => 'Start Date';
+  static String get budget => 'Budget';
+  static String get groupSize => 'Group Size';
+  static String get preferredGroupSize => 'Preferred Group Size';
+  static String get searchGoing => 'Where are you going?';
   static String get paidBy => 'Paid By:';
 
-  
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
-
-
-  
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
@@ -27,5 +34,4 @@ class GeneralString {
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
   static String get grouprequestcard => 'Group Admission Request';
-
 }

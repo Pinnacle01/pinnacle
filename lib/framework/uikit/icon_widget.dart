@@ -11,6 +11,8 @@ class IconWidget extends StatelessWidget {
     this.size,
     this.fit,
     this.color,
+    IconData? icon,
+    Null Function()? onTap,
   });
 
   final String path;
