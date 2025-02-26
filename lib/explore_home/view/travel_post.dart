@@ -8,6 +8,7 @@ import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
+import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
 
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
@@ -24,6 +25,7 @@ class TravelPost extends StatefulWidget {
 class _TravelPostState extends State<TravelPost> {
   @override
   Widget build(BuildContext context) {
+    List<String> languages = ['English', 'Hindi'];
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
       appBar: customAppBarWithShadow(
@@ -36,59 +38,51 @@ class _TravelPostState extends State<TravelPost> {
           TextWidget(
             text: GeneralString.post,
             fontWeight: FontWeight.w600,
-            color: CustomColors.whiteShadeEBEDED,
+            color: CustomColors.whiteColor,
           )
         ],
       ),
       body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: UserProfileCard(
-              userName: GeneralString.userName,
-              userImage: AssetPath.userImage,
-              userProfileId: GeneralString.userId,
+          child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: Sizes.size20.dp),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: Sizes.size16.dp),
+              child: UserProfileCard(
+                userName: GeneralString.userName,
+                userImage: AssetPath.userImage,
+                userProfileId: GeneralString.userId,
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: TextFieldWidget(
-              label: GeneralString.travelTitle,
+            TextFieldWidget(
+              label: GeneralString.tripName,
               labelSize: Sizes.size16.sp,
               labelColor: CustomColors.lightBackgroundColor,
               hintText: "--",
               hintColor: CustomColors.lightBackgroundColor,
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.name,
               textFieldTheme: TextFeildTheme.dark,
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: TextFieldWidget(
-                prefixIcon: AssetPath.locationIcon,
-                prefixIconColor: CustomColors.lightBackgroundColor,
-                label: GeneralString.selectCity,
-                labelSize: Sizes.size16.sp,
-                labelColor: CustomColors.lightBackgroundColor,
-                hintText: GeneralString.enterLocation,
-                hintColor: CustomColors.lightBackgroundColor,
-                keyboardType: TextInputType.emailAddress,
-                textFieldTheme: TextFeildTheme.dark),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: buildDateSelector(),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: TextFieldWidget(
+            SizedBox(height: Sizes.size10.dp),
+            TextFieldDropDownWidget(
+              initalValue: 'Pune',
+              dropDownList: [],
+              dropDownFunction: (value) {},
+              prefixIcon: AssetPath.locationIcon,
+              prefixIconColor: CustomColors.lightBackgroundColor,
+              label: GeneralString.selectCity,
+              labelSize: Sizes.size16.sp,
+              labelColor: CustomColors.lightBackgroundColor,
+              hintText: GeneralString.enterLocation,
+              hintColor: CustomColors.lightBackgroundColor,
+              keyboardType: TextInputType.name,
+            ),
+            SizedBox(height: Sizes.size10.dp),
+            buildDateSelector(),
+            SizedBox(height: Sizes.size10.dp),
+            TextFieldWidget(
               label: GeneralString.budget,
               labelSize: Sizes.size16.sp,
               labelColor: CustomColors.lightBackgroundColor,
@@ -98,11 +92,8 @@ class _TravelPostState extends State<TravelPost> {
               textFieldTheme: TextFeildTheme.dark,
               prefixIcon: AssetPath.crossIcon,
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: TextFieldWidget(
+            SizedBox(height: Sizes.size10.dp),
+            TextFieldWidget(
                 label: GeneralString.groupSize,
                 labelSize: Sizes.size16.sp,
                 labelColor: CustomColors.lightBackgroundColor,
@@ -112,58 +103,8 @@ class _TravelPostState extends State<TravelPost> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size6.dp),
-            child: TextWidget(
-              text: GeneralString.preferredLanguage,
-              size: Sizes.size16.sp,
-              fontWeight: FontWeight.w600,
-              color: CustomColors.lightBackgroundColor,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size4.dp,
                 Sizes.size20.dp, Sizes.size15.dp),
             child: _buildLanguagePreferences(),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size5.dp),
-            child: TextFieldWidget(
-              label: GeneralString.tags,
-              labelSize: Sizes.size16.sp,
-              labelColor: CustomColors.lightBackgroundColor,
-              hintText: GeneralString.addTags,
-              hintColor: CustomColors.lightBackgroundColor,
-              keyboardType: TextInputType.emailAddress,
-              textFieldTheme: TextFeildTheme.dark,
-              prefixIcon: AssetPath.plusIcon,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: _buildLanguagePreferences(),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
-                Sizes.size20.dp, Sizes.size5.dp),
-            child: TextWidget(
-              text: GeneralString.additionalNotes,
-              color: CustomColors.lightBackgroundColor,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
-                Sizes.size20.dp, Sizes.size5.dp),
-            child: ScrollableNotesBox(
-              maxLength: 500,
-              hintText: GeneralString.additionalNotesData,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
-                Sizes.size20.dp, Sizes.size15.dp),
-            child: TextWidget(text: AssetPath.cameraIcon),
           ),
         ],
       )),
@@ -182,9 +123,6 @@ class _TravelPostState extends State<TravelPost> {
 
   Widget _buildChip(String label, {bool selected = false}) {
     return Chip(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Sizes.size5.dp),
-      ),
       label: Text(label,
           style: TextStyle(
               color: selected
