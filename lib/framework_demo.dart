@@ -157,11 +157,13 @@ class FrameworkDemo extends StatelessWidget {
               paidBy: 'Yash',
             ),
 
+            // Note Widget
             const ScrollableNotesBox(
               maxLength: 500,
               hintText: 'Notes...',
             ),
 
+            // Drop Down Widget Text Field
             TextFieldDropDownWidget(
               label: 'Select State',
               hintText: 'hintText',
@@ -169,8 +171,7 @@ class FrameworkDemo extends StatelessWidget {
                 'Pune',
                 'Maha',
               ],
-              dropDownFunction: (String? value) {
-              },
+              dropDownFunction: (String? value) {},
               initalValue: '--',
             ),
           ],
