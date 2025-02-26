@@ -17,7 +17,6 @@ PreferredSizeWidget customAppBarWithShadow({
   FontWeight? fontWeight,
   double? fontSize,
   IconButton? trailing,
-  dynamic? actionWidget,
 }) {
   return PreferredSize(
     preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight.dp),
@@ -51,7 +50,6 @@ PreferredSizeWidget customAppBarWithShadow({
                   iconSize: WidgetStateProperty.all(Sizes.size24.sp),
                 ),
               ),
-        actions: actionWidget,
         backgroundColor: backgroundColor ?? Colors.black,
       ),
     ),
