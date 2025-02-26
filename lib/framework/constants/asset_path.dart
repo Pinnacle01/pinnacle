@@ -31,4 +31,5 @@ class AssetPath {
       '${Constants.iconPath}plus_add_green_icon.png';
   static String get minusRedIcon => '${Constants.iconPath}minus_red_icon.png';
   static String get fuelIcon => '${Constants.iconPath}fuel.png';
+  static String get cameraIcon => '${Constants.iconPath}camera_icon.svg';
 }

@@ -6,6 +6,7 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
@@ -29,7 +30,7 @@ class _TravelPostState extends State<TravelPost> {
         titleName: GeneralString.travelPost,
         backgroundColor: CustomColors.mainBackgroundColor161513,
         titleColor: CustomColors.mainTextColor,
-        fontSize: Sizes.size32.sp,
+        fontSize: Sizes.size20.sp,
         fontWeight: FontWeight.w600,
         actionIcon: [
           TextWidget(
@@ -111,8 +112,58 @@ class _TravelPostState extends State<TravelPost> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size6.dp),
+            child: TextWidget(
+              text: GeneralString.preferredLanguage,
+              size: Sizes.size16.sp,
+              fontWeight: FontWeight.w600,
+              color: CustomColors.lightBackgroundColor,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size4.dp,
                 Sizes.size20.dp, Sizes.size15.dp),
             child: _buildLanguagePreferences(),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: TextFieldWidget(
+              label: GeneralString.tags,
+              labelSize: Sizes.size16.sp,
+              labelColor: CustomColors.lightBackgroundColor,
+              hintText: GeneralString.addTags,
+              hintColor: CustomColors.lightBackgroundColor,
+              keyboardType: TextInputType.emailAddress,
+              textFieldTheme: TextFeildTheme.dark,
+              prefixIcon: AssetPath.plusIcon,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size15.dp),
+            child: _buildLanguagePreferences(),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: TextWidget(
+              text: GeneralString.additionalNotes,
+              color: CustomColors.lightBackgroundColor,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: ScrollableNotesBox(
+              maxLength: 500,
+              hintText: GeneralString.additionalNotesData,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size15.dp),
+            child: TextWidget(text: AssetPath.cameraIcon),
           ),
         ],
       )),
@@ -131,6 +182,9 @@ class _TravelPostState extends State<TravelPost> {
 
   Widget _buildChip(String label, {bool selected = false}) {
     return Chip(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Sizes.size5.dp),
+      ),
       label: Text(label,
           style: TextStyle(
               color: selected

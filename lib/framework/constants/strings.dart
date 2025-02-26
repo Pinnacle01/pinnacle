@@ -24,6 +24,12 @@ class GeneralString {
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
+  static String get preferredLanguage => 'Preferred Language';
+  static String get addTags => 'Add Tags';
+  static String get tags => 'Tags';
+  static String get additionalNotes => 'Additional Notes';
+  static String get additionalNotesData =>
+      'Write some requirements for your trip';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
