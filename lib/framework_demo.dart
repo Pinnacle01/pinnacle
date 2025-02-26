@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
+import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
 import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
@@ -159,7 +160,19 @@ class FrameworkDemo extends StatelessWidget {
             const ScrollableNotesBox(
               maxLength: 500,
               hintText: 'Notes...',
-            )
+            ),
+
+            TextFieldDropDownWidget(
+              label: 'Select State',
+              hintText: 'hintText',
+              dropDownList: const [
+                'Pune',
+                'Maha',
+              ],
+              dropDownFunction: (String? value) {
+              },
+              initalValue: '--',
+            ),
           ],
         ),
       ),
