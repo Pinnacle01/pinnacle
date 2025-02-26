@@ -33,9 +33,9 @@ class HomeApp extends StatelessWidget {
             ),
             NormalButton(
               buttonType: ButtonType.normal,
-              onPress: () => context.go('/tripdetails'),
+              onPress: () => context.go('/travelpost'),
               label: const TextWidget(
-                text: 'Trip Details',
+                text: 'Travel Post',
               ),
             ),
           ],
