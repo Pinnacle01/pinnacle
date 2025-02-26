@@ -6,6 +6,7 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/small_preference_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
 
@@ -55,15 +56,7 @@ class _TravelPostState extends State<TravelPost> {
                 userProfileId: GeneralString.userId,
               ),
             ),
-            TextFieldWidget(
-              label: GeneralString.tripName,
-              labelSize: Sizes.size16.sp,
-              labelColor: CustomColors.lightBackgroundColor,
-              hintText: "--",
-              hintColor: CustomColors.lightBackgroundColor,
-              keyboardType: TextInputType.name,
-              textFieldTheme: TextFeildTheme.dark,
-            ),
+            _commonTextWidget(label: GeneralString.tripName, hintText: "--"),
             SizedBox(height: Sizes.size10.dp),
             TextFieldDropDownWidget(
               initalValue: 'Pune',
@@ -76,33 +69,28 @@ class _TravelPostState extends State<TravelPost> {
               labelColor: CustomColors.lightBackgroundColor,
               hintText: GeneralString.enterLocation,
               hintColor: CustomColors.lightBackgroundColor,
-              keyboardType: TextInputType.name,
             ),
             SizedBox(height: Sizes.size10.dp),
             buildDateSelector(),
             SizedBox(height: Sizes.size10.dp),
-            TextFieldWidget(
+            _commonTextWidget(
               label: GeneralString.budget,
-              labelSize: Sizes.size16.sp,
-              labelColor: CustomColors.lightBackgroundColor,
               hintText: "--",
-              hintColor: CustomColors.lightBackgroundColor,
-              keyboardType: TextInputType.emailAddress,
-              textFieldTheme: TextFeildTheme.dark,
-              prefixIcon: AssetPath.crossIcon,
+              prefixIcon: AssetPath.walletMoneyIcon,
             ),
             SizedBox(height: Sizes.size10.dp),
-            TextFieldWidget(
-                label: GeneralString.groupSize,
-                labelSize: Sizes.size16.sp,
-                labelColor: CustomColors.lightBackgroundColor,
-                hintText: GeneralString.preferredGroupSize,
-                hintColor: CustomColors.lightBackgroundColor,
-                textFieldTheme: TextFeildTheme.dark),
+            _commonTextWidget(
+              label: GeneralString.groupSize,
+              hintText: GeneralString.preferredGroupSize,
+            ),
             SizedBox(height: Sizes.size10.dp),
             Row(
-              children:
-                  languages.map((tag) => _buildPreferenceChip(tag)).toList(),
+              children: languages
+                  .map((tag) => SmallPreferenceButton(
+                        label: tag,
+                        onTap: () {},
+                      ))
+                  .toList(),
             ),
           ],
         ),
@@ -110,22 +98,19 @@ class _TravelPostState extends State<TravelPost> {
     );
   }
 
-  Widget _buildPreferenceChip(String label) {
-    return Container(
-      margin: EdgeInsets.all(Sizes.size5.dp),
-      padding: EdgeInsets.symmetric(
-        vertical: Sizes.size5.dp,
-        horizontal: Sizes.size15.dp,
-      ),
-      decoration: BoxDecoration(
-        color: CustomColors.mainTextColor,
-        borderRadius: BorderRadius.circular(Sizes.size5.dp),
-      ),
-      child: TextWidget(
-        text: label,
-        color: CustomColors.mainBackgroundColor161513,
-        size: Sizes.size12.sp,
-      ),
-    );
-  }
+  Widget _commonTextWidget({
+    required String label,
+    required String hintText,
+    String? prefixIcon,
+  }) =>
+      TextFieldWidget(
+        label: label,
+        labelSize: Sizes.size16.sp,
+        labelColor: CustomColors.lightBackgroundColor,
+        hintText: hintText,
+        hintColor: CustomColors.lightBackgroundColor,
+        textFieldTheme: TextFeildTheme.dark,
+        prefixIcon: prefixIcon,
+        prefixSize: Sizes.size20.sp,
+      );
 }
