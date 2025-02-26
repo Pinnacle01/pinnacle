@@ -1,27 +1,34 @@
+import 'package:pinnacle_main/framework/constants/constants.dart';
+
 class AssetPath {
-  static String get userImage => 'assets/images/profile_pic.jpg';
+  static String get userImage => '${Constants.imagePath}profile_pic.jpg';
   static String get userPostImage =>
-      'assets/images/travel_image_component.jpeg';
-  static String get categoryImage => 'assets/images/bike.jpg';
+      '${Constants.imagePath}travel_image_component.jpeg';
+  static String get categoryImage => '${Constants.imagePath}bike.jpg';
   static String get biking => 'Biking';
   static String get loadingLocationImage =>
-      'assets/images/loading_location_image.jpg';
+      '${Constants.imagePath}loading_location_image.jpg';
 
-  static String get crossIcon => 'assets/icons/cross_icon.svg';
-  static String get tickIcon => 'assets/icons/tick_icon.svg';
-  static String get userSquareIcon => 'assets/icons/user_square_icon.svg';
-  static String get exploreIcon => 'assets/icons/explore_icon.svg';
-  static String get userProfileIcon => 'assets/icons/user_profile_icon.svg';
+  static String get crossIcon => '${Constants.iconPath}cross_icon.svg';
+  static String get tickIcon => '${Constants.iconPath}tick_icon.svg';
+  static String get userSquareIcon =>
+      '${Constants.iconPath}user_square_icon.svg';
+  static String get exploreIcon => '${Constants.iconPath}explore_icon.svg';
+  static String get userProfileIcon =>
+      '${Constants.iconPath}user_profile_icon.svg';
   static String get rightBackButtonIcon =>
-      'assets/icons/right_back_button_icon.svg';
-  static String get homeIcon => 'assets/icons/home_icon.svg';
-  static String get leftButtonIcon => 'assets/icons/left_button_icon.svg';
-  static String get alarmIcon => 'assets/icons/alarm_icon.png';
-  static String get plusIcon => 'assets/icons/plus_icon.png';
-  static String get searchIcon => 'assets/icons/search_icon.svg';
-  static String get locationIcon => 'assets/icons/location_icon.svg';
-  static String get globeIcon => 'assets/icons/globe_icon.svg';
-  static String get groupSizeIcon => 'assets/icons/group_size_icon.svg';
-  static String get plusAddGreenIcon => 'assets/icons/plus_add_green_icon.png';
-  static String get minusRedIcon => 'assets/icons/minus_red_icon.png';
+      '${Constants.iconPath}right_back_button_icon.svg';
+  static String get homeIcon => '${Constants.iconPath}home_icon.svg';
+  static String get leftButtonIcon =>
+      '${Constants.iconPath}left_button_icon.svg';
+  static String get alarmIcon => '${Constants.iconPath}alarm_icon.png';
+  static String get plusIcon => '${Constants.iconPath}plus_icon.png';
+  static String get searchIcon => '${Constants.iconPath}search_icon.svg';
+  static String get locationIcon => '${Constants.iconPath}location_icon.svg';
+  static String get globeIcon => '${Constants.iconPath}globe_icon.svg';
+  static String get groupSizeIcon => '${Constants.iconPath}group_size_icon.svg';
+  static String get plusAddGreenIcon =>
+      '${Constants.iconPath}plus_add_green_icon.png';
+  static String get minusRedIcon => '${Constants.iconPath}minus_red_icon.png';
+  static String get fuelIcon => '${Constants.iconPath}fuel.png';
 }

@@ -1,13 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart'; // If using GoRouter
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
-
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 
-class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({super.key});
+class CustomBottomNavigationBar extends StatefulWidget {
+  final int currentIndex;
+  const CustomBottomNavigationBar({super.key, required this.currentIndex});
+
+  @override
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
+}
+
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
+  int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.currentIndex;
+  }
+
+  void _onItemTapped(int index) {
+    if (_selectedIndex == index) return;
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+        context.go('/component');
+        break;
+      case 1:
+        context.go('/explorepage');
+        break;
+      case 2:
+        context.go('/profile');
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,26 +54,21 @@ class CustomBottomNavigationBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildNavItem(
+              index: 0,
               icon: AssetPath.homeIcon,
               label: 'Home',
-              color: CustomColors.buttonBackgroundCreamColor,
-              isActive: true,
             ),
             _buildNavItem(
+              index: 1,
               icon: AssetPath.exploreIcon,
-              label: 'General',
-              color: CustomColors.buttonBackgroundCreamColor,
-              isActive: false,
+              label: 'Explore',
             ),
             _buildNavItem(
+              index: 2,
               icon: AssetPath.userProfileIcon,
               label: 'Profile',
-              color: CustomColors.buttonBackgroundCreamColor,
-              isActive: false,
             ),
-            SizedBox(
-              width: Sizes.size10.sp,
-            ),
+            SizedBox(width: Sizes.size10.sp),
           ],
         ),
       ),
@@ -47,16 +76,36 @@ class CustomBottomNavigationBar extends StatelessWidget {
   }
 
   Widget _buildNavItem({
+    required int index,
     required String icon,
     required String label,
-    required Color color,
-    required bool isActive,
   }) {
-    return IconWidget(
-      path: icon,
-      size: Sizes.size30.sp,
-      fit: BoxFit.contain,
-      color: isActive ? color : CustomColors.lightBackgroundColor,
+    bool isActive = _selectedIndex == index;
+
+    return GestureDetector(
+      onTap: () => _onItemTapped(index),
+      // child: Column(
+      //   mainAxisSize: MainAxisSize.min,
+      //   children: [
+      child: IconWidget(
+        path: icon,
+        size: Sizes.size30.sp,
+        fit: BoxFit.contain,
+        color: isActive
+            ? CustomColors.buttonBackgroundCreamColor
+            : CustomColors.lightBackgroundColor,
+      ),
+      // Text(
+      //   label,
+      //   style: TextStyle(
+      //     fontSize: Sizes.size12.sp,
+      //     color: isActive
+      //         ? CustomColors.buttonBackgroundCreamColor
+      //         : CustomColors.lightBackgroundColor,
+      //   ),
+      // ),
+      // ],
+      // ),
     );
   }
 }

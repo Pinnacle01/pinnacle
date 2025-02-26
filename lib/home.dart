@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/uikit/normal_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
@@ -35,13 +36,6 @@ class HomeApp extends StatelessWidget {
               onPress: () => context.go('/tripdetails'),
               label: const TextWidget(
                 text: 'Trip Details',
-              ),
-            ),
-            NormalButton(
-              buttonType: ButtonType.normal,
-              onPress: () => context.go('/travelpost'),
-              label: const TextWidget(
-                text: 'Travel Post',
               ),
             ),
           ],
