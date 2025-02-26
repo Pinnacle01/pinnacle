@@ -32,12 +32,10 @@ class _TravelPostState extends State<TravelPost> {
         fontSize: Sizes.size32.sp,
         fontWeight: FontWeight.w600,
         actionIcon: [
-          Flexible(
-            child: TextWidget(
-              text: GeneralString.post,
-              fontWeight: FontWeight.w600,
-              color: CustomColors.whiteShadeEBEDED,
-            ),
+          TextWidget(
+            text: GeneralString.post,
+            fontWeight: FontWeight.w600,
+            color: CustomColors.whiteShadeEBEDED,
           )
         ],
       ),
