@@ -100,17 +100,78 @@ class _TravelPostState extends State<TravelPost> {
                 hintText: GeneralString.preferredGroupSize,
                 hintColor: CustomColors.lightBackgroundColor,
                 textFieldTheme: TextFeildTheme.dark),
+<<<<<<< HEAD
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size6.dp),
+            child: TextWidget(
+              text: GeneralString.preferredLanguage,
+              size: Sizes.size16.sp,
+              fontWeight: FontWeight.w600,
+              color: CustomColors.lightBackgroundColor,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size4.dp,
                 Sizes.size20.dp, Sizes.size15.dp),
             child: _buildLanguagePreferences(),
           ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: TextFieldWidget(
+              label: GeneralString.tags,
+              labelSize: Sizes.size16.sp,
+              labelColor: CustomColors.lightBackgroundColor,
+              hintText: GeneralString.addTags,
+              hintColor: CustomColors.lightBackgroundColor,
+              keyboardType: TextInputType.emailAddress,
+              textFieldTheme: TextFeildTheme.dark,
+              prefixIcon: AssetPath.plusIcon,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size15.dp),
+            child: _buildLanguagePreferences(),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size10.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: TextWidget(
+              text: GeneralString.additionalNotes,
+              color: CustomColors.lightBackgroundColor,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size5.dp),
+            child: ScrollableNotesBox(
+              maxLength: 500,
+              hintText: GeneralString.additionalNotesData,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(Sizes.size20.dp, Sizes.size5.dp,
+                Sizes.size20.dp, Sizes.size15.dp),
+            child: TextWidget(text: AssetPath.cameraIcon),
+          ),
         ],
+=======
+            SizedBox(height: Sizes.size10.dp),
+            Row(
+              children:
+                  languages.map((tag) => _buildPreferenceChip(tag)).toList(),
+            ),
+          ],
+        ),
+>>>>>>> 1b861e7f21bd9053489b0af4dd85fe82f87cce3d
       )),
     );
   }
 
+<<<<<<< HEAD
   Widget _buildLanguagePreferences() {
     return Row(
       children: [
@@ -123,6 +184,9 @@ class _TravelPostState extends State<TravelPost> {
 
   Widget _buildChip(String label, {bool selected = false}) {
     return Chip(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Sizes.size5.dp),
+      ),
       label: Text(label,
           style: TextStyle(
               color: selected
@@ -131,6 +195,24 @@ class _TravelPostState extends State<TravelPost> {
       backgroundColor: selected
           ? CustomColors.buttonBackgroundCreamColor
           : CustomColors.navCardBackgroundColor222222,
+=======
+  Widget _buildPreferenceChip(String label) {
+    return Container(
+      margin: EdgeInsets.all(Sizes.size5.dp),
+      padding: EdgeInsets.symmetric(
+        vertical: Sizes.size5.dp,
+        horizontal: Sizes.size15.dp,
+      ),
+      decoration: BoxDecoration(
+        color: CustomColors.mainTextColor,
+        borderRadius: BorderRadius.circular(Sizes.size5.dp),
+      ),
+      child: TextWidget(
+        text: label,
+        color: CustomColors.mainBackgroundColor161513,
+        size: Sizes.size12.sp,
+      ),
+>>>>>>> 1b861e7f21bd9053489b0af4dd85fe82f87cce3d
     );
   }
 }
