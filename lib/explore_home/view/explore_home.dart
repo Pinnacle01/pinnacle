@@ -129,7 +129,7 @@ class _ExploreHomeState extends State<ExploreHome>
             horizontal: Sizes.size15.dp,
           ),
           child: InkWell(
-            onTap: () => context.push('/tripdetails'),
+            onTap: () => context.pushNamed('tripdetails'),
             child: TravelRequestCard(
               title: 'Travel Title',
               startDate: DateTime.now(),
