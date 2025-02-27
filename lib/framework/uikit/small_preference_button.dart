@@ -33,32 +33,35 @@ class _SmallPreferenceButtonState extends State<SmallPreferenceButton> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        isSelected = !isSelected;
-        setState(() {});
-        widget.onTap();
-      },
-      child: Container(
-        margin: EdgeInsets.only(right: Sizes.size10.sp),
-        padding: EdgeInsets.symmetric(
-          vertical: Sizes.size8.dp,
-          horizontal: Sizes.size16.dp,
-        ),
-        decoration: BoxDecoration(
-          color: !isSelected
-              ? (widget.defaultBgColor ??
-                  CustomColors.navCardBackgroundColor222222)
-              : (widget.onTapBgColor ??
-                  CustomColors.buttonBackgroundCreamColor),
-          borderRadius: BorderRadius.circular(Sizes.size5.dp),
-        ),
-        child: TextWidget(
-          text: widget.label,
-          color: !isSelected
-              ? (widget.defaultLabelColor ?? CustomColors.lightBackgroundColor)
-              : (widget.onTaplabelColor ?? CustomColors.whiteColor),
-          size: widget.labelSize ?? Sizes.size14.sp,
+    return Padding(
+      padding: EdgeInsets.only(right: Sizes.size10.dp),
+      child: InkWell(
+        onTap: () {
+          isSelected = !isSelected;
+          setState(() {});
+          widget.onTap();
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            vertical: Sizes.size8.dp,
+            horizontal: Sizes.size16.dp,
+          ),
+          decoration: BoxDecoration(
+            color: !isSelected
+                ? (widget.defaultBgColor ??
+                    CustomColors.navCardBackgroundColor222222)
+                : (widget.onTapBgColor ??
+                    CustomColors.buttonBackgroundCreamColor),
+            borderRadius: BorderRadius.circular(Sizes.size5.dp),
+          ),
+          child: TextWidget(
+            text: widget.label,
+            color: !isSelected
+                ? (widget.defaultLabelColor ??
+                    CustomColors.lightBackgroundColor)
+                : (widget.onTaplabelColor ?? CustomColors.whiteColor),
+            size: widget.labelSize ?? Sizes.size14.sp,
+          ),
         ),
       ),
     );

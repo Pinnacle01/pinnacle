@@ -21,6 +21,8 @@ class GeneralString {
   static String get preferredGroupSize => 'Preferred Group Size';
   static String get searchGoing => 'Where are you going?';
   static String get paidBy => 'Paid By:';
+  static String get from => 'From';
+  static String get to => 'To';
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
