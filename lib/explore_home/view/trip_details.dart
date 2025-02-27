@@ -75,9 +75,10 @@ class TripDetails extends StatelessWidget {
                 iconColor: CustomColors.mainTextColor,
               ),
               SizedBox(height: Sizes.size10.dp),
-              const ScrollableNotesBox(
+              ScrollableNotesBox(
                 maxLength: 500,
                 hintText: 'Notes....',
+                scrollController: ScrollController(),
               ),
               SizedBox(height: Sizes.size10.dp),
               Row(
