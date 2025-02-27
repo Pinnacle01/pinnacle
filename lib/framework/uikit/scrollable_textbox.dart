@@ -10,13 +10,13 @@ class ScrollableNotesBox extends StatelessWidget {
     this.hintColor,
     this.bgColor,
     this.controller,
-    this.scrollController,
+    required this.scrollController,
     this.maxLength,
   });
 
   final String hintText;
   final TextEditingController? controller;
-  final ScrollController? scrollController;
+  final ScrollController scrollController;
   final Color? hintColor;
   final Color? bgColor;
   final int? maxLength;
@@ -25,6 +25,7 @@ class ScrollableNotesBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Sizes.size100.dp,
+      
       decoration: BoxDecoration(
         color: CustomColors.cardBackgroundColor313131,
         borderRadius: BorderRadius.circular(Sizes.size10.dp),
@@ -32,6 +33,7 @@ class ScrollableNotesBox extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: Sizes.size10.dp),
       child: Scrollbar(
         controller: scrollController,
+
         thumbVisibility: true,
         child: TextField(
           controller: controller,

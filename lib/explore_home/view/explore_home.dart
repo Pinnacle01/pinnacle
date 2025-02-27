@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
@@ -129,7 +129,7 @@ class _ExploreHomeState extends State<ExploreHome>
             horizontal: Sizes.size15.dp,
           ),
           child: InkWell(
-            onTap: () => context.pushNamed('tripdetails'),
+            onTap: () => RouteNavigator.go(context, '/explorepage/tripdetails'),
             child: TravelRequestCard(
               title: 'Travel Title',
               startDate: DateTime.now(),

@@ -158,9 +158,10 @@ class FrameworkDemo extends StatelessWidget {
             ),
 
             // Note Widget
-            const ScrollableNotesBox(
+            ScrollableNotesBox(
               maxLength: 500,
               hintText: 'Notes...',
+              scrollController: ScrollController(),
             ),
 
             // Drop Down Widget Text Field

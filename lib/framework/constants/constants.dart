@@ -3,3 +3,7 @@ class Constants {
   static const iconPath = 'assets/icons/';
   static const imagePath = 'assets/images/';
 }
+
+class Routes {
+  
+}

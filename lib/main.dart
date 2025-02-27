@@ -1,12 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 import 'package:pinnacle_main/explore_home/view/explore_home.dart';
 import 'package:pinnacle_main/explore_home/view/travel_post.dart';
-
 import 'package:pinnacle_main/explore_home/view/trip_details.dart';
+
 import 'package:pinnacle_main/framework/digital/device.dart';
+import 'package:pinnacle_main/framework/services/app_router.dart';
+import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
 
@@ -19,46 +20,32 @@ void main() {
   return runApp(const MyApp());
 }
 
-final _router = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(
-      name: 'home',
-      path: '/',
-      builder: (context, state) => const HomeApp(),
-      routes: <RouteBase>[
-        GoRoute(
-          path: 'component',
-          builder: (BuildContext context, GoRouterState state) {
-            return const FrameworkDemo();
-          },
-        ),
-        GoRoute(
-            name: 'explorepage',
-            path: 'explorepage',
-            builder: (BuildContext context, GoRouterState state) {
-              return const ExploreHome();
-            },
-            routes: [
-              GoRoute(
-                name: 'tripdetails',
-                path: 'explorepage/tripdetails',
-                builder: (BuildContext context, GoRouterState state) {
-                  return const TripDetails();
-                },
-              ),
-            ]),
-        GoRoute(
-          name: 'travelpost',
-          path: 'travelpost',
-          builder: (BuildContext context, GoRouterState state) {
-            return const TravelPost();
-          },
-        ),
-      ],
-    ),
-  ],
-);
+final List<AppRoute> routers = [
+  AppRoute(
+    path: '/',
+    builder: (context, state) => const HomeApp(),
+    subRoutes: [
+      AppRoute(
+        path: 'component',
+        builder: (context, state) => const FrameworkDemo(),
+      ),
+      AppRoute(
+        path: 'explorepage',
+        builder: (context, state) => const ExploreHome(),
+        subRoutes: [
+          AppRoute(            
+            path: 'tripdetails',
+            builder: (context, state) => const TripDetails(),
+          ),
+        ],
+      ),
+      AppRoute(
+        path: 'travelpost',
+        builder: (context, state) => const TravelPost(),
+      ),
+    ],
+  ),
+];
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -68,7 +55,7 @@ class MyApp extends StatelessWidget {
     Device.init(context);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: _router,
+      routerConfig: RouteNavigator.router,
     );
   }
 }
