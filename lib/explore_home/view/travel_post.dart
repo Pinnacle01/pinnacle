@@ -60,7 +60,7 @@ class _TravelPostState extends State<TravelPost> {
             SizedBox(height: Sizes.size10.dp),
             TextFieldDropDownWidget(
               initalValue: 'Pune',
-              dropDownList: [],
+              dropDownList: const ['Mumbai', 'yehh'],
               dropDownFunction: (value) {},
               prefixIcon: AssetPath.locationIcon,
               prefixIconColor: CustomColors.lightBackgroundColor,

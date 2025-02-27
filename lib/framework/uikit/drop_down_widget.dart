@@ -4,7 +4,7 @@ class CustomDropdown extends StatefulWidget {
   const CustomDropdown({super.key});
 
   @override
-  _CustomDropdownState createState() => _CustomDropdownState();
+  State<CustomDropdown> createState() => _CustomDropdownState();
 }
 
 class _CustomDropdownState extends State<CustomDropdown> {
@@ -21,13 +21,20 @@ class _CustomDropdownState extends State<CustomDropdown> {
         child: DropdownButton<String>(
           value: selectedValue,
           dropdownColor: Colors.black,
-          icon: const Icon(Icons.arrow_drop_down, color: Colors.white, size: 24,),
+          icon: const Icon(
+            Icons.arrow_drop_down,
+            color: Colors.white,
+            size: 24,
+          ),
           items: ["Pune", "Mumbai", "Delhi", "Bangalore"]
               .map((city) => DropdownMenuItem(
                     value: city,
                     child: Text(
                       city,
-                      style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ))
               .toList(),
