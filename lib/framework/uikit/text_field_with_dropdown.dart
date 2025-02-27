@@ -93,7 +93,7 @@ class _TextFieldDropDownWidgetState<T>
                 controller: widget.controller,
                 keyboardType: widget.keyboardType,
                 style: TextStyle(
-                  color: widget.fieldTextColor ?? CustomColors.blueColor,
+                  color: widget.fieldTextColor ?? CustomColors.whiteColor,
                 ),
                 maxLength: widget.maxLength,
                 decoration: InputDecoration(

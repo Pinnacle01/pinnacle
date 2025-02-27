@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/explore_home/uikit/trip_details_date_picker.dart';
+import 'package:pinnacle_main/explore_home/uikit/date_picker.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -56,7 +56,12 @@ class _TravelPostState extends State<TravelPost> {
                 userProfileId: GeneralString.userId,
               ),
             ),
-            _commonTextWidget(label: GeneralString.tripName, hintText: "--"),
+            TextFieldWidget(
+              label: GeneralString.tripName,
+              hintText: "--",
+              textFieldTheme: TextFeildTheme.dark,
+              fieldTextColor: CustomColors.whiteColor,
+            ),
             SizedBox(height: Sizes.size10.dp),
             TextFieldDropDownWidget(
               initalValue: 'Pune',
@@ -71,17 +76,24 @@ class _TravelPostState extends State<TravelPost> {
               hintColor: CustomColors.lightBackgroundColor,
             ),
             SizedBox(height: Sizes.size10.dp),
-            buildDateSelector(),
+            CustomDatePicker(
+              label: GeneralString.travelDates,
+              prefixIcon: AssetPath.calendarIcon,
+            ),
             SizedBox(height: Sizes.size10.dp),
-            _commonTextWidget(
+            TextFieldWidget(
               label: GeneralString.budget,
               hintText: "--",
               prefixIcon: AssetPath.walletMoneyIcon,
+              textFieldTheme: TextFeildTheme.dark,
+              fieldTextColor: CustomColors.whiteColor,
             ),
             SizedBox(height: Sizes.size10.dp),
-            _commonTextWidget(
+            TextFieldWidget(
               label: GeneralString.groupSize,
               hintText: GeneralString.preferredGroupSize,
+              textFieldTheme: TextFeildTheme.dark,
+              fieldTextColor: CustomColors.whiteColor,
             ),
             SizedBox(height: Sizes.size10.dp),
             Row(
@@ -97,20 +109,4 @@ class _TravelPostState extends State<TravelPost> {
       )),
     );
   }
-
-  Widget _commonTextWidget({
-    required String label,
-    required String hintText,
-    String? prefixIcon,
-  }) =>
-      TextFieldWidget(
-        label: label,
-        labelSize: Sizes.size16.sp,
-        labelColor: CustomColors.lightBackgroundColor,
-        hintText: hintText,
-        hintColor: CustomColors.lightBackgroundColor,
-        textFieldTheme: TextFeildTheme.dark,
-        prefixIcon: prefixIcon,
-        prefixSize: Sizes.size20.sp,
-      );
 }
