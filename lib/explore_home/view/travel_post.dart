@@ -29,6 +29,7 @@ class _TravelPostState extends State<TravelPost> {
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
       appBar: customAppBarWithShadow(
+        isCenter: true,
         titleName: GeneralString.travelPost,
         backgroundColor: CustomColors.mainBackgroundColor161513,
         titleColor: CustomColors.mainTextColor,

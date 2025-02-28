@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
+import 'package:pinnacle_main/framework/uikit/circle_avatar_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -21,11 +23,11 @@ class NotificationTab extends StatelessWidget {
           Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage(logoImage),
-                  radius: Sizes.size22.sp,
-                  backgroundColor: Colors.transparent,
+                padding: EdgeInsets.all(Sizes.size8.dp),
+                child: CircleAvatarWidget(
+                  imagePath: logoImage,
+                  size: Sizes.size22.sp,
+                  imageType: ImageType.generalImage,
                 ),
               ),
               Visibility(

@@ -1,4 +1,4 @@
-enum ExpenseType{
+enum ExpenseType {
   fuel,
   esential,
   food,
@@ -12,4 +12,15 @@ enum ButtonType {
   buttonWithIcon,
   backIconButton,
   customButton,
+}
+
+enum ImageType {
+  generalImage,
+  networkImage,
+}
+
+enum ExpenseVariant {
+  equal,
+  percentage,
+  money,
 }

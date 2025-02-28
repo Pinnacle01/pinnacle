@@ -17,6 +17,7 @@ PreferredSizeWidget customAppBarWithShadow({
   FontWeight? fontWeight,
   double? fontSize,
   IconButton? trailing,
+  bool isCenter = false,
 }) {
   return PreferredSize(
     preferredSize: Size.fromHeight(WidgetsSizes.appBarHeight.dp),
@@ -31,6 +32,7 @@ PreferredSizeWidget customAppBarWithShadow({
         ],
       ),
       child: AppBar(
+        centerTitle: isCenter,
         toolbarHeight: WidgetsSizes.appBarHeight.dp,
         title: TextWidget(
           text: titleName,

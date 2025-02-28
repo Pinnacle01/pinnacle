@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
+import 'package:pinnacle_main/framework/uikit/circle_avatar_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 
@@ -27,10 +29,10 @@ class UserProfileCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage(userImage),
-            radius: Sizes.size24.sp,
-            backgroundColor: Colors.transparent,
+          CircleAvatarWidget(
+            imagePath: userImage,
+            size: Sizes.size24.sp,
+            imageType: ImageType.generalImage,
           ),
           SizedBox(width: Sizes.size15.dp),
           Column(
