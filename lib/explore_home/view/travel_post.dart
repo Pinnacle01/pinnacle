@@ -131,14 +131,14 @@ class _TravelPostState extends State<TravelPost> {
             ),
             SizedBox(height: Sizes.size10.dp),
             TextWidget(
-              text: GeneralString.languagePreferrance,
+              text: GeneralString.additionalNotes,
               color: CustomColors.lightBackgroundColor,
               size: Sizes.size16.sp,
             ),
             SizedBox(height: Sizes.size7.dp),
             ScrollableNotesBox(
               maxLength: 500,
-              hintText: 'Notes....',
+              hintText: 'Write some requirements for your trip...',
               scrollController: ScrollController(),
             ),
           ],
