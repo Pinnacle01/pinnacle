@@ -130,8 +130,8 @@ class TextFieldWidget extends StatelessWidget {
                           bgColor ?? CustomColors.navCardBackgroundColor222222,
                       hintText: hintText,
                       hintStyle: TextStyle(
-                          color:
-                              hintColor ?? CustomColors.lightBackgroundColor,),
+                        color: hintColor ?? CustomColors.lightBackgroundColor,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(Sizes.size15.sp),
                         borderSide: BorderSide.none,
@@ -151,4 +151,5 @@ class TextFieldWidget extends StatelessWidget {
         size: prefixSize ?? Sizes.size20.sp,
         color: prefixIconColor ?? CustomColors.whiteColor,
       );
+
 }

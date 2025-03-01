@@ -1,29 +1,52 @@
 import 'package:flutter/material.dart';
 
 class TextWidget extends StatelessWidget {
-  const TextWidget(
-      {super.key,
-      required this.text,
-      this.color,
-      this.size,
-      this.fontWeight,
-      this.alignment});
+  const TextWidget({
+    super.key,
+    required this.text,
+    this.color,
+    this.size,
+    this.fontWeight,
+    this.alignment,
+    this.highlightWords = const {},
+    this.highlightColor = Colors.yellow,
+    this.highlightFontWeight = FontWeight.bold,
+  });
 
   final String text;
   final Color? color;
   final double? size;
   final FontWeight? fontWeight;
   final TextAlign? alignment;
+  final Set<String> highlightWords;
+  final Color highlightColor;
+  final FontWeight highlightFontWeight;
+
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontSize: size,
-        fontWeight: fontWeight,
+    List<TextSpan> textSpans = [];
+    text.split(' ').forEach((word) {
+      bool isHighlighted = highlightWords.contains(word);
+      textSpans.add(
+        TextSpan(
+          text: "$word ",
+          style: TextStyle(
+            color: isHighlighted ? highlightColor : color ?? Colors.black,
+            fontSize: size ?? 14.0,
+            fontWeight: isHighlighted
+                ? highlightFontWeight
+                : fontWeight ?? FontWeight.normal,
+          ),
+        ),
+      );
+    });
+
+    return RichText(
+      textAlign: alignment ?? TextAlign.start,
+      text: TextSpan(
+        children: textSpans,
+        style: TextStyle(color: color ?? Colors.black, fontSize: size ?? 14.0),
       ),
-      textAlign: alignment,
     );
   }
 }

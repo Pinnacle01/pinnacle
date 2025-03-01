@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
+import 'package:pinnacle_main/framework/constants/enums.dart';
+import 'package:pinnacle_main/framework/uikit/circle_avatar_widget.dart';
 import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
@@ -36,11 +38,10 @@ class UserWidgets {
           actions: actionIcon,
           title: Row(
             children: [
-              CircleAvatar(
-                backgroundImage: Image.asset(
-                  userImage,
-                ).image,
-                radius: Sizes.size20.sp,
+              CircleAvatarWidget(
+                imagePath: userImage,
+                size: Sizes.size20.sp,
+                imageType: ImageType.generalImage,
               ),
               SizedBox(width: Sizes.size10.dp),
               Column(
@@ -89,11 +90,10 @@ class UserWidgets {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircleAvatar(
-            backgroundImage: Image.asset(
-              userImage,
-            ).image,
-            radius: Sizes.size24.sp,
+          CircleAvatarWidget(
+            imagePath: userImage,
+            size: Sizes.size24.sp,
+            imageType: ImageType.generalImage,
           ),
           SizedBox(
             width: Sizes.size20,

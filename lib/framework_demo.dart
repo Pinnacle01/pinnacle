@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
+import 'package:pinnacle_main/framework/widgets/expense/add_user_expense.dart';
 import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
@@ -20,9 +21,15 @@ import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 
-class FrameworkDemo extends StatelessWidget {
+class FrameworkDemo extends StatefulWidget {
   const FrameworkDemo({super.key});
 
+  @override
+  State<FrameworkDemo> createState() => _FrameworkDemoState();
+}
+
+class _FrameworkDemoState extends State<FrameworkDemo> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,6 +182,32 @@ class FrameworkDemo extends StatelessWidget {
               dropDownFunction: (String? value) {},
               initalValue: '--',
             ),
+
+            // Add User Expense
+            ExpenseSplit(
+              userImage: AssetPath.userImage,
+              userName: 'Yash Vaishnav',
+              value: isSelected,
+              expenseVariant: ExpenseVariant.equal,
+              onChange: (value) {
+                isSelected = value;
+                setState(() {});
+              },
+            ),
+            ExpenseSplit(
+              userImage: AssetPath.userImage,
+              userName: 'Yash Vaishnav',
+              expenseVariant: ExpenseVariant.percentage,
+              controller: TextEditingController(),
+            ),
+            ExpenseSplit(
+              userImage: AssetPath.userImage,
+              userName: 'Yash Vaishnav',
+              expenseVariant: ExpenseVariant.money,
+              controller: TextEditingController(),
+            ),
+
+            const SizedBox(height: 100),
           ],
         ),
       ),

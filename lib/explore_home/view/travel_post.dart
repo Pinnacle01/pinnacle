@@ -31,6 +31,7 @@ class _TravelPostState extends State<TravelPost> {
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
       appBar: customAppBarWithShadow(
+        isCenter: true,
         titleName: GeneralString.travelPost,
         backgroundColor: CustomColors.mainBackgroundColor161513,
         titleColor: CustomColors.mainTextColor,
@@ -135,7 +136,7 @@ class _TravelPostState extends State<TravelPost> {
               color: CustomColors.lightBackgroundColor,
               size: Sizes.size16.sp,
             ),
-            SizedBox(height: Sizes.size7.dp),
+            SizedBox(height: Sizes.size10.dp),
             ScrollableNotesBox(
               maxLength: 500,
               hintText: 'Write some requirements for your trip...',

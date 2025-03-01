@@ -31,6 +31,7 @@ class TripDetails extends StatelessWidget {
         titleName: GeneralString.tripDetail,
         titleColor: CustomColors.mainTextColor,
         fontSize: Sizes.size20.sp,
+        isCenter: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
