@@ -38,6 +38,13 @@ class HomeApp extends StatelessWidget {
                 text: 'Travel Post',
               ),
             ),
+            NormalButton(
+              onPress: () => RouteNavigator.go(context, '/locationpage'),
+              buttonType: ButtonType.normal,
+              label: const TextWidget(
+                text: 'Location Page',
+              ),
+            ),
           ],
         ),
       ),

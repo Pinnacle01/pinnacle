@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pinnacle_main/explore_home/view/explore_home.dart';
+import 'package:pinnacle_main/explore_home/view/location_page.dart';
 import 'package:pinnacle_main/explore_home/view/travel_post.dart';
 import 'package:pinnacle_main/explore_home/view/trip_details.dart';
 
@@ -42,6 +43,10 @@ final List<AppRoute> routers = [
       AppRoute(
         path: 'travelpost',
         builder: (context, state) => const TravelPost(),
+      ),
+       AppRoute(
+        path: 'locationpage',
+        builder: (context, state) => const LocationPage(),
       ),
     ],
   ),
