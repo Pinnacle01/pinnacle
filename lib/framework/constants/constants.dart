@@ -5,4 +5,7 @@ class Constants {
   static const percentSymbol = '%';
 }
 
-class Routes {}
+class Routes {
+  static const travelRequest = 'travel_request';
+  static const planATrip = 'plan_trip';
+}

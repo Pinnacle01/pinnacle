@@ -31,20 +31,6 @@ class HomeApp extends StatelessWidget {
                 text: 'Explore Page',
               ),
             ),
-            NormalButton(
-              onPress: () => RouteNavigator.go(context, '/travelpost'),
-              buttonType: ButtonType.normal,
-              label: const TextWidget(
-                text: 'Travel Post',
-              ),
-            ),
-            NormalButton(
-              onPress: () => RouteNavigator.go(context, '/locationpage'),
-              buttonType: ButtonType.normal,
-              label: const TextWidget(
-                text: 'Location Page',
-              ),
-            ),
           ],
         ),
       ),

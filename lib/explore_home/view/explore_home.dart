@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:pinnacle_main/explore_home/store/explore_page_store.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -26,11 +28,18 @@ class _ExploreHomeState extends State<ExploreHome>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   late TextEditingController controller = TextEditingController();
+  final exploreStore = ExplorePageStore();
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+
+    _tabController.addListener(() {
+      if (_tabController.indexIsChanging == false) {
+        exploreStore.setTabIndex(_tabController.index);
+      }
+    });
   }
 
   @override
@@ -42,9 +51,7 @@ class _ExploreHomeState extends State<ExploreHome>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: CustomfloatingActionButton(
-        onPress: () {},
-      ),
+      floatingActionButton: const CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
       bottomNavigationBar: const CustomBottomNavigationBar(
@@ -71,15 +78,19 @@ class _ExploreHomeState extends State<ExploreHome>
               _categoryBoxButton('Locations', 2),
             ],
           ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                _buildListViewHome('Home'),
-                _buildListViewCategories('Categories'),
-                _buildListViewLocations('Locations'),
-              ],
-            ),
+          Observer(
+            builder: (context) {
+              return Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildListViewHome('Home'),
+                    _buildListViewCategories('Categories'),
+                    _buildListViewLocations('Locations'),
+                  ],
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -88,32 +99,35 @@ class _ExploreHomeState extends State<ExploreHome>
 
   Widget _categoryBoxButton(String title, int index) {
     return Expanded(
-      child: Container(
-        margin: EdgeInsets.symmetric(
-          horizontal: Sizes.size5.dp,
-          vertical: Sizes.size10.dp,
-        ),
-        padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
-        decoration: BoxDecoration(
-          color: _tabController.index == index
-              ? CustomColors.buttonBackgroundCreamColor
-              : CustomColors.mainTextColor,
-          borderRadius: BorderRadius.circular(Sizes.size10.sp),
-        ),
-        child: InkWell(
-          onTap: () {
-            setState(() {
-              _tabController.index = index;
-            });
-          },
-          child: Center(
-            child: TextWidget(
-              text: title,
-              color: CustomColors.mainBackgroundColor161513,
-              fontWeight: FontWeight.w600,
+      child: Observer(
+        builder: (context) {
+          return Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: Sizes.size5.dp,
+              vertical: Sizes.size10.dp,
             ),
-          ),
-        ),
+            padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
+            decoration: BoxDecoration(
+              color: exploreStore.tabIndex == index
+                  ? CustomColors.buttonBackgroundCreamColor
+                  : CustomColors.mainTextColor,
+              borderRadius: BorderRadius.circular(Sizes.size10.sp),
+            ),
+            child: InkWell(
+              onTap: () {
+                exploreStore.setTabIndex(index);
+                _tabController.index = index;
+              },
+              child: Center(
+                child: TextWidget(
+                  text: title,
+                  color: CustomColors.mainBackgroundColor161513,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -174,7 +188,8 @@ class _ExploreHomeState extends State<ExploreHome>
             horizontal: Sizes.size15.dp,
           ),
           child: SingleCategoryCard(
-            onTap: () {},
+            onTap: () =>
+                RouteNavigator.go(context, '/explorepage/locationpage'),
             categoryImage: AssetPath.categoryImage,
           ),
         );

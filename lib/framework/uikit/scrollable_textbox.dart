@@ -24,16 +24,14 @@ class ScrollableNotesBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Sizes.size100.dp,
-      
+      height: Sizes.size120.dp,
       decoration: BoxDecoration(
-        color: CustomColors.cardBackgroundColor313131,
+        color: bgColor ?? CustomColors.cardBackgroundColor313131,
         borderRadius: BorderRadius.circular(Sizes.size10.dp),
       ),
       padding: EdgeInsets.symmetric(horizontal: Sizes.size10.dp),
       child: Scrollbar(
         controller: scrollController,
-
         thumbVisibility: true,
         child: TextField(
           controller: controller,

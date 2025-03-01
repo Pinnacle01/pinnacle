@@ -6,14 +6,16 @@ class CircleAvatarWidget extends StatelessWidget {
   final double size;
   final ImageType imageType;
   final String imagePath;
-  final Color? bgColor; 
+  final Color? bgColor;
+  final Widget? child;
 
   const CircleAvatarWidget({
     super.key,
     this.size = 100,
     required this.imagePath,
     required this.imageType,
-    this.bgColor
+    this.bgColor,
+    this.child,
   });
 
   @override
@@ -24,6 +26,7 @@ class CircleAvatarWidget extends StatelessWidget {
           ? NetworkImage(imagePath)
           : AssetImage(imagePath),
       backgroundColor: bgColor ?? Colors.transparent,
+      child: child,
     );
   }
 }

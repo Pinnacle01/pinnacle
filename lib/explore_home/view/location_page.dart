@@ -17,68 +17,72 @@ class LocationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: CustomfloatingActionButton(
-        onPress: () {},
-      ),
+      floatingActionButton: const CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
       bottomNavigationBar: const CustomBottomNavigationBar(
         currentIndex: 1,
       ),
-      body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ImageWidget(
-                path: AssetPath.dummyImage,
-                width: double.infinity,
-                height: Sizes.size420.dp,
-                fit: BoxFit.cover,
-              ),
-              Positioned(
+      body: SafeArea(
+        child: SingleChildScrollView(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              children: [
+                ImageWidget(
+                  path: AssetPath.dummyLocationImage,
+                  width: double.infinity,
+                  height: Sizes.size420.dp,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
                   top: Sizes.size20.dp,
                   left: Sizes.size10.dp,
-                  child: const CircleBackButtonWidget()),
-              Positioned(
-                bottom: Sizes.size10.dp,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(Sizes.size8.dp),
-                      child: Positioned(
-                        child: TextWidget(
+                  child: CircleBackButtonWidget(
+                    onPress: () {
+                      RouteNavigator.pop(context);
+                    },
+                  ),
+                ),
+                Positioned(
+                  bottom: Sizes.size0.dp,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: Sizes.size20.dp),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(Sizes.size8.dp),
+                          child: TextWidget(
                             text: 'Lonavala',
                             size: Sizes.size30.sp,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic,
                             alignment: TextAlign.center,
-                            color: CustomColors.mainTextColor),
-                      ),
+                            color: CustomColors.mainTextColor,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(Sizes.size8.dp),
+                          child: TextWidget(
+                              text:
+                                  'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
+                              alignment: TextAlign.center,
+                              size: Sizes.size16.sp,
+                              fontStyle: FontStyle.italic,
+                              color: CustomColors.mainTextColor),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(Sizes.size8.dp),
-                      child: Positioned(
-                        bottom: Sizes.size10.dp,
-                        child: TextWidget(
-                            text:
-                                'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
-                            alignment: TextAlign.center,
-                            size: Sizes.size16.sp,
-                            fontStyle: FontStyle.italic,
-                            color: CustomColors.mainTextColor),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          _buildListViewHome(),
-        ],
-      )),
+              ],
+            ),
+            _buildListViewHome(),
+          ],
+        )),
+      ),
     );
   }
 
@@ -86,6 +90,7 @@ class LocationPage extends StatelessWidget {
     return ListView.builder(
       itemCount: 5,
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: EdgeInsets.symmetric(

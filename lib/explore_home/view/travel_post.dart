@@ -149,9 +149,9 @@ class _TravelPostState extends State<TravelPost> {
             ),
             SizedBox(height: Sizes.size10.dp),
             ScrollableNotesBox(
-              maxLength: 500,
               hintText: 'Write some requirements for your trip...',
               scrollController: ScrollController(),
+              bgColor: CustomColors.navCardBackgroundColor222222,
             ),
             SizedBox(height: Sizes.size10.dp),
             Padding(

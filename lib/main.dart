@@ -34,19 +34,19 @@ final List<AppRoute> routers = [
         path: 'explorepage',
         builder: (context, state) => const ExploreHome(),
         subRoutes: [
-          AppRoute(            
+          AppRoute(
+            path: 'travelpost',
+            builder: (context, state) => const TravelPost(),
+          ),
+          AppRoute(
             path: 'tripdetails',
             builder: (context, state) => const TripDetails(),
           ),
+          AppRoute(
+            path: 'locationpage',
+            builder: (context, state) => const LocationPage(),
+          ),
         ],
-      ),
-      AppRoute(
-        path: 'travelpost',
-        builder: (context, state) => const TravelPost(),
-      ),
-       AppRoute(
-        path: 'locationpage',
-        builder: (context, state) => const LocationPage(),
       ),
     ],
   ),

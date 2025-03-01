@@ -37,9 +37,7 @@ class _FrameworkDemoState extends State<FrameworkDemo> {
       appBar: customAppBarWithShadow(
         titleName: GeneralString.appBarTitle,
       ),
-      floatingActionButton: CustomfloatingActionButton(
-        onPress: () {},
-      ),
+      floatingActionButton: const CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       backgroundColor: CustomColors.mainBackgroundColor161513,
       bottomNavigationBar: const CustomBottomNavigationBar(

@@ -6,16 +6,31 @@ import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/uikit/icon_button_widget.dart';
 
 class CircleBackButtonWidget extends StatelessWidget {
-  const CircleBackButtonWidget({super.key});
+  const CircleBackButtonWidget({
+    super.key,
+    this.bgColor,
+    this.size,
+    this.iconColor,
+    this.iconPath,
+    required this.onPress,
+  });
+
+  final Color? bgColor;
+  final double? size;
+  final Color? iconColor;
+  final String? iconPath;
+  final void Function() onPress;
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-        backgroundColor: CustomColors.mainTextColor,
-        child: IconButtonWidget(
-            path: AssetPath.leftButtonIcon,
-            size: Sizes.size14.sp,
-            color: CustomColors.mainBackgroundColor161513,
-            onPress: () {}));
+      backgroundColor: bgColor ?? CustomColors.mainTextColor,
+      child: IconButtonWidget(
+        path: iconPath ?? AssetPath.leftButtonIcon,
+        size: size ?? Sizes.size16.sp,
+        color: iconColor ?? CustomColors.mainBackgroundColor161513,
+        onPress: onPress,
+      ),
+    );
   }
 }
