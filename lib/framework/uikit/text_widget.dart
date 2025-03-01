@@ -11,6 +11,7 @@ class TextWidget extends StatelessWidget {
     this.highlightWords = const {},
     this.highlightColor = Colors.yellow,
     this.highlightFontWeight = FontWeight.bold,
+    this.fontStyle,
   });
 
   final String text;
@@ -21,6 +22,7 @@ class TextWidget extends StatelessWidget {
   final Set<String> highlightWords;
   final Color highlightColor;
   final FontWeight highlightFontWeight;
+  final FontStyle? fontStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class TextWidget extends StatelessWidget {
             fontWeight: isHighlighted
                 ? highlightFontWeight
                 : fontWeight ?? FontWeight.normal,
+            fontStyle: fontStyle,
           ),
         ),
       );
@@ -45,8 +48,13 @@ class TextWidget extends StatelessWidget {
       textAlign: alignment ?? TextAlign.start,
       text: TextSpan(
         children: textSpans,
-        style: TextStyle(color: color ?? Colors.black, fontSize: size ?? 14.0),
+        style: TextStyle(
+          color: color ?? Colors.black,
+          fontSize: size ?? 14.0,
+          fontStyle: fontStyle,
+        ),
       ),
+      softWrap: true,
     );
   }
 }

@@ -8,6 +8,7 @@ class AssetPath {
   static String get biking => 'Biking';
   static String get loadingLocationImage =>
       '${Constants.imagePath}loading_location_image.jpg';
+  static String get dummyImage => '${Constants.imagePath}dummy.jpg';
 
   static String get crossIcon => '${Constants.iconPath}cross_icon.svg';
   static String get tickIcon => '${Constants.iconPath}tick_icon.svg';
