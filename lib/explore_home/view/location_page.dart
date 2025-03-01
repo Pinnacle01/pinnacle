@@ -6,6 +6,7 @@ import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework/uikit/circle_back_button_widget.dart';
+import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
@@ -30,23 +31,23 @@ class LocationPage extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.asset(
-                AssetPath.dummyImage,
+              ImageWidget(
+                path: AssetPath.dummyImage,
                 width: double.infinity,
                 height: Sizes.size420.dp,
                 fit: BoxFit.cover,
               ),
               Positioned(
-                  top: Sizes.size20.sp,
-                  left: Sizes.size10.sp,
+                  top: Sizes.size20.dp,
+                  left: Sizes.size10.dp,
                   child: const CircleBackButtonWidget()),
               Positioned(
-                bottom: Sizes.size10.sp,
+                bottom: Sizes.size10.dp,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(Sizes.size8.sp),
+                      padding: EdgeInsets.all(Sizes.size8.dp),
                       child: Positioned(
                         child: TextWidget(
                             text: 'Lonavala',
@@ -60,7 +61,7 @@ class LocationPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(Sizes.size8.dp),
                       child: Positioned(
-                        bottom: Sizes.size10.sp,
+                        bottom: Sizes.size10.dp,
                         child: TextWidget(
                             text:
                                 'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
