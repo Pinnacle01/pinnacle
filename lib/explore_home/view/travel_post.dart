@@ -6,6 +6,7 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/framework/uikit/small_preference_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
@@ -26,6 +27,7 @@ class _TravelPostState extends State<TravelPost> {
   @override
   Widget build(BuildContext context) {
     List<String> languages = ['English', 'Hindi'];
+    List<String> tags = ['Hiking', 'Camping', 'Trekking', 'Biking'];
     return Scaffold(
       backgroundColor: CustomColors.mainBackgroundColor161513,
       appBar: customAppBarWithShadow(
@@ -96,6 +98,12 @@ class _TravelPostState extends State<TravelPost> {
               fieldTextColor: CustomColors.whiteColor,
             ),
             SizedBox(height: Sizes.size10.dp),
+            TextWidget(
+              text: GeneralString.languagePreferrance,
+              color: CustomColors.lightBackgroundColor,
+              size: Sizes.size16.sp,
+            ),
+            SizedBox(height: Sizes.size7.dp),
             Row(
               children: languages
                   .map((tag) => SmallPreferenceButton(
@@ -103,6 +111,35 @@ class _TravelPostState extends State<TravelPost> {
                         onTap: () {},
                       ))
                   .toList(),
+            ),
+            SizedBox(height: Sizes.size10.dp),
+            TextFieldWidget(
+              label: GeneralString.tags,
+              hintText: "Add Tags",
+              prefixIcon: AssetPath.plusIcon,
+              textFieldTheme: TextFeildTheme.dark,
+              fieldTextColor: CustomColors.whiteColor,
+            ),
+            SizedBox(height: Sizes.size7.dp),
+            Row(
+              children: tags
+                  .map((tag) => SmallPreferenceButton(
+                        label: tag,
+                        onTap: () {},
+                      ))
+                  .toList(),
+            ),
+            SizedBox(height: Sizes.size10.dp),
+            TextWidget(
+              text: GeneralString.languagePreferrance,
+              color: CustomColors.lightBackgroundColor,
+              size: Sizes.size16.sp,
+            ),
+            SizedBox(height: Sizes.size7.dp),
+            ScrollableNotesBox(
+              maxLength: 500,
+              hintText: 'Notes....',
+              scrollController: ScrollController(),
             ),
           ],
         ),
