@@ -30,14 +30,16 @@ class LocationPage extends StatelessWidget {
           children: [
             Stack(
               children: [
-                ImageWidget(
-                  path: AssetPath.dummyLocationImage,
-                  width: double.infinity,
-                  height: Sizes.size420.dp,
-                  fit: BoxFit.cover,
+                Center(
+                  child: ImageWidget(
+                    path: AssetPath.dummyLocationImage,
+                    width: double.infinity,
+                    height: Sizes.size420.dp,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Positioned(
-                  top: Sizes.size20.dp,
+                  top: Sizes.size10.dp,
                   left: Sizes.size10.dp,
                   child: CircleBackButtonWidget(
                     onPress: () {
@@ -47,37 +49,41 @@ class LocationPage extends StatelessWidget {
                 ),
                 Positioned(
                   bottom: Sizes.size0.dp,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Sizes.size20.dp),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: Sizes.size15.dp),
+                    width: MediaQuery.of(context).size.width,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(Sizes.size8.dp),
-                          child: TextWidget(
-                            text: 'Lonavala',
-                            size: Sizes.size30.sp,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            alignment: TextAlign.center,
-                            color: CustomColors.mainTextColor,
-                          ),
+                        TextWidget(
+                          text: 'Lonavala',
+                          size: Sizes.size30.sp,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          alignment: TextAlign.center,
+                          color: CustomColors.mainTextColor,
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(Sizes.size8.dp),
-                          child: TextWidget(
-                              text:
-                                  'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
-                              alignment: TextAlign.center,
-                              size: Sizes.size16.sp,
-                              fontStyle: FontStyle.italic,
-                              color: CustomColors.mainTextColor),
+                        TextWidget(
+                          text:
+                              'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
+                          alignment: TextAlign.center,
+                          size: Sizes.size16.sp,
+                          fontStyle: FontStyle.italic,
+                          color: CustomColors.mainTextColor,
                         ),
                       ],
                     ),
                   ),
                 ),
               ],
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(
+                Sizes.size15.dp,
+                Sizes.size10.dp,
+                Sizes.size15.dp,
+                Sizes.size5.dp,
+              ),
             ),
             _buildListViewHome(),
           ],
