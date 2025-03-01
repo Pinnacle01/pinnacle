@@ -75,7 +75,7 @@ class NotificationTab extends StatelessWidget {
           ),
           TextWidget(
             text: '1m ago',
-            color: CustomColors.lightBackgroundColor,
+            color: CustomColors.lightBackgroundColor9A9A9A,
             size: Sizes.size16.sp,
           )
         ],

@@ -48,7 +48,7 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
           text: widget.label,
           size: widget.labelSize ?? Sizes.size16.sp,
           fontWeight: FontWeight.bold,
-          color: widget.labelColor ?? CustomColors.lightBackgroundColor,
+          color: widget.labelColor ?? CustomColors.lightBackgroundColor9A9A9A,
         ),
         SizedBox(height: Sizes.size10.dp),
         Row(
@@ -132,7 +132,7 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
                       hintText: hintText,
                       hintStyle: TextStyle(
                         color: widget.hintColor ??
-                            CustomColors.lightBackgroundColor,
+                            CustomColors.lightBackgroundColor9A9A9A,
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(Sizes.size15.sp),

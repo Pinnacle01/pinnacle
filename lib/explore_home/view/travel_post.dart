@@ -6,6 +6,7 @@ import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/icon_button_widget.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/framework/uikit/small_preference_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_widget.dart';
@@ -38,10 +39,13 @@ class _TravelPostState extends State<TravelPost> {
         fontSize: Sizes.size20.sp,
         fontWeight: FontWeight.w600,
         actionIcon: [
-          TextWidget(
-            text: GeneralString.post,
-            fontWeight: FontWeight.w600,
-            color: CustomColors.whiteColor,
+          Padding(
+            padding: EdgeInsets.only(right: Sizes.size10.dp),
+            child: TextWidget(
+              text: GeneralString.post,
+              fontWeight: FontWeight.w600,
+              color: CustomColors.whiteColor,
+            ),
           )
         ],
       ),
@@ -71,12 +75,12 @@ class _TravelPostState extends State<TravelPost> {
               dropDownList: const ['Mumbai', 'yehh'],
               dropDownFunction: (value) {},
               prefixIcon: AssetPath.locationIcon,
-              prefixIconColor: CustomColors.lightBackgroundColor,
+              prefixIconColor: CustomColors.lightBackgroundColor9A9A9A,
               label: GeneralString.selectCity,
               labelSize: Sizes.size16.sp,
-              labelColor: CustomColors.lightBackgroundColor,
+              labelColor: CustomColors.lightBackgroundColor9A9A9A,
               hintText: GeneralString.enterLocation,
-              hintColor: CustomColors.lightBackgroundColor,
+              hintColor: CustomColors.lightBackgroundColor9A9A9A,
             ),
             SizedBox(height: Sizes.size10.dp),
             CustomDatePicker(
@@ -101,8 +105,9 @@ class _TravelPostState extends State<TravelPost> {
             SizedBox(height: Sizes.size10.dp),
             TextWidget(
               text: GeneralString.languagePreferrance,
-              color: CustomColors.lightBackgroundColor,
+              color: CustomColors.lightBackgroundColor9A9A9A,
               size: Sizes.size16.sp,
+              fontWeight: FontWeight.bold,
             ),
             SizedBox(height: Sizes.size7.dp),
             Row(
@@ -122,18 +127,24 @@ class _TravelPostState extends State<TravelPost> {
               fieldTextColor: CustomColors.whiteColor,
             ),
             SizedBox(height: Sizes.size7.dp),
-            Row(
-              children: tags
-                  .map((tag) => SmallPreferenceButton(
-                        label: tag,
-                        onTap: () {},
-                      ))
-                  .toList(),
+            SizedBox(
+              height: Sizes.size35.sp,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                children: tags
+                    .map((tag) => SmallPreferenceButton(
+                          label: tag,
+                          onTap: () {},
+                        ))
+                    .toList(),
+              ),
             ),
             SizedBox(height: Sizes.size10.dp),
             TextWidget(
               text: GeneralString.additionalNotes,
-              color: CustomColors.lightBackgroundColor,
+              fontWeight: FontWeight.bold,
+              color: CustomColors.lightBackgroundColor9A9A9A,
               size: Sizes.size16.sp,
             ),
             SizedBox(height: Sizes.size10.dp),
@@ -142,6 +153,28 @@ class _TravelPostState extends State<TravelPost> {
               hintText: 'Write some requirements for your trip...',
               scrollController: ScrollController(),
             ),
+            SizedBox(height: Sizes.size10.dp),
+            Padding(
+              padding: EdgeInsets.only(left: Sizes.size10.dp),
+              child: Row(
+                children: [
+                  IconButtonWidget(
+                    path: AssetPath.cameraIcon,
+                    size: Sizes.size20.sp,
+                    onPress: () {},
+                    color: CustomColors.lightBackgroundColor9A9A9A,
+                  ),
+                  SizedBox(width: Sizes.size20.dp),
+                  IconButtonWidget(
+                    path: AssetPath.imageGalleryIcon,
+                    size: Sizes.size20.sp,
+                    onPress: () {},
+                    color: CustomColors.lightBackgroundColor9A9A9A,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: Sizes.size15.dp),
           ],
         ),
       )),

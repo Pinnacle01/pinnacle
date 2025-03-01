@@ -26,6 +26,7 @@ class GeneralString {
   static String get tags => 'Tags';
   static String get languagePreferrance => 'Language Preferrance';
   static String get additionalNotes => 'Additional Notes';
+  static String get unpaidExpense => 'Unpaid Expense';
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';

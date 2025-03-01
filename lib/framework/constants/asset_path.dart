@@ -35,4 +35,6 @@ class AssetPath {
   static String get walletMoneyIcon =>
       '${Constants.iconPath}wallet_money_icon.svg';
   static String get calendarIcon => '${Constants.iconPath}calendar_icon.svg';
+  static String get cameraIcon => '${Constants.iconPath}camera_icon.svg';
+  static String get imageGalleryIcon => '${Constants.iconPath}image_icon.svg';
 }

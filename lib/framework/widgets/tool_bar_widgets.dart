@@ -13,7 +13,7 @@ PreferredSizeWidget customAppBarWithShadow({
   Color? iconColor,
   double? iconSize,
   Color? backgroundColor,
-  List<TextWidget>? actionIcon,
+  List<Widget>? actionIcon,
   FontWeight? fontWeight,
   double? fontSize,
   IconButton? trailing,
@@ -32,6 +32,7 @@ PreferredSizeWidget customAppBarWithShadow({
         ],
       ),
       child: AppBar(
+        actions: actionIcon,
         centerTitle: isCenter,
         toolbarHeight: WidgetsSizes.appBarHeight.dp,
         title: TextWidget(

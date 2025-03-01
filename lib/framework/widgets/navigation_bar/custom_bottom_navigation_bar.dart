@@ -93,7 +93,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         fit: BoxFit.contain,
         color: isActive
             ? CustomColors.buttonBackgroundCreamColor
-            : CustomColors.lightBackgroundColor,
+            : CustomColors.lightBackgroundColor9A9A9A,
       ),
       // Text(
       //   label,

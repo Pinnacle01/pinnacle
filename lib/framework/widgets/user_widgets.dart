@@ -113,7 +113,7 @@ class UserWidgets {
                   child: TextWidget(
                     text: usermessage!,
                     size: Sizes.size16.sp,
-                    color: CustomColors.lightBackgroundColor,
+                    color: CustomColors.lightBackgroundColor9A9A9A,
                   ),
                 ),
               ],
