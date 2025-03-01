@@ -58,7 +58,7 @@ class _SmallPreferenceButtonState extends State<SmallPreferenceButton> {
             text: widget.label,
             color: !isSelected
                 ? (widget.defaultLabelColor ??
-                    CustomColors.lightBackgroundColor)
+                    CustomColors.lightBackgroundColor9A9A9A)
                 : (widget.onTaplabelColor ?? CustomColors.whiteColor),
             size: widget.labelSize ?? Sizes.size14.sp,
           ),

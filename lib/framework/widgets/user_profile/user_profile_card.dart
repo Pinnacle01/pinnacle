@@ -31,7 +31,7 @@ class UserProfileCard extends StatelessWidget {
         children: [
           CircleAvatarWidget(
             imagePath: userImage,
-            size: Sizes.size24.sp,
+            size: Sizes.size40.sp,
             imageType: ImageType.generalImage,
           ),
           SizedBox(width: Sizes.size15.dp),
@@ -48,7 +48,7 @@ class UserProfileCard extends StatelessWidget {
               SizedBox(width: Sizes.size5.dp),
               TextWidget(
                 text: '@$userProfileId',
-                color: CustomColors.lightBackgroundColor,
+                color: CustomColors.lightBackgroundColor9A9A9A,
                 size: Sizes.size14.sp,
               ),
             ],

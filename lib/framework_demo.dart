@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
 import 'package:pinnacle_main/framework/widgets/expense/add_user_expense.dart';
+import 'package:pinnacle_main/framework/widgets/expense/single_user_expense.dart';
 import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
 import 'package:pinnacle_main/explore_home/uikit/single_category_card.dart';
@@ -207,6 +208,12 @@ class _FrameworkDemoState extends State<FrameworkDemo> {
               controller: TextEditingController(),
             ),
 
+            UnpaidUserExpense(
+              rupees: 500,
+              unpaidExpense: 2,
+              userName: GeneralString.userName,
+              isOwned: true,
+            ),
             const SizedBox(height: 100),
           ],
         ),

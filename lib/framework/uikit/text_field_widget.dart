@@ -105,7 +105,7 @@ class TextFieldWidget extends StatelessWidget {
             text: label,
             size: labelSize ?? Sizes.size16.sp,
             fontWeight: FontWeight.bold,
-            color: labelColor ?? CustomColors.lightBackgroundColor,
+            color: labelColor ?? CustomColors.lightBackgroundColor9A9A9A,
           ),
           SizedBox(height: Sizes.size10.dp),
           Container(
@@ -130,7 +130,8 @@ class TextFieldWidget extends StatelessWidget {
                           bgColor ?? CustomColors.navCardBackgroundColor222222,
                       hintText: hintText,
                       hintStyle: TextStyle(
-                        color: hintColor ?? CustomColors.lightBackgroundColor,
+                        color: hintColor ??
+                            CustomColors.lightBackgroundColor9A9A9A,
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(Sizes.size15.sp),
@@ -151,5 +152,4 @@ class TextFieldWidget extends StatelessWidget {
         size: prefixSize ?? Sizes.size20.sp,
         color: prefixIconColor ?? CustomColors.whiteColor,
       );
-
 }
