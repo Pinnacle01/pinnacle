@@ -11,16 +11,11 @@ class CircleBackButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-        backgroundColor: CustomColors.mainBackgroundColor161513,
+        backgroundColor: CustomColors.mainTextColor,
         child: IconButtonWidget(
-            path: AssetPath.rightBackButtonIcon,
+            path: AssetPath.leftButtonIcon,
             size: Sizes.size14.dp,
-            onPress: () {})
-
-        // IconButton(
-        //   icon: Icon(Icons.arrow_back, color: CustomColors.mainTextColor),
-        //   onPressed: () => Navigator.pop(context),
-        // ),
-        );
+            color: CustomColors.mainBackgroundColor161513,
+            onPress: () {}));
   }
 }
