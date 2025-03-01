@@ -14,7 +14,7 @@ class CircleBackButtonWidget extends StatelessWidget {
         backgroundColor: CustomColors.mainTextColor,
         child: IconButtonWidget(
             path: AssetPath.leftButtonIcon,
-            size: Sizes.size14.dp,
+            size: Sizes.size14.sp,
             color: CustomColors.mainBackgroundColor161513,
             onPress: () {}));
   }
