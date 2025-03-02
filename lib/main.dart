@@ -47,11 +47,11 @@ final List<AppRoute> routers = [
             path: 'locationpage',
             builder: (context, state) => const LocationPage(),
           ),
+          AppRoute(
+            path: 'categorypage',
+            builder: (context, state) => const CategoryPage(),
+          ),
         ],
-      ),
-      AppRoute(
-        path: 'categorypage',
-        builder: (context, state) => const CategoryPage(),
       ),
     ],
   ),

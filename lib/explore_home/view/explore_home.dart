@@ -35,11 +35,13 @@ class _ExploreHomeState extends State<ExploreHome>
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
 
-    _tabController.addListener(() {
-      if (_tabController.indexIsChanging == false) {
-        exploreStore.setTabIndex(_tabController.index);
-      }
-    });
+    _tabController.addListener(
+      () {
+        if (_tabController.indexIsChanging == false) {
+          exploreStore.setTabIndex(_tabController.index);
+        }
+      },
+    );
   }
 
   @override
@@ -118,11 +120,14 @@ class _ExploreHomeState extends State<ExploreHome>
                 exploreStore.setTabIndex(index);
                 _tabController.index = index;
               },
-              child: Center(
-                child: TextWidget(
-                  text: title,
-                  color: CustomColors.mainBackgroundColor161513,
-                  fontWeight: FontWeight.w600,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: Sizes.size5.dp),
+                child: Center(
+                  child: TextWidget(
+                    text: title,
+                    color: CustomColors.mainBackgroundColor161513,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
@@ -169,7 +174,8 @@ class _ExploreHomeState extends State<ExploreHome>
             horizontal: Sizes.size15.dp,
           ),
           child: SingleCategoryCard(
-            onTap: () {},
+            onTap: () =>
+                RouteNavigator.go(context, '/explorepage/categorypage'),
             categoryImage: AssetPath.categoryImage,
           ),
         );
