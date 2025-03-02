@@ -11,6 +11,7 @@ import 'package:pinnacle_main/framework/services/app_router.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
+import 'package:pinnacle_main/profile%20section/view/profile.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -34,7 +35,7 @@ final List<AppRoute> routers = [
         path: 'explorepage',
         builder: (context, state) => const ExploreHome(),
         subRoutes: [
-          AppRoute(            
+          AppRoute(
             path: 'tripdetails',
             builder: (context, state) => const TripDetails(),
           ),
@@ -44,9 +45,13 @@ final List<AppRoute> routers = [
         path: 'travelpost',
         builder: (context, state) => const TravelPost(),
       ),
-       AppRoute(
+      AppRoute(
         path: 'locationpage',
         builder: (context, state) => const LocationPage(),
+      ),
+      AppRoute(
+        path: 'profile',
+        builder: (context, state) => const ProfilePage(),
       ),
     ],
   ),

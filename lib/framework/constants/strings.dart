@@ -30,6 +30,7 @@ class GeneralString {
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
+  static String get profile => 'Profile';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
