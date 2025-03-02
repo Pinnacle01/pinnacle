@@ -53,6 +53,7 @@ class LocationPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(Sizes.size8.dp),
                         child: Positioned(
+                          bottom: Sizes.size20.dp,
                           child: TextWidget(
                               text: 'Lonavala',
                               size: Sizes.size30.sp,
