@@ -13,6 +13,7 @@ class NerabyAttractionSmallCard extends StatefulWidget {
   final String locationName;
   final String distance;
   final Function onTap;
+  final bool isEnable;
 
   const NerabyAttractionSmallCard({
     super.key,
@@ -20,6 +21,7 @@ class NerabyAttractionSmallCard extends StatefulWidget {
     required this.distance,
     required this.imagePath,
     required this.onTap,
+    this.isEnable = true,
   });
 
   @override
@@ -65,26 +67,27 @@ class _NerabyAttractionSmallCardState extends State<NerabyAttractionSmallCard> {
             ],
           ),
         ),
-        Positioned(
-          top: 0,
-          right: 0,
-          child: InkWell(
-            onTap: () {
-              if (!isTick) {
-                iconPath = AssetPath.plusAddGreenIcon;
-                isTick = true;
-              } else {
-                iconPath = AssetPath.minusRedIcon;
-                isTick = false;
-              }
-              setState(() {});
-            },
-            child: IconWidget(
-              path: iconPath,
-              size: Sizes.size35.sp,
+        if (widget.isEnable)
+          Positioned(
+            top: 0,
+            right: 0,
+            child: InkWell(
+              onTap: () {
+                if (!isTick) {
+                  iconPath = AssetPath.plusAddGreenIcon;
+                  isTick = true;
+                } else {
+                  iconPath = AssetPath.minusRedIcon;
+                  isTick = false;
+                }
+                setState(() {});
+              },
+              child: IconWidget(
+                path: iconPath,
+                size: Sizes.size35.sp,
+              ),
             ),
           ),
-        ),
       ],
     );
   }

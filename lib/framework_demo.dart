@@ -149,6 +149,40 @@ class _FrameworkDemoState extends State<FrameworkDemo> {
               ),
             ),
 
+            SizedBox(
+              height: Sizes.size210.dp,
+              child: ListView(
+                padding: EdgeInsets.symmetric(
+                  horizontal: Sizes.size10.dp,
+                  vertical: Sizes.size5.dp,
+                ),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                    isEnable: false,
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                    isEnable: false,
+                  ),
+                  NerabyAttractionSmallCard(
+                    imagePath: AssetPath.loadingLocationImage,
+                    locationName: 'Lonavala',
+                    distance: '2.5',
+                    onTap: () {},
+                    isEnable: false,
+                  ),
+                ],
+              ),
+            ),
+
             // Request Card
             GeneralComponent.requestCardDataInfo(
               iconPath: AssetPath.locationIcon,
