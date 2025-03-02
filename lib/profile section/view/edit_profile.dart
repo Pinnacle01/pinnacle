@@ -36,16 +36,18 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: TextFieldWidget(
                   label: GeneralString.editUserId,
                   hintText: "@amitrana",
                   keyboardType: TextInputType.name,
                   textFieldTheme: TextFeildTheme.light,
+                  highlightColor: CustomColors.blueColor,
+                  highlightWords: {GeneralString.editItOnce},
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: TextFieldWidget(
                   label: GeneralString.editEmail,
                   hintText: "abcd@gmail.com",
@@ -54,9 +56,7 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  top: Sizes.size20.dp,
-                ),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: TextFieldWidget(
                   label: GeneralString.editPhone,
                   hintText: "65484615468",
@@ -65,7 +65,7 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: TextFieldWidget(
                   label: GeneralString.editCity,
                   hintText: "Pune",
@@ -74,9 +74,7 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  top: Sizes.size20.dp,
-                ),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: TextFieldWidget(
                   label: GeneralString.editState,
                   hintText: "Maharastra",
@@ -85,8 +83,7 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                    top: Sizes.size20.dp, bottom: Sizes.size10.dp),
+                padding: EdgeInsets.only(top: Sizes.size10.dp),
                 child: NormalButton(
                     label: TextWidget(text: GeneralString.save),
                     onPress: () {},

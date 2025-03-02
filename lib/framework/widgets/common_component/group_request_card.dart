@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
-import 'package:pinnacle_main/framework/uikit/image_button_widget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_button_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/user_profile/user_profile_card.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
@@ -58,18 +58,16 @@ class GroupRequestCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ImageButtonWidget(
-                iconPath: AssetPath.tickIcon,
-                size: Sizes.size35.sp,
+              IconButtonWidget(
+                path: AssetPath.tickIcon,
+                size: Sizes.size24.sp,
                 onPress: () {},
-                iconType: IconType.svg,
               ),
               SizedBox(height: Sizes.size5.dp),
-              ImageButtonWidget(
-                iconPath: AssetPath.crossIcon,
-                size: Sizes.size35.sp,
+              IconButtonWidget(
+                size: Sizes.size24.sp,
+                path: AssetPath.crossIcon,
                 onPress: () {},
-                iconType: IconType.svg,
               )
             ],
           ),

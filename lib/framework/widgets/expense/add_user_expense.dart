@@ -51,7 +51,7 @@ class _ExpenseSplitState extends State<ExpenseSplit> {
         CircleAvatarWidget(
           imagePath: AssetPath.userImage,
           imageType: ImageType.generalImage,
-          size: Sizes.size40.sp,
+          radius: Sizes.size24.sp,
         ),
         SizedBox(width: Sizes.size10.dp),
         Expanded(

@@ -73,10 +73,6 @@ class NormalButton extends StatelessWidget {
             label,
             Visibility(
               visible: icon != null,
-              child: SizedBox(width: Sizes.size10.dp),
-            ),
-            Visibility(
-              visible: icon != null,
               child: icon!,
             ),
           ],

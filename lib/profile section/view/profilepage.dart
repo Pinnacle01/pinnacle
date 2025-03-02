@@ -68,7 +68,10 @@ class ProfilePage extends StatelessWidget {
                     child: NormalButton(
                       buttonType: ButtonType.buttonWithIcon,
                       onPress: () => {
-                        RouteNavigator.push(context, '/profileSection/editProfile')
+                        RouteNavigator.push(
+                          context,
+                          '/profileSection/editProfile',
+                        )
                       },
                       label: TextWidget(
                         text: GeneralString.edit,

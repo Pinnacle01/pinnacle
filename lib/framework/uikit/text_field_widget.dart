@@ -16,6 +16,7 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final TextFeildTheme textFieldTheme;
+  final double? radius;
   final String? prefixIcon;
   final double? labelSize;
   final double? prefixSize;
@@ -25,12 +26,16 @@ class TextFieldWidget extends StatelessWidget {
   final Color? fieldTextColor;
   final Color? prefixIconColor;
   final int? maxLength;
+  final Set<String> highlightWords;
+  final Color highlightColor;
+  final FontWeight highlightFontWeight;
 
   const TextFieldWidget({
     super.key,
     required this.label,
     required this.hintText,
     required this.textFieldTheme,
+    this.radius,
     this.hintColor,
     this.labelColor,
     this.labelSize,
@@ -42,6 +47,9 @@ class TextFieldWidget extends StatelessWidget {
     this.fieldTextColor,
     this.prefixIconColor,
     this.maxLength,
+    this.highlightWords = const {},
+    this.highlightColor = Colors.yellow,
+    this.highlightFontWeight = FontWeight.bold,
   });
 
   @override
@@ -62,13 +70,16 @@ class TextFieldWidget extends StatelessWidget {
             size: labelSize ?? Sizes.size16.sp,
             fontWeight: FontWeight.bold,
             color: labelColor ?? Colors.white,
+            highlightColor: highlightColor,
+            highlightWords: highlightWords,
+            highlightFontWeight: highlightFontWeight,
           ),
           SizedBox(height: Sizes.size10.dp),
           Container(
             padding: EdgeInsets.only(right: Sizes.size20.dp),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Sizes.size15.sp),
-              color: bgColor ?? CustomColors.navCardBackgroundColor222222,
+              borderRadius: BorderRadius.circular(radius ?? Sizes.size15.sp),
+              color: bgColor ?? CustomColors.whiteShadeEBEDED,
             ),
             child: TextField(
               maxLength: maxLength,
@@ -89,7 +100,8 @@ class TextFieldWidget extends StatelessWidget {
                     color:
                         hintColor ?? CustomColors.navCardBackgroundColor222222),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(Sizes.size30.sp),
+                  borderRadius:
+                      BorderRadius.circular(radius ?? Sizes.size15.sp),
                   borderSide: BorderSide.none,
                 ),
               ),
@@ -111,7 +123,7 @@ class TextFieldWidget extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(right: Sizes.size20.dp),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Sizes.size15.sp),
+              borderRadius: BorderRadius.circular(radius ?? Sizes.size15.sp),
               color: bgColor ?? CustomColors.navCardBackgroundColor222222,
             ),
             child: Row(
@@ -134,7 +146,8 @@ class TextFieldWidget extends StatelessWidget {
                             CustomColors.lightBackgroundColor9A9A9A,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(Sizes.size15.sp),
+                        borderRadius:
+                            BorderRadius.circular(radius ?? Sizes.size15.sp),
                         borderSide: BorderSide.none,
                       ),
                     ),

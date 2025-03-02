@@ -25,7 +25,7 @@ class NotificationTab extends StatelessWidget {
                 padding: EdgeInsets.all(Sizes.size8.dp),
                 child: CircleAvatarWidget(
                   imagePath: logoImage,
-                  size: Sizes.size22.sp,
+                  radius: Sizes.size22.sp,
                   imageType: ImageType.generalImage,
                 ),
               ),

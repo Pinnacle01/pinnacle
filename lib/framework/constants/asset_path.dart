@@ -1,7 +1,7 @@
 import 'package:pinnacle_main/framework/constants/constants.dart';
 
 class AssetPath {
-  //Images
+  // Images
   static String get userImage => '${Constants.imagePath}profile_pic.jpg';
   static String get userPostImage =>
       '${Constants.imagePath}travel_image_component.jpeg';
@@ -50,4 +50,6 @@ class AssetPath {
   static String get privacyIcon => '${Constants.iconPath}lock_icon.png';
   static String get editIcon => '${Constants.iconPath}edit_icon.png';
   static String get locationPinIcon => '${Constants.iconPath}pin_icon.png';
+  static String get editPencilIcon =>
+      '${Constants.iconPath}edit_pencil_icon.svg';
 }

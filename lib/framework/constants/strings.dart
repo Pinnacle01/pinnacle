@@ -58,6 +58,7 @@ class GeneralString {
 
   //Edit profile
   static String get editUserId => 'User Id (You can edit it only once !)';
+  static String get editItOnce => '(You can edit it only once !)';
   static String get editEmail => 'Email';
   static String get editPhone => 'Phone';
   static String get editCity => 'City';

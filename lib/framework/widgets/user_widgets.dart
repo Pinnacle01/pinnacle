@@ -40,7 +40,7 @@ class UserWidgets {
             children: [
               CircleAvatarWidget(
                 imagePath: userImage,
-                size: Sizes.size20.sp,
+                radius: Sizes.size20.sp,
                 imageType: ImageType.generalImage,
               ),
               SizedBox(width: Sizes.size10.dp),
@@ -92,7 +92,7 @@ class UserWidgets {
         children: [
           CircleAvatarWidget(
             imagePath: userImage,
-            size: Sizes.size24.sp,
+            radius: Sizes.size24.sp,
             imageType: ImageType.generalImage,
           ),
           SizedBox(
