@@ -125,7 +125,9 @@ class _ExploreHomeState extends State<ExploreHome>
                 child: Center(
                   child: TextWidget(
                     text: title,
-                    color: CustomColors.mainBackgroundColor161513,
+                    color: exploreStore.tabIndex == index
+                        ? CustomColors.whiteColor
+                        : CustomColors.mainBackgroundColor161513,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
