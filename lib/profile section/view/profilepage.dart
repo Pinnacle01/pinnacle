@@ -5,6 +5,7 @@ import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/normal_button.dart';
 import 'package:pinnacle_main/framework/uikit/small_preference_button.dart';
@@ -37,6 +38,7 @@ class ProfilePage extends StatelessWidget {
                 child: ProfilePic(
                   userId: GeneralString.userId,
                   username: GeneralString.userName,
+                  isEditable: false,
                 ),
               ),
             ),
@@ -65,7 +67,9 @@ class ProfilePage extends StatelessWidget {
                   Expanded(
                     child: NormalButton(
                       buttonType: ButtonType.buttonWithIcon,
-                      onPress: () => {},
+                      onPress: () => {
+                        RouteNavigator.push(context, '/profileSection/editProfile')
+                      },
                       label: TextWidget(
                         text: GeneralString.edit,
                         color: CustomColors.whiteColor,

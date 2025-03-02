@@ -12,11 +12,13 @@ class ProfilePic extends StatelessWidget {
     this.profilePic,
     required this.username,
     required this.userId,
+    required this.isEditable,
   });
 
   final String? profilePic;
   final String username;
   final String userId;
+  final bool isEditable;
 
   @override
   Widget build(BuildContext context) {

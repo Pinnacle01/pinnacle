@@ -31,6 +31,7 @@ class GeneralString {
   static String get languagePreferrance => 'Language Preferrance';
   static String get additionalNotes => 'Additional Notes';
   static String get unpaidExpense => 'Unpaid Expense';
+  static String get save => 'Save';
   static String get totalTripMade => 'Total Trips Made';
 
   static String get tripDetail => 'Trip Details';
@@ -49,11 +50,16 @@ class GeneralString {
   static String get notification => 'Notification';
   static String get helpAndSupport => 'Help And Support';
   static String get privacy => 'Privacy';
-  
+  static String get editProfile => 'Edit Profile';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
-  // static String get notificationTitle => 'Notification Title';
   static String get grouprequestcard => 'Group Admission Request';
+
+  //Edit profile
+  static String get editUserId => 'User Id (You can edit it only once !)';
+  static String get editEmail => 'Email';
+  static String get editPhone => 'Phone';
+  static String get editCity => 'City';
+  static String get editState => 'State';
 }
-// Notification Caption ..... Notification Substring

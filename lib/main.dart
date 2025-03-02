@@ -13,7 +13,7 @@ import 'package:pinnacle_main/framework/services/app_router.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
-import 'package:pinnacle_main/profile%20section/view/profile.dart';
+import 'package:pinnacle_main/profile%20section/view/profilepage.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -56,9 +56,14 @@ final List<AppRoute> routers = [
         ],
       ),
       AppRoute(
-        path: 'profileSection',
-        builder: (context, state) => const ProfilePage(),
-      ),
+          path: 'profileSection',
+          builder: (context, state) => const ProfilePage(),
+          subRoutes: [
+            AppRoute(
+              path: 'editProfile',
+              builder: (context, state) => const ProfilePage(),
+            ),
+          ]),
     ],
   ),
 ];
