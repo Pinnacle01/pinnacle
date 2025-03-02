@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pinnacle_main/explore_home/uikit/general_component.dart';
 import 'package:pinnacle_main/framework/uikit/text_field_with_dropdown.dart';
 import 'package:pinnacle_main/framework/widgets/expense/add_user_expense.dart';
+import 'package:pinnacle_main/framework/widgets/expense/expense_tile.dart';
 import 'package:pinnacle_main/framework/widgets/expense/single_user_expense.dart';
 import 'package:pinnacle_main/framework/widgets/neraby_attraction_small_card.dart';
 import 'package:pinnacle_main/framework/uikit/scrollable_textbox.dart';
@@ -212,6 +213,13 @@ class _FrameworkDemoState extends State<FrameworkDemo> {
               userName: GeneralString.userName,
               isOwned: true,
             ),
+
+            const ExpenseTile(
+              amount: '500',
+              expenseType: 'Shopping',
+              percentage: 50,
+            ),
+
             const SizedBox(height: 100),
           ],
         ),

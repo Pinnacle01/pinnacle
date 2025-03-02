@@ -27,6 +27,7 @@ class EditProfile extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(Sizes.size20.dp),
           child: Column(
+            spacing: Sizes.size10.dp,
             children: [
               Center(
                 child: ProfilePic(
@@ -35,60 +36,42 @@ class EditProfile extends StatelessWidget {
                   username: GeneralString.userName,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: TextFieldWidget(
-                  label: GeneralString.editUserId,
-                  hintText: "@amitrana",
-                  keyboardType: TextInputType.name,
-                  textFieldTheme: TextFeildTheme.light,
-                  highlightColor: CustomColors.blueColor,
-                  highlightWords: {GeneralString.editItOnce},
-                ),
+              TextFieldWidget(
+                label: GeneralString.editUserId,
+                hintText: "@amitrana",
+                keyboardType: TextInputType.name,
+                textFieldTheme: TextFeildTheme.light,
+                highlightColor: CustomColors.blueColor,
+                highlightWords: {GeneralString.editItOnce},
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: TextFieldWidget(
-                  label: GeneralString.editEmail,
-                  hintText: "abcd@gmail.com",
-                  keyboardType: TextInputType.emailAddress,
-                  textFieldTheme: TextFeildTheme.light,
-                ),
+              TextFieldWidget(
+                label: GeneralString.editEmail,
+                hintText: "abcd@gmail.com",
+                keyboardType: TextInputType.emailAddress,
+                textFieldTheme: TextFeildTheme.light,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: TextFieldWidget(
-                  label: GeneralString.editPhone,
-                  hintText: "65484615468",
-                  keyboardType: TextInputType.phone,
-                  textFieldTheme: TextFeildTheme.light,
-                ),
+              TextFieldWidget(
+                label: GeneralString.editPhone,
+                hintText: "65484615468",
+                keyboardType: TextInputType.phone,
+                textFieldTheme: TextFeildTheme.light,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: TextFieldWidget(
-                  label: GeneralString.editCity,
-                  hintText: "Pune",
-                  keyboardType: TextInputType.streetAddress,
-                  textFieldTheme: TextFeildTheme.light,
-                ),
+              TextFieldWidget(
+                label: GeneralString.editCity,
+                hintText: "Pune",
+                keyboardType: TextInputType.streetAddress,
+                textFieldTheme: TextFeildTheme.light,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: TextFieldWidget(
-                  label: GeneralString.editState,
-                  hintText: "Maharastra",
-                  keyboardType: TextInputType.streetAddress,
-                  textFieldTheme: TextFeildTheme.light,
-                ),
+              TextFieldWidget(
+                label: GeneralString.editState,
+                hintText: "Maharastra",
+                keyboardType: TextInputType.streetAddress,
+                textFieldTheme: TextFeildTheme.light,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: Sizes.size10.dp),
-                child: NormalButton(
-                    label: TextWidget(text: GeneralString.save),
-                    onPress: () {},
-                    buttonType: ButtonType.normal),
-              )
+              NormalButton(
+                  label: TextWidget(text: GeneralString.save),
+                  onPress: () {},
+                  buttonType: ButtonType.normal)
             ],
           ),
         ),

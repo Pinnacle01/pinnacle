@@ -31,9 +31,8 @@ class TextWidget extends StatelessWidget {
     String remainingText = text;
 
     while (remainingText.isNotEmpty) {
-      // Find the first highlighted phrase in the text
       String? firstMatch;
-      int matchStart = remainingText.length; // Set to max initially
+      int matchStart = remainingText.length;
 
       for (String word in highlightWords) {
         int index = remainingText.indexOf(word);
@@ -44,7 +43,6 @@ class TextWidget extends StatelessWidget {
       }
 
       if (firstMatch == null) {
-        // No match found, add remaining text as normal
         textSpans.add(
           TextSpan(
             text: remainingText,
@@ -59,7 +57,6 @@ class TextWidget extends StatelessWidget {
         break;
       }
 
-      // Add the normal text before the match
       if (matchStart > 0) {
         textSpans.add(
           TextSpan(
@@ -74,7 +71,6 @@ class TextWidget extends StatelessWidget {
         );
       }
 
-      // Add the highlighted text
       textSpans.add(
         TextSpan(
           text: firstMatch,

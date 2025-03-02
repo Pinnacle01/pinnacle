@@ -107,25 +107,22 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: Sizes.size15.dp),
+              padding: EdgeInsets.symmetric(
+                horizontal: Sizes.size10.dp,
+                vertical: Sizes.size15.dp,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: Sizes.size15.dp,
-                    ),
-                    child: TextWidget(
-                      text: GeneralString.totalTripMade,
-                      size: Sizes.size24.sp,
-                      color: CustomColors.whiteColor,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  TextWidget(
+                    text: GeneralString.totalTripMade,
+                    size: Sizes.size24.sp,
+                    color: CustomColors.whiteColor,
+                    fontWeight: FontWeight.w500,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: Sizes.size10.dp,
-                      vertical: Sizes.size5.dp,
                     ),
                     child: TextWidget(
                       alignment: TextAlign.start,
@@ -134,17 +131,13 @@ class ProfilePage extends StatelessWidget {
                       color: CustomColors.greyChatColor,
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: Sizes.size5.dp,
-                    ),
-                    child: TextWidget(
-                      alignment: TextAlign.start,
-                      text: GeneralString.settings,
-                      size: Sizes.size28.sp,
-                      color: CustomColors.mainTextColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  SizedBox(height: Sizes.size10.dp),
+                  TextWidget(
+                    alignment: TextAlign.start,
+                    text: GeneralString.settings,
+                    size: Sizes.size28.sp,
+                    color: CustomColors.mainTextColor,
+                    fontWeight: FontWeight.bold,
                   ),
                   UserWidgets.settingsTab(
                     label: GeneralString.account,
