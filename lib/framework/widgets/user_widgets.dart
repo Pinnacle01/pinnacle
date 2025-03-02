@@ -141,30 +141,30 @@ class UserWidgets {
       child: Container(
         padding: EdgeInsets.symmetric(
           vertical: Sizes.size20.dp,
-          horizontal: Sizes.size20.dp,
+          horizontal: Sizes.size10.dp,
         ),
         decoration: BoxDecoration(
-          color: backgroundColor ?? CustomColors.blackColor,
+          color: backgroundColor ?? CustomColors.mainBackgroundColor161513,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconWidget(
               path: iconPath,
-              size: Sizes.size24.sp,
+              size: Sizes.size20.sp,
               color: CustomColors.whiteColor,
             ),
             SizedBox(width: Sizes.size10.dp),
             Expanded(
               child: TextWidget(
                 text: label,
-                size: Sizes.size20.sp,
+                size: Sizes.size18.sp,
                 color: Colors.white,
               ),
             ),
             IconWidget(
               path: AssetPath.rightBackButtonIcon,
-              size: Sizes.size40.sp,
+              size: Sizes.size30.sp,
               color: CustomColors.whiteColor,
             ),
           ],

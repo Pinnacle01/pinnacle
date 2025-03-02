@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart'; // If using GoRouter
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
+import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
@@ -32,13 +32,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
     switch (index) {
       case 0:
-        context.go('/component');
+        RouteNavigator.go(context, '/component');
         break;
       case 1:
-        context.go('/explorepage');
+        RouteNavigator.go(context, '/explorepage');
         break;
       case 2:
-        context.go('/profile');
+        RouteNavigator.go(context, '/profileSection');
         break;
     }
   }

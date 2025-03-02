@@ -19,60 +19,80 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: CustomColors.mainBackgroundColor161513,
-        appBar: customAppBarWithShadow(
-          titleName: GeneralString.profile,
-          titleColor: CustomColors.mainTextColor,
-          fontSize: Sizes.size20.sp,
-          isCenter: true,
-        ),
-        body: SingleChildScrollView(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      backgroundColor: CustomColors.mainBackgroundColor161513,
+      appBar: customAppBarWithShadow(
+        titleName: GeneralString.profile,
+        titleColor: CustomColors.mainTextColor,
+        fontSize: Sizes.size20.sp,
+        fontWeight: FontWeight.bold,
+        isCenter: true,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             Padding(
               padding: EdgeInsets.only(top: Sizes.size20.dp),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ProfilePic(),
-                ],
+              child: Center(
+                child: ProfilePic(
+                  userId: GeneralString.userId,
+                  username: GeneralString.userName,
+                ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(Sizes.size10.dp),
+              padding: EdgeInsets.symmetric(
+                vertical: Sizes.size10.dp,
+                horizontal: Sizes.size20.dp,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  NormalButton(
+                  Expanded(
+                    child: NormalButton(
                       buttonType: ButtonType.normal,
                       onPress: () => {},
                       label: TextWidget(
-                        text: 'Upcoming Trips',
+                        text: GeneralString.upcomingTrip,
                         color: CustomColors.whiteColor,
                       ),
-                      bgColor: CustomColors.darkgreyButtonColor),
-                  NormalButton(
-                    buttonType: ButtonType.backIconButton,
-                    onPress: () => {},
-                    label: TextWidget(
-                      text: 'Edit',
-                      color: CustomColors.whiteColor,
+                      bgColor: CustomColors.darkgreyButtonColor,
                     ),
-                    icon: IconWidget(path: AssetPath.editIcon),
+                  ),
+                  SizedBox(
+                    width: Sizes.size25.dp,
+                  ),
+                  Expanded(
+                    child: NormalButton(
+                      buttonType: ButtonType.buttonWithIcon,
+                      onPress: () => {},
+                      label: TextWidget(
+                        text: GeneralString.edit,
+                        color: CustomColors.whiteColor,
+                      ),
+                      icon: IconWidget(path: AssetPath.editIcon),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: Sizes.size10.dp),
               height: Sizes.size36.dp,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: Sizes.size8.dp),
-                itemCount: 10,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return Row(
                     children: [
-                      SmallPreferenceButton(label: 'Hiking', onTap: () {}),
+                      SmallPreferenceButton(
+                        defaultBgColor:
+                            CustomColors.navCardBackgroundColor3B3B3B,
+                        label: 'Hiking',
+                        onTap: () {},
+                        isEnable: false,
+                      ),
                       SizedBox(width: Sizes.size10.dp),
                     ],
                   );
@@ -80,60 +100,71 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: Sizes.size15.dp,
-                  top: Sizes.size20.dp,
-                  bottom: Sizes.size5.dp),
-              child: TextWidget(
-                  alignment: TextAlign.start,
-                  text: 'Total Trips Made',
-                  size: Sizes.size24.sp,
-                  color: CustomColors.whiteColor,
-                  fontWeight: FontWeight.w500),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Sizes.size15.dp, bottom: Sizes.size5.dp),
-              child: TextWidget(
-                  alignment: TextAlign.start,
-                  text: '50 Trips',
-                  size: Sizes.size16.sp,
-                  color: CustomColors.mainTextColor,
-                  fontWeight: FontWeight.w300),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Sizes.size15.dp,
-                  top: Sizes.size10.dp,
-                  bottom: Sizes.size5.dp),
-              child: TextWidget(
-                  alignment: TextAlign.start,
-                  text: 'Settings',
-                  size: Sizes.size24.sp,
-                  color: CustomColors.mainTextColor,
-                  fontWeight: FontWeight.w500),
-            ),
-            UserWidgets.settingsTab(
-                label: "Account",
-                iconPath: AssetPath.userSquareIcon,
-                onTap: () {},
-                backgroundColor: CustomColors.mainBackgroundColor161513),
-            UserWidgets.settingsTab(
-                label: "Notification",
-                iconPath: AssetPath.notificationIcon,
-                onTap: () {},
-                backgroundColor: CustomColors.mainBackgroundColor161513),
-            UserWidgets.settingsTab(
-                label: "Privacy",
-                iconPath: AssetPath.privacyIcon,
-                onTap: () {},
-                backgroundColor: CustomColors.mainBackgroundColor161513),
-            UserWidgets.settingsTab(
-                label: "Help And Support",
-                iconPath: AssetPath.globeIcon,
-                onTap: () {},
-                backgroundColor: CustomColors.mainBackgroundColor161513)
-          ]),
-        ));
+              padding: EdgeInsets.symmetric(horizontal: Sizes.size15.dp),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: Sizes.size15.dp,
+                    ),
+                    child: TextWidget(
+                      text: GeneralString.totalTripMade,
+                      size: Sizes.size24.sp,
+                      color: CustomColors.whiteColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: Sizes.size10.dp,
+                      vertical: Sizes.size5.dp,
+                    ),
+                    child: TextWidget(
+                      alignment: TextAlign.start,
+                      text: '50 ${GeneralString.trips}',
+                      size: Sizes.size14.sp,
+                      color: CustomColors.greyChatColor,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: Sizes.size5.dp,
+                    ),
+                    child: TextWidget(
+                      alignment: TextAlign.start,
+                      text: GeneralString.settings,
+                      size: Sizes.size28.sp,
+                      color: CustomColors.mainTextColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  UserWidgets.settingsTab(
+                    label: GeneralString.account,
+                    iconPath: AssetPath.userSquareIcon,
+                    onTap: () {},
+                  ),
+                  UserWidgets.settingsTab(
+                    label: GeneralString.notification,
+                    iconPath: AssetPath.notificationIcon,
+                    onTap: () {},
+                  ),
+                  UserWidgets.settingsTab(
+                    label: GeneralString.privacy,
+                    iconPath: AssetPath.privacyIcon,
+                    onTap: () {},
+                  ),
+                  UserWidgets.settingsTab(
+                    label: GeneralString.helpAndSupport,
+                    iconPath: AssetPath.globeIcon,
+                    onTap: () {},
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

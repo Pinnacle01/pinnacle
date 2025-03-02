@@ -3,36 +3,45 @@ import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 
 class ProfilePic extends StatelessWidget {
-  const ProfilePic({super.key});
+  const ProfilePic({
+    super.key,
+    this.profilePic,
+    required this.username,
+    required this.userId,
+  });
+
+  final String? profilePic;
+  final String username;
+  final String userId;
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: Image.asset(
-              AssetPath.userPostImage,
-            ).image,
-            fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.circular(Sizes.size150.dp),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ImageWidget(
+          path: profilePic ?? AssetPath.userImage,
+          radius: Sizes.size150.dp,
+          height: Sizes.size216.dp,
+          width: Sizes.size216.dp,
+          fit: BoxFit.cover,
         ),
-        height: Sizes.size216.dp,
-        width: Sizes.size216.dp,
-      ),
-      TextWidget(
-          text: "Username",
+        TextWidget(
+          text: username,
           size: Sizes.size20.sp,
-          color: CustomColors.whiteColor),
-      TextWidget(
-        text: "@userId",
-        size: Sizes.size15.sp,
-        color: CustomColors.whiteColor,
-      ),
-    ]);
+          color: CustomColors.whiteColor,
+          fontWeight: FontWeight.bold,
+        ),
+        TextWidget(
+          text: "@$userId",
+          size: Sizes.size14.sp,
+          color: CustomColors.greyChatColor,
+        ),
+      ],
+    );
   }
 }

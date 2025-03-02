@@ -5,11 +5,13 @@ import 'package:pinnacle_main/explore_home/uikit/build_list_view.dart';
 
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
+import 'package:pinnacle_main/framework/constants/constants.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 
 import 'package:pinnacle_main/framework/uikit/circle_back_button_widget.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
@@ -84,27 +86,39 @@ class LocationPage extends StatelessWidget {
               ),
               Container(
                 height: Sizes.size200.dp,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Sizes.size12.dp),
-                ),
                 padding: EdgeInsets.fromLTRB(
                   Sizes.size15.dp,
                   Sizes.size10.dp,
                   Sizes.size15.dp,
                   Sizes.size5.dp,
                 ),
-                child: FlutterMap(
-                  options: const MapOptions(
-                    initialCenter: LatLng(51.509364, -0.128928),
-                    initialZoom: 3.2,
-                  ),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      userAgentPackageName: 'com.example.app',
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(Sizes.size12.dp),
+                  child: FlutterMap(
+                    options: const MapOptions(
+                      initialCenter: LatLng(51.509364, -0.128928),
+                      initialZoom: 3.2,
+                      // interactionOptions: InteractionOptions(
+                      //   flags: InteractiveFlag.none,
+                      // ),
                     ),
-                  ],
+                    children: [
+                      TileLayer(
+                        urlTemplate: Constants.mapUrlTemp,
+                      ),
+                      MarkerLayer(
+                        markers: [
+                          Marker(
+                            point: const LatLng(51.509364, -0.128928),
+                            child: IconWidget(
+                              path: AssetPath.locationPinIcon,
+                              size: Sizes.size24.sp,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               const BuildListView(),

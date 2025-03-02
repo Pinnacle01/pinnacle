@@ -27,22 +27,24 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TextSpan> textSpans = [];
-    text.split(' ').forEach((word) {
-      bool isHighlighted = highlightWords.contains(word);
-      textSpans.add(
-        TextSpan(
-          text: "$word ",
-          style: TextStyle(
-            color: isHighlighted ? highlightColor : color ?? Colors.black,
-            fontSize: size ?? 14.0,
-            fontWeight: isHighlighted
-                ? highlightFontWeight
-                : fontWeight ?? FontWeight.normal,
-            fontStyle: fontStyle,
+    text.split(' ').forEach(
+      (word) {
+        bool isHighlighted = highlightWords.contains(word);
+        textSpans.add(
+          TextSpan(
+            text: "$word ",
+            style: TextStyle(
+              color: isHighlighted ? highlightColor : color ?? Colors.black,
+              fontSize: size ?? 14.0,
+              fontWeight: isHighlighted
+                  ? highlightFontWeight
+                  : fontWeight ?? FontWeight.normal,
+              fontStyle: fontStyle,
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
 
     return RichText(
       textAlign: alignment ?? TextAlign.start,

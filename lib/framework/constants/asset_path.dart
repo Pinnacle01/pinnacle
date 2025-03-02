@@ -49,4 +49,5 @@ class AssetPath {
       '${Constants.iconPath}bell_line_icon.png';
   static String get privacyIcon => '${Constants.iconPath}lock_icon.png';
   static String get editIcon => '${Constants.iconPath}edit_icon.png';
+  static String get locationPinIcon => '${Constants.iconPath}pin_icon.png';
 }

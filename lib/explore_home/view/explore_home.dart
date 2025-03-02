@@ -5,6 +5,7 @@ import 'package:pinnacle_main/framework/constants/asset_path.dart';
 
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
+import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
@@ -60,7 +61,7 @@ class _ExploreHomeState extends State<ExploreHome>
         currentIndex: 1,
       ),
       appBar: customAppBarWithShadow(
-        titleName: 'Explore',
+        titleName: GeneralString.explore,
         backgroundColor: CustomColors.mainBackgroundColor161513,
         titleColor: CustomColors.mainTextColor,
         fontSize: Sizes.size32.sp,
@@ -75,9 +76,9 @@ class _ExploreHomeState extends State<ExploreHome>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _categoryBoxButton('Home', 0),
-              _categoryBoxButton('Categories', 1),
-              _categoryBoxButton('Locations', 2),
+              _categoryBoxButton(GeneralString.home, 0),
+              _categoryBoxButton(GeneralString.categories, 1),
+              _categoryBoxButton(GeneralString.locations, 2),
             ],
           ),
           Observer(
@@ -86,9 +87,9 @@ class _ExploreHomeState extends State<ExploreHome>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    _buildListViewHome('Home'),
-                    _buildListViewCategories('Categories'),
-                    _buildListViewLocations('Locations'),
+                    _buildListViewHome(GeneralString.home),
+                    _buildListViewCategories(GeneralString.categories),
+                    _buildListViewLocations(GeneralString.locations),
                   ],
                 ),
               );

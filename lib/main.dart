@@ -55,6 +55,10 @@ final List<AppRoute> routers = [
           ),
         ],
       ),
+      AppRoute(
+        path: 'profileSection',
+        builder: (context, state) => const ProfilePage(),
+      ),
     ],
   ),
 ];
