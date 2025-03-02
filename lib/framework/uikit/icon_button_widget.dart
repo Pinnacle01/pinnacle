@@ -8,12 +8,14 @@ class IconButtonWidget extends StatelessWidget {
     required this.size,
     this.color,
     required this.onPress,
+    this.fit,
   });
 
   final void Function() onPress;
   final String path;
   final double size;
   final Color? color;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class IconButtonWidget extends StatelessWidget {
         path: path,
         size: size,
         color: color,
+        fit: fit,
       ),
     );
   }

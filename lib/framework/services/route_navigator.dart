@@ -42,7 +42,7 @@ class RouteNavigator {
     }
   }
 
-  static void goBack(BuildContext context) {
+  static void pop(BuildContext context) {
     try {
       if (context.canPop()) {
         context.pop();

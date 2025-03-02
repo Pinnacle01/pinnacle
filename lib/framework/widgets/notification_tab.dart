@@ -6,7 +6,6 @@ import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
-import 'package:pinnacle_main/framework/constants/strings.dart';
 
 class NotificationTab extends StatelessWidget {
   const NotificationTab(
@@ -26,7 +25,7 @@ class NotificationTab extends StatelessWidget {
                 padding: EdgeInsets.all(Sizes.size8.dp),
                 child: CircleAvatarWidget(
                   imagePath: logoImage,
-                  size: Sizes.size22.sp,
+                  radius: Sizes.size22.sp,
                   imageType: ImageType.generalImage,
                 ),
               ),
@@ -60,13 +59,13 @@ class NotificationTab extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextWidget(
-                  text: GeneralString.notificationTitle,
+                  text: 'Notification Title',
                   color: Colors.white,
                   size: Sizes.size18.sp,
                   fontWeight: FontWeight.bold,
                 ),
                 TextWidget(
-                  text: GeneralString.notificationCaption,
+                  text: 'Notification Caption ..... Notification Substring',
                   color: Colors.white,
                   size: Sizes.size16.sp,
                 ),

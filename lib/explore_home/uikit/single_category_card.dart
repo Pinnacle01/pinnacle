@@ -18,6 +18,7 @@ class SingleCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      excludeFromSemantics: true,
       child: Stack(
         children: [
           Container(

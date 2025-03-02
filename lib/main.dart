@@ -14,7 +14,7 @@ import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
 import 'package:pinnacle_main/profile%20section/view/edit_profile.dart';
-import 'package:pinnacle_main/profile%20section/view/profile.dart';
+import 'package:pinnacle_main/profile%20section/view/profilepage.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -39,31 +39,32 @@ final List<AppRoute> routers = [
         builder: (context, state) => const ExploreHome(),
         subRoutes: [
           AppRoute(
+            path: 'travelpost',
+            builder: (context, state) => const TravelPost(),
+          ),
+          AppRoute(
             path: 'tripdetails',
             builder: (context, state) => const TripDetails(),
+          ),
+          AppRoute(
+            path: 'locationpage',
+            builder: (context, state) => const LocationPage(),
+          ),
+          AppRoute(
+            path: 'categorypage',
+            builder: (context, state) => const CategoryPage(),
           ),
         ],
       ),
       AppRoute(
-        path: 'travelpost',
-        builder: (context, state) => const TravelPost(),
-      ),
-      AppRoute(
-        path: 'locationpage',
-        builder: (context, state) => const LocationPage(),
-      ),
-      AppRoute(
-        path: 'profile',
-        builder: (context, state) => const ProfilePage(),
-      ),
-      AppRoute(
-        path: 'editprofile',
-        builder: (context, state) => const EditProfile(),
-      ),
-      AppRoute(
-        path: 'categorypage',
-        builder: (context, state) => const CategoryPage(),
-      ),
+          path: 'profileSection',
+          builder: (context, state) => const ProfilePage(),
+          subRoutes: [
+            AppRoute(
+              path: 'editProfile',
+              builder: (context, state) => const EditProfile(),
+            ),
+          ]),
     ],
   ),
 ];

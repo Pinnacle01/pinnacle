@@ -19,33 +19,46 @@ class GeneralString {
   static String get budget => 'Budget';
   static String get groupSize => 'Group Size';
   static String get preferredGroupSize => 'Preferred Group Size';
+  static String get addTags => 'Add Tags';
   static String get searchGoing => 'Where are you going?';
+  static String get writeSomeReqforTrip =>
+      'Write some requirements for your trip...';
   static String get paidBy => 'Paid By:';
   static String get from => 'From';
   static String get to => 'To';
   static String get tags => 'Tags';
+  static String get edit => 'Edit';
   static String get languagePreferrance => 'Language Preferrance';
   static String get additionalNotes => 'Additional Notes';
   static String get unpaidExpense => 'Unpaid Expense';
   static String get save => 'Save';
+  static String get totalTripMade => 'Total Trips Made';
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
+  static String get planTrip => 'Plan a Trip';
+  static String get addTrvlReq => 'Add a Travel Request';
   static String get profile => 'Profile';
+  static String get upcomingTrip => 'Upcoming Trips';
+  static String get home => 'Home';
+  static String get categories => 'Categories';
+  static String get locations => 'Locations';
+  static String get explore => 'Explore';
+  static String get trips => 'Trips';
+  static String get settings => 'Settings';
+  static String get account => 'Account';
+  static String get notification => 'Notification';
+  static String get helpAndSupport => 'Help And Support';
+  static String get privacy => 'Privacy';
   static String get editProfile => 'Edit Profile';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
-  static String get notificationTitle => 'Notification Title';
-  static String get notificationCaption =>
-      'Notification Caption ..... Notification Substring';
-  static String get awardTitle => 'Intel Expectional Award';
-  static String get awardCaption =>
-      'For your Expectional work in driving the team to success in 2020';
   static String get grouprequestcard => 'Group Admission Request';
 
   //Edit profile
   static String get editUserId => 'User Id (You can edit it only once !)';
+  static String get editItOnce => '(You can edit it only once !)';
   static String get editEmail => 'Email';
   static String get editPhone => 'Phone';
   static String get editCity => 'City';

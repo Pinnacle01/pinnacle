@@ -27,22 +27,64 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TextSpan> textSpans = [];
-    text.split(' ').forEach((word) {
-      bool isHighlighted = highlightWords.contains(word);
+
+    String remainingText = text;
+
+    while (remainingText.isNotEmpty) {
+      String? firstMatch;
+      int matchStart = remainingText.length;
+
+      for (String word in highlightWords) {
+        int index = remainingText.indexOf(word);
+        if (index != -1 && index < matchStart) {
+          firstMatch = word;
+          matchStart = index;
+        }
+      }
+
+      if (firstMatch == null) {
+        textSpans.add(
+          TextSpan(
+            text: remainingText,
+            style: TextStyle(
+              color: color ?? Colors.black,
+              fontSize: size ?? 14.0,
+              fontWeight: fontWeight ?? FontWeight.normal,
+              fontStyle: fontStyle,
+            ),
+          ),
+        );
+        break;
+      }
+
+      if (matchStart > 0) {
+        textSpans.add(
+          TextSpan(
+            text: remainingText.substring(0, matchStart),
+            style: TextStyle(
+              color: color ?? Colors.black,
+              fontSize: size ?? 14.0,
+              fontWeight: fontWeight ?? FontWeight.normal,
+              fontStyle: fontStyle,
+            ),
+          ),
+        );
+      }
+
       textSpans.add(
         TextSpan(
-          text: "$word ",
+          text: firstMatch,
           style: TextStyle(
-            color: isHighlighted ? highlightColor : color ?? Colors.black,
+            color: highlightColor,
             fontSize: size ?? 14.0,
-            fontWeight: isHighlighted
-                ? highlightFontWeight
-                : fontWeight ?? FontWeight.normal,
+            fontWeight: highlightFontWeight,
             fontStyle: fontStyle,
           ),
         ),
       );
-    });
+
+      remainingText = remainingText.substring(matchStart + firstMatch.length);
+    }
 
     return RichText(
       textAlign: alignment ?? TextAlign.start,
@@ -55,6 +97,7 @@ class TextWidget extends StatelessWidget {
         ),
       ),
       softWrap: true,
+      overflow: TextOverflow.visible,
     );
   }
 }

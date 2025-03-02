@@ -1,6 +1,7 @@
 import 'package:pinnacle_main/framework/constants/constants.dart';
 
 class AssetPath {
+  // Images
   static String get userImage => '${Constants.imagePath}profile_pic.jpg';
   static String get userPostImage =>
       '${Constants.imagePath}travel_image_component.jpeg';
@@ -8,9 +9,11 @@ class AssetPath {
   static String get biking => 'Biking';
   static String get loadingLocationImage =>
       '${Constants.imagePath}loading_location_image.jpg';
-  static String get dummyImage => '${Constants.imagePath}dummy.jpg';
+  static String get dummyLocationImage =>
+      '${Constants.imagePath}dummy_location.png';
   static String get cycleBikeImage => '${Constants.imagePath}cycle_bike.jpg';
 
+//Icon
   static String get crossIcon => '${Constants.iconPath}cross_icon.svg';
   static String get tickIcon => '${Constants.iconPath}tick_icon.svg';
   static String get userSquareIcon =>
@@ -39,8 +42,14 @@ class AssetPath {
   static String get calendarIcon => '${Constants.iconPath}calendar_icon.svg';
   static String get cameraIcon => '${Constants.iconPath}camera_icon.svg';
   static String get imageGalleryIcon => '${Constants.iconPath}image_icon.svg';
+  static String get locationFilledIcon =>
+      '${Constants.iconPath}location_on_icon.svg';
+  static String get mapIcon => '${Constants.iconPath}map_icon.svg';
   static String get notificationIcon =>
       '${Constants.iconPath}bell_line_icon.png';
   static String get privacyIcon => '${Constants.iconPath}lock_icon.png';
   static String get editIcon => '${Constants.iconPath}edit_icon.png';
+  static String get locationPinIcon => '${Constants.iconPath}pin_icon.png';
+  static String get editPencilIcon =>
+      '${Constants.iconPath}edit_pencil_icon.svg';
 }

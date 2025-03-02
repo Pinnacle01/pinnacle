@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 
 enum IconType {
   icon,
@@ -9,36 +9,36 @@ enum IconType {
 class ImageButtonWidget extends StatelessWidget {
   const ImageButtonWidget({
     super.key,
-    required this.iconPath,
-    required this.size,
-    required this.onPress,
-    required this.iconType,
+    required this.path,
+    required this.height,
+    required this.width,
+    this.onPress,
+    this.fit,
+    this.onHover,
+    this.radius,
   });
 
-  final void Function() onPress;
-  final String iconPath;
-  final double size;
-  final IconType iconType;
+  final void Function()? onPress;
+  final String path;
+  final double height;
+  final double width;
+  final BoxFit? fit;
+  final double? radius;
+  final Function(bool)? onHover;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPress,
-      child: Container(
-        height: size,
-        width: size,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(size),
-        ),
-        child: iconType == IconType.svg
-            ? SvgPicture.asset(
-                iconPath,
-                fit: BoxFit.cover,
-              )
-            : Image.asset(
-                iconPath,
-                fit: BoxFit.cover,
-              ),
+      onHover: (value) {
+        onHover!(value);
+      },
+      child: ImageWidget(
+        path: path,
+        fit: fit,
+        height: height,
+        radius: radius,
+        width: width,
       ),
     );
   }

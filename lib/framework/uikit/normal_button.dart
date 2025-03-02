@@ -68,12 +68,9 @@ class NormalButton extends StatelessWidget {
       onLongPress: onLongPress,
       child: Center(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             label,
-            Visibility(
-              visible: icon != null,
-              child: SizedBox(width: Sizes.size10.dp),
-            ),
             Visibility(
               visible: icon != null,
               child: icon!,

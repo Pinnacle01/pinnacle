@@ -12,6 +12,7 @@ class BuildListView extends StatelessWidget {
     return ListView.builder(
       itemCount: 5,
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: EdgeInsets.symmetric(
@@ -19,7 +20,10 @@ class BuildListView extends StatelessWidget {
             horizontal: Sizes.size15.dp,
           ),
           child: InkWell(
-            onTap: () => RouteNavigator.go(context, '/explorepage/tripdetails'),
+            onTap: () => RouteNavigator.go(
+              context,
+              '/explorepage/tripdetails',
+            ),
             child: TravelRequestCard(
               title: 'Travel Title',
               startDate: DateTime.now(),

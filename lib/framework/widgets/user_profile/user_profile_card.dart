@@ -31,7 +31,7 @@ class UserProfileCard extends StatelessWidget {
         children: [
           CircleAvatarWidget(
             imagePath: userImage,
-            size: Sizes.size40.sp,
+            radius: Sizes.size24.sp,
             imageType: ImageType.generalImage,
           ),
           SizedBox(width: Sizes.size15.dp),
