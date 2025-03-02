@@ -5,6 +5,7 @@ import 'package:pinnacle_main/framework/constants/enums.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/constants/strings.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
+import 'package:pinnacle_main/framework/uikit/icon_widget.dart';
 import 'package:pinnacle_main/framework/uikit/normal_button.dart';
 import 'package:pinnacle_main/framework/uikit/small_preference_button.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
@@ -12,14 +13,9 @@ import 'package:pinnacle_main/framework/widgets/tool_bar_widgets.dart';
 import 'package:pinnacle_main/framework/widgets/user_widgets.dart';
 import 'package:pinnacle_main/profile%20section/uikit/profile_pic.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +58,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       text: 'Edit',
                       color: CustomColors.whiteColor,
                     ),
-                    icon: const Icon(Icons.edit_note_outlined),
+                    icon: IconWidget(path: AssetPath.editIcon),
                   ),
                 ],
               ),

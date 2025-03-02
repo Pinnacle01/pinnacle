@@ -30,7 +30,7 @@ class ProfilePic extends StatelessWidget {
           color: CustomColors.whiteColor),
       TextWidget(
         text: "@userId",
-        size: Sizes.size15.dp,
+        size: Sizes.size15.sp,
         color: CustomColors.whiteColor,
       ),
     ]);
