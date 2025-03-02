@@ -24,78 +24,77 @@ class EditProfile extends StatelessWidget {
         isCenter: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: Sizes.size20.dp),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ProfilePic(
+        child: Padding(
+          padding: EdgeInsets.only(left: Sizes.size20.dp),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                child: const Center(
+                  child: ProfilePic(
                     isEditable: true,
                   ),
-                ],
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: Sizes.size20.dp, left: Sizes.size20.dp),
-              child: TextFieldWidget(
-                label: GeneralString.editUserId,
-                hintText: "@amitrana",
-                keyboardType: TextInputType.name,
-                textFieldTheme: TextFeildTheme.light,
+              Padding(
+                padding: EdgeInsets.only(top: Sizes.size20),
+                child: TextFieldWidget(
+                  label: GeneralString.editUserId,
+                  hintText: "@amitrana",
+                  keyboardType: TextInputType.name,
+                  textFieldTheme: TextFeildTheme.light,
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: Sizes.size20.dp, left: Sizes.size20.dp),
-              child: TextFieldWidget(
-                label: GeneralString.editEmail,
-                hintText: "abcd@gmail.com",
-                keyboardType: TextInputType.emailAddress,
-                textFieldTheme: TextFeildTheme.light,
+              Padding(
+                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                child: TextFieldWidget(
+                  label: GeneralString.editEmail,
+                  hintText: "abcd@gmail.com",
+                  keyboardType: TextInputType.emailAddress,
+                  textFieldTheme: TextFeildTheme.light,
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: Sizes.size20.dp, left: Sizes.size20.dp),
-              child: TextFieldWidget(
-                label: GeneralString.editPhone,
-                hintText: "65484615468",
-                keyboardType: TextInputType.phone,
-                textFieldTheme: TextFeildTheme.light,
+              Padding(
+                padding: EdgeInsets.only(
+                  top: Sizes.size20.dp,
+                ),
+                child: TextFieldWidget(
+                  label: GeneralString.editPhone,
+                  hintText: "65484615468",
+                  keyboardType: TextInputType.phone,
+                  textFieldTheme: TextFeildTheme.light,
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: Sizes.size20.dp, left: Sizes.size20.dp),
-              child: TextFieldWidget(
-                label: GeneralString.editCity,
-                hintText: "Pune",
-                keyboardType: TextInputType.streetAddress,
-                textFieldTheme: TextFeildTheme.light,
+              Padding(
+                padding: EdgeInsets.only(top: Sizes.size20.dp),
+                child: TextFieldWidget(
+                  label: GeneralString.editCity,
+                  hintText: "Pune",
+                  keyboardType: TextInputType.streetAddress,
+                  textFieldTheme: TextFeildTheme.light,
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(top: Sizes.size20.dp, left: Sizes.size20.dp),
-              child: TextFieldWidget(
-                label: GeneralString.editState,
-                hintText: "Maharastra",
-                keyboardType: TextInputType.streetAddress,
-                textFieldTheme: TextFeildTheme.light,
+              Padding(
+                padding: EdgeInsets.only(
+                  top: Sizes.size20.dp,
+                ),
+                child: TextFieldWidget(
+                  label: GeneralString.editState,
+                  hintText: "Maharastra",
+                  keyboardType: TextInputType.streetAddress,
+                  textFieldTheme: TextFeildTheme.light,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: Sizes.size20.dp, bottom: Sizes.size10.dp),
-              child: NormalButton(
-                  label: TextWidget(text: GeneralString.save),
-                  onPress: () {},
-                  buttonType: ButtonType.normal),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.only(
+                    top: Sizes.size20.dp, bottom: Sizes.size10.dp),
+                child: NormalButton(
+                    label: TextWidget(text: GeneralString.save),
+                    onPress: () {},
+                    buttonType: ButtonType.normal),
+              )
+            ],
+          ),
         ),
       ),
     );
