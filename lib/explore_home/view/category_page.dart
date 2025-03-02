@@ -5,15 +5,14 @@ import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
-
 import 'package:pinnacle_main/framework/uikit/circle_back_button_widget.dart';
 import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:pinnacle_main/framework/widgets/navigation_bar/floating_action_button.dart';
 
-class LocationPage extends StatelessWidget {
-  const LocationPage({super.key});
+class CategoryPage extends StatelessWidget {
+  const CategoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,6 @@ class LocationPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(
@@ -36,49 +34,26 @@ class LocationPage extends StatelessWidget {
             child: Stack(
               children: [
                 ImageWidget(
-                  path: AssetPath.dummyImage,
+                  path: AssetPath.cycleBikeImage,
                   width: double.infinity,
                   height: Sizes.size420.dp,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                    top: Sizes.size20.dp,
-                    left: Sizes.size10.dp,
-                    child: const CircleBackButtonWidget()),
+                  top: Sizes.size20.dp,
+                  left: Sizes.size10.dp,
+                  child: const CircleBackButtonWidget(),
+                ),
                 Positioned(
                   bottom: Sizes.size10.dp,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(Sizes.size8.dp),
-                        child: Positioned(
-                          bottom: Sizes.size20.dp,
-                          child: TextWidget(
-                              text: 'Lonavala',
-                              size: Sizes.size30.sp,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                              alignment: TextAlign.center,
-                              color: CustomColors.mainTextColor),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(Sizes.size8.dp),
-                        child: Positioned(
-                          bottom: Sizes.size10.dp,
-                          child: TextWidget(
-                              text:
-                                  'Lonavala-Khandala is a hill station and a Municipal Council in the Pune district, Maharashtra, India.',
-                              alignment: TextAlign.center,
-                              size: Sizes.size16.sp,
-                              fontStyle: FontStyle.italic,
-                              color: CustomColors.mainTextColor),
-                        ),
-                      ),
-                    ],
+                  left: Sizes.size5.dp,
+                  child: TextWidget(
+                    text: 'Biking',
+                    fontStyle: FontStyle.italic,
+                    color: CustomColors.mainTextColor,
+                    size: Sizes.size36.sp,
                   ),
-                ),
+                )
               ],
             ),
           ),
