@@ -16,6 +16,8 @@ class CircleBackButtonWidget extends StatelessWidget {
             path: AssetPath.leftButtonIcon,
             size: Sizes.size14.sp,
             color: CustomColors.mainBackgroundColor161513,
-            onPress: () {}));
+            onPress: () {
+              Navigator.pop(context);
+            }));
   }
 }
