@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pinnacle_main/explore_home/view/category_page.dart';
+
 import 'package:pinnacle_main/explore_home/view/explore_home.dart';
 import 'package:pinnacle_main/explore_home/view/location_page.dart';
 import 'package:pinnacle_main/explore_home/view/travel_post.dart';
@@ -12,6 +13,7 @@ import 'package:pinnacle_main/framework/services/app_router.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
+import 'package:pinnacle_main/profile%20section/view/profile.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -48,6 +50,10 @@ final List<AppRoute> routers = [
       AppRoute(
         path: 'locationpage',
         builder: (context, state) => const LocationPage(),
+      ),
+      AppRoute(
+        path: 'profile',
+        builder: (context, state) => const ProfilePage(),
       ),
       AppRoute(
         path: 'categorypage',

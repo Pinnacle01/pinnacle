@@ -107,6 +107,7 @@ class Sizes {
   static double get size150 => 150;
   static double get size200 => 200;
   static double get size210 => 210;
+  static double get size216 => 216;
   static double get size220 => 220;
   static double get size230 => 230;
   static double get size240 => 240;

@@ -46,10 +46,10 @@ class HomeApp extends StatelessWidget {
               ),
             ),
             NormalButton(
-              onPress: () => RouteNavigator.go(context, '/categorypage'),
+              onPress: () => RouteNavigator.go(context, '/profile'),
               buttonType: ButtonType.normal,
               label: const TextWidget(
-                text: 'Category Page',
+                text: 'Profile Section',
               ),
             ),
           ],

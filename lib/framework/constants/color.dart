@@ -30,4 +30,5 @@ class CustomColors {
   static Color brownColor = const Color.fromRGBO(64, 46, 50, 1);
   static Color whiteColor = const Color.fromARGB(255, 255, 255, 255);
   static Color blackColor = const Color.fromARGB(255, 0, 0, 0);
+  static Color darkgreyButtonColor = const Color.fromARGB(255, 53, 50, 44);
 }
