@@ -27,10 +27,12 @@ class GeneralString {
   static String get languagePreferrance => 'Language Preferrance';
   static String get additionalNotes => 'Additional Notes';
   static String get unpaidExpense => 'Unpaid Expense';
+  static String get save => 'Save';
 
   static String get tripDetail => 'Trip Details';
   static String get startPlanning => 'Start Planning';
   static String get profile => 'Profile';
+  static String get editProfile => 'Edit Profile';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';
@@ -41,4 +43,11 @@ class GeneralString {
   static String get awardCaption =>
       'For your Expectional work in driving the team to success in 2020';
   static String get grouprequestcard => 'Group Admission Request';
+
+  //Edit profile
+  static String get editUserId => 'User Id (You can edit it only once !)';
+  static String get editEmail => 'Email';
+  static String get editPhone => 'Phone';
+  static String get editCity => 'City';
+  static String get editState => 'State';
 }

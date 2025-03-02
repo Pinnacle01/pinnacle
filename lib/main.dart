@@ -13,6 +13,7 @@ import 'package:pinnacle_main/framework/services/app_router.dart';
 import 'package:pinnacle_main/framework/services/route_navigator.dart';
 import 'package:pinnacle_main/framework_demo.dart';
 import 'package:pinnacle_main/home.dart';
+import 'package:pinnacle_main/profile%20section/view/edit_profile.dart';
 import 'package:pinnacle_main/profile%20section/view/profile.dart';
 
 void main() {
@@ -54,6 +55,10 @@ final List<AppRoute> routers = [
       AppRoute(
         path: 'profile',
         builder: (context, state) => const ProfilePage(),
+      ),
+      AppRoute(
+        path: 'editprofile',
+        builder: (context, state) => const EditProfile(),
       ),
       AppRoute(
         path: 'categorypage',
