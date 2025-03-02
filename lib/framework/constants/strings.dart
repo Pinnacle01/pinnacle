@@ -34,6 +34,7 @@ class GeneralString {
   static String get startPlanning => 'Start Planning';
   static String get planTrip => 'Plan a Trip';
   static String get addTrvlReq => 'Add a Travel Request';
+  static String get profile => 'Profile';
 
   // Notification Tab
   static String get commentWrite => 'Write a comment';

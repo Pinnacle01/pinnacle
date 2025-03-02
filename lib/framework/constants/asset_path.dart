@@ -45,4 +45,8 @@ class AssetPath {
   static String get locationFilledIcon =>
       '${Constants.iconPath}location_on_icon.svg';
   static String get mapIcon => '${Constants.iconPath}map_icon.svg';
+  static String get notificationIcon =>
+      '${Constants.iconPath}bell_line_icon.png';
+  static String get privacyIcon => '${Constants.iconPath}lock_icon.png';
+  static String get editIcon => '${Constants.iconPath}edit_icon.png';
 }

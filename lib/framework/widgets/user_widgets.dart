@@ -134,7 +134,7 @@ class UserWidgets {
     required String iconPath,
     required String label,
     required Function() onTap,
-    Color? bgColor,
+    Color? backgroundColor,
   }) {
     return InkWell(
       onTap: onTap,
@@ -144,7 +144,7 @@ class UserWidgets {
           horizontal: Sizes.size20.dp,
         ),
         decoration: BoxDecoration(
-          color: bgColor ?? CustomColors.blackColor,
+          color: backgroundColor ?? CustomColors.blackColor,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
