@@ -52,6 +52,13 @@ class HomeApp extends StatelessWidget {
                 text: 'Profile Section',
               ),
             ),
+            NormalButton(
+              onPress: () => RouteNavigator.go(context, '/editprofile'),
+              buttonType: ButtonType.normal,
+              label: const TextWidget(
+                text: 'Edit Profile',
+              ),
+            ),
           ],
         ),
       ),
