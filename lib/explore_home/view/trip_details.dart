@@ -53,9 +53,9 @@ class TripDetails extends StatelessWidget {
               ),
               SizedBox(height: Sizes.size10.dp),
               UserProfileCard(
-                userName: 'User Name',
+                userName: GeneralString.userName,
                 userImage: AssetPath.userImage,
-                userProfileId: 'User Id',
+                userProfileId: GeneralString.userId,
               ),
               SizedBox(height: Sizes.size10.dp),
               GeneralComponent.requestCardDataInfo(
@@ -65,7 +65,7 @@ class TripDetails extends StatelessWidget {
               ),
               SizedBox(height: Sizes.size10.dp),
               GeneralComponent.requestCardDataInfo(
-                title: 'Group size',
+                title: GeneralString.groupSize,
                 iconPath: AssetPath.groupSizeIcon,
                 iconColor: CustomColors.mainTextColor,
               ),

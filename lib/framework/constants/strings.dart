@@ -19,7 +19,9 @@ class GeneralString {
   static String get budget => 'Budget';
   static String get groupSize => 'Group Size';
   static String get preferredGroupSize => 'Preferred Group Size';
+  static String get addTags => 'Add Tags'; 
   static String get searchGoing => 'Where are you going?';
+ static String get writeSomeReqforTrip => 'Write some requirements for your trip...';
   static String get paidBy => 'Paid By:';
   static String get from => 'From';
   static String get to => 'To';

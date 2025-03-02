@@ -13,6 +13,7 @@ class SmallPreferenceButton extends StatefulWidget {
     this.onTaplabelColor,
     this.defaultBgColor,
     this.onTapBgColor,
+    required this.isEnable,
     required this.onTap,
   });
 
@@ -23,6 +24,7 @@ class SmallPreferenceButton extends StatefulWidget {
   final Color? defaultBgColor;
   final Color? onTapBgColor;
   final Function() onTap;
+  final bool isEnable;
 
   @override
   State<SmallPreferenceButton> createState() => _SmallPreferenceButtonState();
@@ -37,9 +39,11 @@ class _SmallPreferenceButtonState extends State<SmallPreferenceButton> {
       padding: EdgeInsets.only(right: Sizes.size10.dp),
       child: InkWell(
         onTap: () {
-          isSelected = !isSelected;
-          setState(() {});
-          widget.onTap();
+          if (widget.isEnable) {
+            isSelected = !isSelected;
+            setState(() {});
+            widget.onTap();
+          }
         },
         child: Container(
           padding: EdgeInsets.symmetric(

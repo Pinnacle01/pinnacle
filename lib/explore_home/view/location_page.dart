@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:pinnacle_main/explore_home/uikit/build_list_view.dart';
 
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
@@ -81,11 +83,28 @@ class LocationPage extends StatelessWidget {
                 ],
               ),
               Container(
+                height: Sizes.size200.dp,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Sizes.size12.dp),
+                ),
                 padding: EdgeInsets.fromLTRB(
                   Sizes.size15.dp,
                   Sizes.size10.dp,
                   Sizes.size15.dp,
                   Sizes.size5.dp,
+                ),
+                child: FlutterMap(
+                  options: const MapOptions(
+                    initialCenter: LatLng(51.509364, -0.128928),
+                    initialZoom: 3.2,
+                  ),
+                  children: [
+                    TileLayer(
+                      urlTemplate:
+                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                      userAgentPackageName: 'com.example.app',
+                    ),
+                  ],
                 ),
               ),
               const BuildListView(),

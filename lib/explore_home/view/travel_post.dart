@@ -113,6 +113,7 @@ class _TravelPostState extends State<TravelPost> {
             Row(
               children: languages
                   .map((tag) => SmallPreferenceButton(
+                        isEnable: true,
                         label: tag,
                         onTap: () {},
                       ))
@@ -121,7 +122,7 @@ class _TravelPostState extends State<TravelPost> {
             SizedBox(height: Sizes.size10.dp),
             TextFieldWidget(
               label: GeneralString.tags,
-              hintText: "Add Tags",
+              hintText: GeneralString.addTags,
               prefixIcon: AssetPath.plusIcon,
               textFieldTheme: TextFeildTheme.dark,
               fieldTextColor: CustomColors.whiteColor,
@@ -134,6 +135,7 @@ class _TravelPostState extends State<TravelPost> {
                 shrinkWrap: true,
                 children: tags
                     .map((tag) => SmallPreferenceButton(
+                          isEnable: false,
                           label: tag,
                           onTap: () {},
                         ))
@@ -149,7 +151,7 @@ class _TravelPostState extends State<TravelPost> {
             ),
             SizedBox(height: Sizes.size10.dp),
             ScrollableNotesBox(
-              hintText: 'Write some requirements for your trip...',
+              hintText: GeneralString.writeSomeReqforTrip,
               scrollController: ScrollController(),
               bgColor: CustomColors.navCardBackgroundColor222222,
             ),
