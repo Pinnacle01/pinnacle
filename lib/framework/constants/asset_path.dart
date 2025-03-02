@@ -11,6 +11,7 @@ class AssetPath {
       '${Constants.imagePath}loading_location_image.jpg';
   static String get dummyLocationImage =>
       '${Constants.imagePath}dummy_location.png';
+  static String get cycleBikeImage => '${Constants.imagePath}cycle_bike.jpg';
 
 //Icon
   static String get crossIcon => '${Constants.iconPath}cross_icon.svg';

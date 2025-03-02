@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pinnacle_main/explore_home/uikit/travel_request_component.dart';
+import 'package:pinnacle_main/explore_home/uikit/build_list_view.dart';
+
 import 'package:pinnacle_main/framework/constants/asset_path.dart';
 import 'package:pinnacle_main/framework/constants/color.dart';
 import 'package:pinnacle_main/framework/constants/size.dart';
 import 'package:pinnacle_main/framework/digital/sizer.dart';
-import 'package:pinnacle_main/framework/services/route_navigator.dart';
+
 import 'package:pinnacle_main/framework/uikit/circle_back_button_widget.dart';
 import 'package:pinnacle_main/framework/uikit/image_widget.dart';
 import 'package:pinnacle_main/framework/uikit/text_widget.dart';
